@@ -18,6 +18,8 @@
 		78860C3A28D7DE85002F70DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78860C3828D7DE85002F70DE /* Main.storyboard */; };
 		78860C3C28D7DE8D002F70DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78860C3B28D7DE8D002F70DE /* Assets.xcassets */; };
 		78860C3F28D7DE8D002F70DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78860C3D28D7DE8D002F70DE /* LaunchScreen.storyboard */; };
+		78FD3FD328D90FFA00CCBF1F /* Medico.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FD3FD228D90FFA00CCBF1F /* Medico.swift */; };
+		78FD3FD628D9176400CCBF1F /* CuestionarioSemanal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FD3FD528D9176400CCBF1F /* CuestionarioSemanal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		78860C3B28D7DE8D002F70DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78860C3E28D7DE8D002F70DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78860C4028D7DE8D002F70DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78FD3FD228D90FFA00CCBF1F /* Medico.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medico.swift; sourceTree = "<group>"; };
+		78FD3FD528D9176400CCBF1F /* CuestionarioSemanal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuestionarioSemanal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 				78860C3428D7DE85002F70DE /* SceneDelegate.swift */,
 				78860C3628D7DE85002F70DE /* ViewController.swift */,
 				78860C3828D7DE85002F70DE /* Main.storyboard */,
+				78FD3FD228D90FFA00CCBF1F /* Medico.swift */,
+				78FD3FD528D9176400CCBF1F /* CuestionarioSemanal.swift */,
 				7880CEC028D90277008C3D4B /* Paciente.swift */,
 				78860C3B28D7DE8D002F70DE /* Assets.xcassets */,
 				78860C3D28D7DE8D002F70DE /* LaunchScreen.storyboard */,
@@ -160,8 +166,10 @@
 			files = (
 				78860C3728D7DE85002F70DE /* ViewController.swift in Sources */,
 				78860C3328D7DE85002F70DE /* AppDelegate.swift in Sources */,
+				78FD3FD628D9176400CCBF1F /* CuestionarioSemanal.swift in Sources */,
 				7880CEC128D90277008C3D4B /* Paciente.swift in Sources */,
 				78860C3528D7DE85002F70DE /* SceneDelegate.swift in Sources */,
+				78FD3FD328D90FFA00CCBF1F /* Medico.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
