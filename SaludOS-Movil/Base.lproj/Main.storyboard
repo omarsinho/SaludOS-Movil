@@ -232,7 +232,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Privacidad"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4s-H1-fng">
-                                <rect key="frame" x="20" y="681" width="374" height="45"/>
+                                <rect key="frame" x="20" y="682" width="374" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Cierra Sesion"/>
