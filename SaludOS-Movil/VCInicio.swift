@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  VCInicio.swift
 //  SaludOS-Movil
 //
 //  Created by Invitado on 18/09/22.
@@ -16,4 +16,3 @@ class ViewController: UIViewController {
 
 
 }
-
