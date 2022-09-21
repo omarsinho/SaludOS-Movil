@@ -11,6 +11,7 @@
 		3083A26828D8FE7D00941527 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3083A26728D8FE7D00941527 /* FirebaseAuth */; };
 		3083A26A28D8FE7D00941527 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3083A26928D8FE7D00941527 /* FirebaseFirestore */; };
 		3083A26C28D8FE7D00941527 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3083A26B28D8FE7D00941527 /* FirebaseStorage */; };
+		7880CEC128D90277008C3D4B /* Paciente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7880CEC028D90277008C3D4B /* Paciente.swift */; };
 		78860C3328D7DE85002F70DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78860C3228D7DE85002F70DE /* AppDelegate.swift */; };
 		78860C3528D7DE85002F70DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78860C3428D7DE85002F70DE /* SceneDelegate.swift */; };
 		78860C3728D7DE85002F70DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78860C3628D7DE85002F70DE /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		3083A26428D8FDF600941527 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7880CEC028D90277008C3D4B /* Paciente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paciente.swift; sourceTree = "<group>"; };
 		78860C2F28D7DE85002F70DE /* SaludOS-Movil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SaludOS-Movil.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78860C3228D7DE85002F70DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78860C3428D7DE85002F70DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				78860C3428D7DE85002F70DE /* SceneDelegate.swift */,
 				78860C3628D7DE85002F70DE /* ViewController.swift */,
 				78860C3828D7DE85002F70DE /* Main.storyboard */,
+				7880CEC028D90277008C3D4B /* Paciente.swift */,
 				78860C3B28D7DE8D002F70DE /* Assets.xcassets */,
 				78860C3D28D7DE8D002F70DE /* LaunchScreen.storyboard */,
 				3083A26428D8FDF600941527 /* GoogleService-Info.plist */,
@@ -157,6 +160,7 @@
 			files = (
 				78860C3728D7DE85002F70DE /* ViewController.swift in Sources */,
 				78860C3328D7DE85002F70DE /* AppDelegate.swift in Sources */,
+				7880CEC128D90277008C3D4B /* Paciente.swift in Sources */,
 				78860C3528D7DE85002F70DE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
