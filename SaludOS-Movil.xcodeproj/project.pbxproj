@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3033D6B028DB8E5B0046F1EF /* VCRegistroSangre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3033D6AA28DB8E5B0046F1EF /* VCRegistroSangre.swift */; };
+		3033D6B128DB8E5B0046F1EF /* VCSignUp_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3033D6AB28DB8E5B0046F1EF /* VCSignUp_1.swift */; };
+		3033D6B228DB8E5B0046F1EF /* VCPerfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3033D6AD28DB8E5B0046F1EF /* VCPerfil.swift */; };
+		3033D6B328DB8E5B0046F1EF /* VCLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3033D6AE28DB8E5B0046F1EF /* VCLogin.swift */; };
+		3033D6B428DB8E5B0046F1EF /* VCInicio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3033D6AF28DB8E5B0046F1EF /* VCInicio.swift */; };
+		3033D6B528DB8E5B0046F1EF /* VCSignUp_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3033D6AC28DB8E5B0046F1EF /* VCSignUp_2.swift */; };
 		3083A26528D8FDF600941527 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3083A26428D8FDF600941527 /* GoogleService-Info.plist */; };
 		3083A26828D8FE7D00941527 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3083A26728D8FE7D00941527 /* FirebaseAuth */; };
 		3083A26A28D8FE7D00941527 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3083A26928D8FE7D00941527 /* FirebaseFirestore */; };
@@ -14,7 +20,6 @@
 		7880CEC128D90277008C3D4B /* Paciente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7880CEC028D90277008C3D4B /* Paciente.swift */; };
 		78860C3328D7DE85002F70DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78860C3228D7DE85002F70DE /* AppDelegate.swift */; };
 		78860C3528D7DE85002F70DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78860C3428D7DE85002F70DE /* SceneDelegate.swift */; };
-		78860C3728D7DE85002F70DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78860C3628D7DE85002F70DE /* ViewController.swift */; };
 		78860C3A28D7DE85002F70DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78860C3828D7DE85002F70DE /* Main.storyboard */; };
 		78860C3C28D7DE8D002F70DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78860C3B28D7DE8D002F70DE /* Assets.xcassets */; };
 		78860C3F28D7DE8D002F70DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78860C3D28D7DE8D002F70DE /* LaunchScreen.storyboard */; };
@@ -23,12 +28,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3033D6AA28DB8E5B0046F1EF /* VCRegistroSangre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCRegistroSangre.swift; sourceTree = "<group>"; };
+		3033D6AB28DB8E5B0046F1EF /* VCSignUp_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCSignUp_1.swift; sourceTree = "<group>"; };
+		3033D6AC28DB8E5B0046F1EF /* VCSignUp_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCSignUp_2.swift; sourceTree = "<group>"; };
+		3033D6AD28DB8E5B0046F1EF /* VCPerfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCPerfil.swift; sourceTree = "<group>"; };
+		3033D6AE28DB8E5B0046F1EF /* VCLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCLogin.swift; sourceTree = "<group>"; };
+		3033D6AF28DB8E5B0046F1EF /* VCInicio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCInicio.swift; sourceTree = "<group>"; };
 		3083A26428D8FDF600941527 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7880CEC028D90277008C3D4B /* Paciente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paciente.swift; sourceTree = "<group>"; };
 		78860C2F28D7DE85002F70DE /* SaludOS-Movil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SaludOS-Movil.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78860C3228D7DE85002F70DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78860C3428D7DE85002F70DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		78860C3628D7DE85002F70DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		78860C3928D7DE85002F70DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		78860C3B28D7DE8D002F70DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78860C3E28D7DE8D002F70DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +61,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3033D6B628DB8E960046F1EF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3033D6AF28DB8E5B0046F1EF /* VCInicio.swift */,
+				3033D6AE28DB8E5B0046F1EF /* VCLogin.swift */,
+				3033D6AD28DB8E5B0046F1EF /* VCPerfil.swift */,
+				3033D6AA28DB8E5B0046F1EF /* VCRegistroSangre.swift */,
+				3033D6AB28DB8E5B0046F1EF /* VCSignUp_1.swift */,
+				3033D6AC28DB8E5B0046F1EF /* VCSignUp_2.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		78860C2628D7DE85002F70DE = {
 			isa = PBXGroup;
 			children = (
@@ -70,9 +93,9 @@
 		78860C3128D7DE85002F70DE /* SaludOS-Movil */ = {
 			isa = PBXGroup;
 			children = (
+				3033D6B628DB8E960046F1EF /* Controllers */,
 				78860C3228D7DE85002F70DE /* AppDelegate.swift */,
 				78860C3428D7DE85002F70DE /* SceneDelegate.swift */,
-				78860C3628D7DE85002F70DE /* ViewController.swift */,
 				78860C3828D7DE85002F70DE /* Main.storyboard */,
 				78FD3FD228D90FFA00CCBF1F /* Medico.swift */,
 				78FD3FD528D9176400CCBF1F /* CuestionarioSemanal.swift */,
@@ -164,12 +187,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78860C3728D7DE85002F70DE /* ViewController.swift in Sources */,
+				3033D6B228DB8E5B0046F1EF /* VCPerfil.swift in Sources */,
 				78860C3328D7DE85002F70DE /* AppDelegate.swift in Sources */,
-				78FD3FD628D9176400CCBF1F /* CuestionarioSemanal.swift in Sources */,
 				7880CEC128D90277008C3D4B /* Paciente.swift in Sources */,
+				3033D6B428DB8E5B0046F1EF /* VCInicio.swift in Sources */,
+				3033D6B528DB8E5B0046F1EF /* VCSignUp_2.swift in Sources */,
 				78860C3528D7DE85002F70DE /* SceneDelegate.swift in Sources */,
-				78FD3FD328D90FFA00CCBF1F /* Medico.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
