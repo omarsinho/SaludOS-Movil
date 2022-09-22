@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3033D6B028DB8E5B0046F1EF /* VCRegistroSangre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3033D6AA28DB8E5B0046F1EF /* VCRegistroSangre.swift */; };
-		3033D6B128DB8E5B0046F1EF /* VCSignUp_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3033D6AB28DB8E5B0046F1EF /* VCSignUp_1.swift */; };
-		3033D6B228DB8E5B0046F1EF /* VCPerfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3033D6AD28DB8E5B0046F1EF /* VCPerfil.swift */; };
-		3033D6B328DB8E5B0046F1EF /* VCLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3033D6AE28DB8E5B0046F1EF /* VCLogin.swift */; };
+		30234B8428DBEF1500E46A6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30234B8328DBEF1500E46A6B /* Main.storyboard */; };
 		3033D6B428DB8E5B0046F1EF /* VCInicio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3033D6AF28DB8E5B0046F1EF /* VCInicio.swift */; };
 		3033D6B528DB8E5B0046F1EF /* VCSignUp_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3033D6AC28DB8E5B0046F1EF /* VCSignUp_2.swift */; };
 		3083A26528D8FDF600941527 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3083A26428D8FDF600941527 /* GoogleService-Info.plist */; };
@@ -20,13 +17,12 @@
 		7880CEC128D90277008C3D4B /* Paciente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7880CEC028D90277008C3D4B /* Paciente.swift */; };
 		78860C3328D7DE85002F70DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78860C3228D7DE85002F70DE /* AppDelegate.swift */; };
 		78860C3528D7DE85002F70DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78860C3428D7DE85002F70DE /* SceneDelegate.swift */; };
-		78860C3A28D7DE85002F70DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78860C3828D7DE85002F70DE /* Main.storyboard */; };
 		78860C3C28D7DE8D002F70DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78860C3B28D7DE8D002F70DE /* Assets.xcassets */; };
 		78860C3F28D7DE8D002F70DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78860C3D28D7DE8D002F70DE /* LaunchScreen.storyboard */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30234B8328DBEF1500E46A6B /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3033D6AA28DB8E5B0046F1EF /* VCRegistroSangre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCRegistroSangre.swift; sourceTree = "<group>"; };
 		3033D6AB28DB8E5B0046F1EF /* VCSignUp_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCSignUp_1.swift; sourceTree = "<group>"; };
 		3033D6AC28DB8E5B0046F1EF /* VCSignUp_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCSignUp_2.swift; sourceTree = "<group>"; };
@@ -38,11 +34,9 @@
 		78860C2F28D7DE85002F70DE /* SaludOS-Movil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SaludOS-Movil.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78860C3228D7DE85002F70DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78860C3428D7DE85002F70DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		78860C3928D7DE85002F70DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		78860C3B28D7DE8D002F70DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78860C3E28D7DE8D002F70DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78860C4028D7DE8D002F70DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,17 +87,9 @@
 			children = (
 				3033D6B628DB8E960046F1EF /* Controllers */,
 				78860C3228D7DE85002F70DE /* AppDelegate.swift */,
+				30234B8328DBEF1500E46A6B /* Main.storyboard */,
 				78860C3428D7DE85002F70DE /* SceneDelegate.swift */,
-				78860C3828D7DE85002F70DE /* Main.storyboard */,
-				78FD3FD228D90FFA00CCBF1F /* Medico.swift */,
-				78FD3FD528D9176400CCBF1F /* CuestionarioSemanal.swift */,
 				7880CEC028D90277008C3D4B /* Paciente.swift */,
-				FB82F31028DBD1C500C061F3 /* VCInicio.swift */,
-				FB82F31128DBD1C500C061F3 /* VCLogin.swift */,
-				FB82F31528DBD1C600C061F3 /* VCPerfil.swift */,
-				FB82F31428DBD1C600C061F3 /* VCRegistroSangre.swift */,
-				FB82F31228DBD1C600C061F3 /* VCSignUp_1.swift */,
-				FB82F31328DBD1C600C061F3 /* VCSignUp_2.swift */,
 				78860C3B28D7DE8D002F70DE /* Assets.xcassets */,
 				78860C3D28D7DE8D002F70DE /* LaunchScreen.storyboard */,
 				3083A26428D8FDF600941527 /* GoogleService-Info.plist */,
@@ -180,7 +166,7 @@
 				78860C3F28D7DE8D002F70DE /* LaunchScreen.storyboard in Resources */,
 				3083A26528D8FDF600941527 /* GoogleService-Info.plist in Resources */,
 				78860C3C28D7DE8D002F70DE /* Assets.xcassets in Resources */,
-				78860C3A28D7DE85002F70DE /* Main.storyboard in Resources */,
+				30234B8428DBEF1500E46A6B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,30 +177,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 				78860C3328D7DE85002F70DE /* AppDelegate.swift in Sources */,
-				FB82F31B28DBD1C600C061F3 /* VCPerfil.swift in Sources */,
-				FB82F31628DBD1C600C061F3 /* VCInicio.swift in Sources */,
-				FB82F31728DBD1C600C061F3 /* VCLogin.swift in Sources */,
 				7880CEC128D90277008C3D4B /* Paciente.swift in Sources */,
 				3033D6B428DB8E5B0046F1EF /* VCInicio.swift in Sources */,
 				3033D6B528DB8E5B0046F1EF /* VCSignUp_2.swift in Sources */,
 				78860C3528D7DE85002F70DE /* SceneDelegate.swift in Sources */,
-				FB82F31928DBD1C600C061F3 /* VCSignUp_2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		78860C3828D7DE85002F70DE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				78860C3928D7DE85002F70DE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		78860C3D28D7DE8D002F70DE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
