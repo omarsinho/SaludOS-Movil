@@ -14,10 +14,15 @@
 		7880CEC128D90277008C3D4B /* Paciente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7880CEC028D90277008C3D4B /* Paciente.swift */; };
 		78860C3328D7DE85002F70DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78860C3228D7DE85002F70DE /* AppDelegate.swift */; };
 		78860C3528D7DE85002F70DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78860C3428D7DE85002F70DE /* SceneDelegate.swift */; };
-		78860C3728D7DE85002F70DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78860C3628D7DE85002F70DE /* ViewController.swift */; };
 		78860C3A28D7DE85002F70DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78860C3828D7DE85002F70DE /* Main.storyboard */; };
 		78860C3C28D7DE8D002F70DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78860C3B28D7DE8D002F70DE /* Assets.xcassets */; };
 		78860C3F28D7DE8D002F70DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78860C3D28D7DE8D002F70DE /* LaunchScreen.storyboard */; };
+		FB82F31628DBD1C600C061F3 /* VCInicio.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82F31028DBD1C500C061F3 /* VCInicio.swift */; };
+		FB82F31728DBD1C600C061F3 /* VCLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82F31128DBD1C500C061F3 /* VCLogin.swift */; };
+		FB82F31828DBD1C600C061F3 /* VCSignUp_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82F31228DBD1C600C061F3 /* VCSignUp_1.swift */; };
+		FB82F31928DBD1C600C061F3 /* VCSignUp_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82F31328DBD1C600C061F3 /* VCSignUp_2.swift */; };
+		FB82F31A28DBD1C600C061F3 /* VCRegistroSangre.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82F31428DBD1C600C061F3 /* VCRegistroSangre.swift */; };
+		FB82F31B28DBD1C600C061F3 /* VCPerfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82F31528DBD1C600C061F3 /* VCPerfil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,11 +31,16 @@
 		78860C2F28D7DE85002F70DE /* SaludOS-Movil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SaludOS-Movil.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78860C3228D7DE85002F70DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78860C3428D7DE85002F70DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		78860C3628D7DE85002F70DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		78860C3928D7DE85002F70DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		78860C3B28D7DE8D002F70DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78860C3E28D7DE8D002F70DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78860C4028D7DE8D002F70DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB82F31028DBD1C500C061F3 /* VCInicio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCInicio.swift; sourceTree = "<group>"; };
+		FB82F31128DBD1C500C061F3 /* VCLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCLogin.swift; sourceTree = "<group>"; };
+		FB82F31228DBD1C600C061F3 /* VCSignUp_1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCSignUp_1.swift; sourceTree = "<group>"; };
+		FB82F31328DBD1C600C061F3 /* VCSignUp_2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCSignUp_2.swift; sourceTree = "<group>"; };
+		FB82F31428DBD1C600C061F3 /* VCRegistroSangre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCRegistroSangre.swift; sourceTree = "<group>"; };
+		FB82F31528DBD1C600C061F3 /* VCPerfil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCPerfil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +78,14 @@
 			children = (
 				78860C3228D7DE85002F70DE /* AppDelegate.swift */,
 				78860C3428D7DE85002F70DE /* SceneDelegate.swift */,
-				78860C3628D7DE85002F70DE /* ViewController.swift */,
 				78860C3828D7DE85002F70DE /* Main.storyboard */,
 				7880CEC028D90277008C3D4B /* Paciente.swift */,
+				FB82F31028DBD1C500C061F3 /* VCInicio.swift */,
+				FB82F31128DBD1C500C061F3 /* VCLogin.swift */,
+				FB82F31528DBD1C600C061F3 /* VCPerfil.swift */,
+				FB82F31428DBD1C600C061F3 /* VCRegistroSangre.swift */,
+				FB82F31228DBD1C600C061F3 /* VCSignUp_1.swift */,
+				FB82F31328DBD1C600C061F3 /* VCSignUp_2.swift */,
 				78860C3B28D7DE8D002F70DE /* Assets.xcassets */,
 				78860C3D28D7DE8D002F70DE /* LaunchScreen.storyboard */,
 				3083A26428D8FDF600941527 /* GoogleService-Info.plist */,
@@ -158,10 +173,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78860C3728D7DE85002F70DE /* ViewController.swift in Sources */,
+				FB82F31828DBD1C600C061F3 /* VCSignUp_1.swift in Sources */,
+				FB82F31A28DBD1C600C061F3 /* VCRegistroSangre.swift in Sources */,
 				78860C3328D7DE85002F70DE /* AppDelegate.swift in Sources */,
+				FB82F31B28DBD1C600C061F3 /* VCPerfil.swift in Sources */,
+				FB82F31628DBD1C600C061F3 /* VCInicio.swift in Sources */,
+				FB82F31728DBD1C600C061F3 /* VCLogin.swift in Sources */,
 				7880CEC128D90277008C3D4B /* Paciente.swift in Sources */,
 				78860C3528D7DE85002F70DE /* SceneDelegate.swift in Sources */,
+				FB82F31928DBD1C600C061F3 /* VCSignUp_2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
