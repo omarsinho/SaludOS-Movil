@@ -18,14 +18,15 @@ class Medico: NSObject {
     var contrasena_hash: String
     var cedulaProfesional: String
     
-    init(idPaciente: Int, nombrePila: String, apellidoPaterno: String, apellidoMaterno: String, fechaNacimiento: Date, correoElectronico: String, contrasena: String, cedulaProfesional: String) {
-        self.idPaciente = idPaciente
+    init(idMedico: Int, nombrePila: String, apellidoPaterno: String, apellidoMaterno: String, fechaNacimiento: Date, correoElectronico: String, contrasena: String, contrasena_hash: String, cedulaProfesional: String) {
+        self.idMedico = idMedico
         self.nombrePila = nombrePila
         self.apellidoPaterno = apellidoPaterno
         self.apellidoMaterno = apellidoMaterno
         self.fechaNacimiento = fechaNacimiento
         self.correoElectronico = correoElectronico
         self.contrasena = contrasena
+        self.contrasena_hash = contrasena_hash
         //self.contrasena_hash = hashContrasena(contrasena) //Contraseña con la función para hacer la seguridad por medio de hashing
         self.cedulaProfesional = cedulaProfesional
     }

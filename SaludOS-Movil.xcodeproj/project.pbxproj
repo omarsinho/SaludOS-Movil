@@ -14,6 +14,8 @@
 		3083A26828D8FE7D00941527 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3083A26728D8FE7D00941527 /* FirebaseAuth */; };
 		3083A26A28D8FE7D00941527 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3083A26928D8FE7D00941527 /* FirebaseFirestore */; };
 		3083A26C28D8FE7D00941527 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3083A26B28D8FE7D00941527 /* FirebaseStorage */; };
+		7813C27728DC46330059EB6B /* Medico.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7813C27628DC46320059EB6B /* Medico.swift */; };
+		7813C27A28DC4F360059EB6B /* ViewControllerPruebaPopUp2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7813C27928DC4F360059EB6B /* ViewControllerPruebaPopUp2.swift */; };
 		7880CEC128D90277008C3D4B /* Paciente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7880CEC028D90277008C3D4B /* Paciente.swift */; };
 		78860C3328D7DE85002F70DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78860C3228D7DE85002F70DE /* AppDelegate.swift */; };
 		78860C3528D7DE85002F70DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78860C3428D7DE85002F70DE /* SceneDelegate.swift */; };
@@ -31,6 +33,8 @@
 		3033D6AE28DB8E5B0046F1EF /* VCLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCLogin.swift; sourceTree = "<group>"; };
 		3033D6AF28DB8E5B0046F1EF /* VCInicio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCInicio.swift; sourceTree = "<group>"; };
 		3083A26428D8FDF600941527 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7813C27628DC46320059EB6B /* Medico.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medico.swift; sourceTree = "<group>"; };
+		7813C27928DC4F360059EB6B /* ViewControllerPruebaPopUp2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPruebaPopUp2.swift; sourceTree = "<group>"; };
 		7880CEC028D90277008C3D4B /* Paciente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paciente.swift; sourceTree = "<group>"; };
 		78860C2F28D7DE85002F70DE /* SaludOS-Movil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SaludOS-Movil.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78860C3228D7DE85002F70DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 				78860C3228D7DE85002F70DE /* AppDelegate.swift */,
 				30234B8328DBEF1500E46A6B /* Main.storyboard */,
 				788AE2C628DC003800F747AC /* ViewControllerPruebaPopUp.swift */,
+				7813C27928DC4F360059EB6B /* ViewControllerPruebaPopUp2.swift */,
+				7813C27628DC46320059EB6B /* Medico.swift */,
 				78860C3428D7DE85002F70DE /* SceneDelegate.swift */,
 				7880CEC028D90277008C3D4B /* Paciente.swift */,
 				78860C3B28D7DE8D002F70DE /* Assets.xcassets */,
@@ -181,10 +187,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				788AE2C728DC003800F747AC /* ViewControllerPruebaPopUp.swift in Sources */,
+				7813C27728DC46330059EB6B /* Medico.swift in Sources */,
 				78860C3328D7DE85002F70DE /* AppDelegate.swift in Sources */,
 				7880CEC128D90277008C3D4B /* Paciente.swift in Sources */,
 				3033D6B428DB8E5B0046F1EF /* VCInicio.swift in Sources */,
 				3033D6B528DB8E5B0046F1EF /* VCSignUp_2.swift in Sources */,
+				7813C27A28DC4F360059EB6B /* ViewControllerPruebaPopUp2.swift in Sources */,
 				78860C3528D7DE85002F70DE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
