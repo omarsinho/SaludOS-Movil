@@ -19,6 +19,7 @@
 		78860C3528D7DE85002F70DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78860C3428D7DE85002F70DE /* SceneDelegate.swift */; };
 		78860C3C28D7DE8D002F70DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78860C3B28D7DE8D002F70DE /* Assets.xcassets */; };
 		78860C3F28D7DE8D002F70DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78860C3D28D7DE8D002F70DE /* LaunchScreen.storyboard */; };
+		FBDBF77C28DD3A0A00795F4E /* StoryboardLoginAndRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBDBF77B28DD3A0A00795F4E /* StoryboardLoginAndRegister.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		78860C3B28D7DE8D002F70DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78860C3E28D7DE8D002F70DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78860C4028D7DE8D002F70DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBDBF77B28DD3A0A00795F4E /* StoryboardLoginAndRegister.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardLoginAndRegister.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				3033D6B628DB8E960046F1EF /* Controllers */,
 				78860C3228D7DE85002F70DE /* AppDelegate.swift */,
 				30234B8328DBEF1500E46A6B /* Main.storyboard */,
+				FBDBF77B28DD3A0A00795F4E /* StoryboardLoginAndRegister.storyboard */,
 				78860C3428D7DE85002F70DE /* SceneDelegate.swift */,
 				7880CEC028D90277008C3D4B /* Paciente.swift */,
 				78860C3B28D7DE8D002F70DE /* Assets.xcassets */,
@@ -167,6 +170,7 @@
 				3083A26528D8FDF600941527 /* GoogleService-Info.plist in Resources */,
 				78860C3C28D7DE8D002F70DE /* Assets.xcassets in Resources */,
 				30234B8428DBEF1500E46A6B /* Main.storyboard in Resources */,
+				FBDBF77C28DD3A0A00795F4E /* StoryboardLoginAndRegister.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
