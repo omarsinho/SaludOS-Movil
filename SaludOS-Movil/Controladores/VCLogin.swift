@@ -15,8 +15,6 @@ class VCLogin: UIViewController {
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
     
-    @IBOutlet weak var btnIniciarSesion: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,21 +33,12 @@ class VCLogin: UIViewController {
     }
         
     func validarTextFields() {
-        if tfEmail.text?.isEmpty == true {
-            print("No email text")
-            let alerta = UIAlertController(title: "Error", message: "Debe haber texto en el campo", preferredStyle: .alert)
+        if tfEmail.text?.isEmpty == true || tfPassword.text?.isEmpty == true {
+            let alerta = UIAlertController(title: "Error", message: "Debe haber texto en todos los campos", preferredStyle: .alert)
             let accion = UIAlertAction(title: "OK", style: .cancel)
                 alerta.addAction(accion)
-                present(alerta, animated: true)
+            present(alerta, animated: true)
         }
-        if tfPassword.text?.isEmpty == true {
-                print("No password")
-            let alerta = UIAlertController(title: "Error", message: "Debe haber texto en el campo", preferredStyle: .alert)
-            let accion = UIAlertAction(title: "OK", style: .cancel)
-                alerta.addAction(accion)
-                present(alerta, animated: true)
-        }
-            
         login()
     }
         
@@ -58,7 +47,6 @@ class VCLogin: UIViewController {
             (result, error) in
             if error != nil {
                 print(error?.localizedDescription)
-                print("Hola y Adios Mundo")
                 let alerta = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: .alert)
                 let accion = UIAlertAction(title: "OK", style: .cancel)
                     alerta.addAction(accion)
@@ -77,5 +65,10 @@ class VCLogin: UIViewController {
             let vc = storyboard.instantiateViewController(withIdentifier: "Inicio")
             present(vc, animated: true)
         }
+    }
+    
+    
+    @IBAction func quitaTeclado(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
 }

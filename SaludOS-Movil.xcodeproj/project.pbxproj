@@ -59,7 +59,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		30FF1E5228E01176009B595D /* Controllers */ = {
+		30FF1E5228E01176009B595D /* Controladores */ = {
 			isa = PBXGroup;
 			children = (
 				FB82F31028DBD1C500C061F3 /* VCInicio.swift */,
@@ -69,7 +69,7 @@
 				FB82F31228DBD1C600C061F3 /* VCSignUp_1.swift */,
 				FB82F31328DBD1C600C061F3 /* VCSignUp_2.swift */,
 			);
-			path = Controllers;
+			path = Controladores;
 			sourceTree = "<group>";
 		};
 		78860C2628D7DE85002F70DE = {
@@ -91,7 +91,7 @@
 		78860C3128D7DE85002F70DE /* SaludOS-Movil */ = {
 			isa = PBXGroup;
 			children = (
-				30FF1E5228E01176009B595D /* Controllers */,
+				30FF1E5228E01176009B595D /* Controladores */,
 				78860C3228D7DE85002F70DE /* AppDelegate.swift */,
 				78860C3428D7DE85002F70DE /* SceneDelegate.swift */,
 				78860C3828D7DE85002F70DE /* Main.storyboard */,
