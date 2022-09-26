@@ -42,7 +42,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9oj-st-QlZ">
                                         <rect key="frame" x="0.0" y="74" width="314" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="alphabet" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -118,7 +118,7 @@
                                 <rect key="frame" x="69" y="438" width="275" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fecha de Nacimiento:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oqr-lB-Qgz">
                                 <rect key="frame" x="69" y="511" width="275" height="34"/>
@@ -136,7 +136,7 @@
                                 <rect key="frame" x="70" y="365" width="275" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uKZ-MQ-uSG">
                                 <rect key="frame" x="37" y="217" width="104" height="34"/>
@@ -148,7 +148,7 @@
                                 <rect key="frame" x="142" y="217" width="129" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jN-SJ-u3a">
                                 <rect key="frame" x="133" y="676" width="146" height="31"/>
@@ -163,7 +163,7 @@
                                 <rect key="frame" x="267" y="217" width="127" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jiX-QV-RIi"/>
@@ -211,7 +211,7 @@
                                 <rect key="frame" x="69" y="508" width="275" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZe-hj-C1S">
                                 <rect key="frame" x="147" y="679" width="120" height="31"/>
@@ -220,7 +220,6 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Terminar!"/>
                                 <connections>
                                     <action selector="CrearCuenta:" destination="gee-U0-Ma4" eventType="touchUpInside" id="p5b-Cz-dpK"/>
-                                    <segue destination="GYD-cE-4VM" kind="presentation" modalPresentationStyle="fullScreen" id="OhP-rQ-r72"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Altura:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V8T-Jv-rPp">
@@ -245,6 +244,7 @@
                         <outlet property="tfAltura" destination="V8T-Jv-rPp" id="BKx-jN-lhe"/>
                         <outlet property="tfPeso" destination="fWF-8p-71C" id="QIZ-ZL-hNM"/>
                         <outlet property="tfTipoSangre" destination="mVZ-oP-Y7t" id="eor-5I-ces"/>
+                        <segue destination="GYD-cE-4VM" kind="presentation" identifier="SignUp2AInicio" modalPresentationStyle="fullScreen" id="VA6-fv-x40"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1JK-Ic-7S5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -258,7 +258,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="OhP-rQ-r72"/>
+        <segue reference="VA6-fv-x40"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="blood" width="55" height="78"/>

@@ -31,7 +31,7 @@ class VCSignUp_2: UIViewController {
     }
     
     @IBAction func CrearCuenta(_ sender: UIButton) {
-        Auth.auth().createUser(withEmail: nombreRecibido!, password: contrasenaRecibida!) {
+        Auth.auth().createUser(withEmail: emailRecibido!, password: contrasenaRecibida!) {
             (result, err) in
             if err != nil {
                 let alerta = UIAlertController(title: "Error", message: err!.localizedDescription, preferredStyle: .alert)
@@ -81,6 +81,9 @@ class VCSignUp_2: UIViewController {
                         let accion = UIAlertAction(title: "OK", style: .cancel)
                             alerta.addAction(accion)
                         self.present(alerta, animated: true)
+                    }
+                    else {
+                        self.performSegue(withIdentifier: "SignUp2AInicio", sender: self)
                     }
                 }
             }
