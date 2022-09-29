@@ -15,9 +15,6 @@ class VCPerfil: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func btnInicio(_ sender: UIButton) {
-        dismiss(animated: true)
-    }
     
     /*
     // MARK: - Navigation
