@@ -1,23 +1,24 @@
 //
-//  VCPerfil.swift
+//  VCRegistroPresion.swift
 //  SaludOS-Movil
 //
-//  Created by Alumno on 20/09/22.
+//  Created by Alumno on 29/09/22.
 //
 
 import UIKit
 
-class VCPerfil: UIViewController {
+class VCRegistroPresion: UIViewController {
 
-    @IBOutlet weak var lbNombre: UILabel!
-    @IBOutlet weak var lbStatus: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-    
+
+    @IBAction func cierraView(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
