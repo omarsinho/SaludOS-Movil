@@ -80,6 +80,11 @@ class VCSignUp_1: UIViewController {
         present(alerta, animated: true)
     }
     
+    @IBAction func Regresar(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+    
+    
     @IBAction func quitaTeclado(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
