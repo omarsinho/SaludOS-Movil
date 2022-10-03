@@ -6,30 +6,29 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class VCInicio: UIViewController {
-
-    @IBOutlet weak var lbSugerencia: UILabel!
-    @IBOutlet weak var lbTomaDiaria: UILabel!
-    @IBOutlet weak var imgSugerencia: UIImageView!
+    
+    
+    @IBOutlet weak var lbNombre: UILabel!
+    
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        lbSugerencia.text = GetBD(choice: 1)
-    }
-    
-    // MARK: -- Falta GETS SUGE, TOMA y GRAFICA
-    
-
-    func GetBD(choice: Int) -> String {
-        if choice == 1 {
-            let sugerenciaDiaria = "nicht" // Get BD
-            return "Sugerencia Diaria: " + sugerenciaDiaria
-        } else {
-            let tomaPendiente = "" // Get BD
-            return "Toma Diaria: " + tomaPendiente
+        
+        db.collection("Paciente").document(Auth.auth().currentUser!.uid).getDocument {
+            (documentSnapshot, error) in
+            if let document = documentSnapshot, error == nil {
+                if let nombrePila = document.get("nombrePila") as? String, let apellidoP = document.get("apellidoPaterno") as? String, let apellidoM = document.get("apellidoMaterno") as? String {
+                    self.lbNombre.text = nombrePila + " " + apellidoP + " " + apellidoM
+                }
+            }
+            else {
+                self.lbNombre.text = error?.localizedDescription
+            }
         }
     }
-    
-
 }

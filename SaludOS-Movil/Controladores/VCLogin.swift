@@ -22,13 +22,14 @@ class VCLogin: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //checkUserInfo()
+        if Auth.auth().currentUser != nil {
+            performSegue(withIdentifier: "LoginAInicio", sender: self)
+        }
     }
     
      // MARK: - Navigation
     
     @IBAction func IniciarSesion(_ sender: UIButton) {
-        print("Pulsé el botón")
         validarTextFields()
     }
         
@@ -46,7 +47,6 @@ class VCLogin: UIViewController {
         Auth.auth().signIn(withEmail: tfEmail.text!, password: tfPassword.text!) {
             (result, error) in
             if error != nil {
-                print(error?.localizedDescription)
                 let alerta = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: .alert)
                 let accion = UIAlertAction(title: "OK", style: .cancel)
                     alerta.addAction(accion)
@@ -57,16 +57,6 @@ class VCLogin: UIViewController {
             }
         }
     }
-        
-    func checkUserInfo() {
-        if Auth.auth().currentUser != nil {
-            print(Auth.auth().currentUser?.uid)
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "Inicio")
-            present(vc, animated: true)
-        }
-    }
-    
     
     @IBAction func quitaTeclado(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)

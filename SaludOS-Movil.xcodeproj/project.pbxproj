@@ -73,6 +73,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30D5C56728E8F0FC00B87C6F /* Modelos */ = {
+			isa = PBXGroup;
+			children = (
+				7880CEC028D90277008C3D4B /* Paciente.swift */,
+				FBC837C128E647F9006B6086 /* Medico.swift */,
+			);
+			path = Modelos;
+			sourceTree = "<group>";
+		};
 		30FF1E5228E01176009B595D /* Controladores */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +92,11 @@
 				FB82F31428DBD1C600C061F3 /* VCRegistroSangre.swift */,
 				FB82F31228DBD1C600C061F3 /* VCSignUp_1.swift */,
 				FB82F31328DBD1C600C061F3 /* VCSignUp_2.swift */,
+				FBBB9B5628E8CDBC001396E3 /* PopUp_Notificaciones.swift */,
+				FBBB9B5428E8C87C001396E3 /* PopUp_VCEncuestaSemanal.swift */,
+				FB3828F828E8B4FF00694EA5 /* PopUp_VCInfo.swift */,
+				FB3828F628E8AEA200694EA5 /* PopUp_VCIndicaciones.swift */,
+				FBC837C328E64CB3006B6086 /* VCRegistroPresion.swift */,
 			);
 			path = Controladores;
 			sourceTree = "<group>";
@@ -106,18 +120,12 @@
 		78860C3128D7DE85002F70DE /* SaludOS-Movil */ = {
 			isa = PBXGroup;
 			children = (
+				30D5C56728E8F0FC00B87C6F /* Modelos */,
 				30FF1E5228E01176009B595D /* Controladores */,
 				78860C3228D7DE85002F70DE /* AppDelegate.swift */,
 				78860C3428D7DE85002F70DE /* SceneDelegate.swift */,
 				78860C3828D7DE85002F70DE /* Main.storyboard */,
 				30FF1E5028E00E5A009B595D /* AppGeneral.storyboard */,
-				FBBB9B5628E8CDBC001396E3 /* PopUp_Notificaciones.swift */,
-				FBBB9B5428E8C87C001396E3 /* PopUp_VCEncuestaSemanal.swift */,
-				FB3828F828E8B4FF00694EA5 /* PopUp_VCInfo.swift */,
-				FB3828F628E8AEA200694EA5 /* PopUp_VCIndicaciones.swift */,
-				FBC837C328E64CB3006B6086 /* VCRegistroPresion.swift */,
-				7880CEC028D90277008C3D4B /* Paciente.swift */,
-				FBC837C128E647F9006B6086 /* Medico.swift */,
 				78860C3B28D7DE8D002F70DE /* Assets.xcassets */,
 				78860C3D28D7DE8D002F70DE /* LaunchScreen.storyboard */,
 				3083A26428D8FDF600941527 /* GoogleService-Info.plist */,

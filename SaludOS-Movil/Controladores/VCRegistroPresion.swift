@@ -6,9 +6,17 @@
 //
 
 import UIKit
+import Firebase
 
 class VCRegistroPresion: UIViewController {
-
+    
+    @IBOutlet weak var switchEjercicio: UISwitch!
+    @IBOutlet weak var tfPresionSYS: UITextField!
+    @IBOutlet weak var tfPresionDIA: UITextField!
+    @IBOutlet weak var tfPulso: UITextField!
+    
+    @IBOutlet weak var tfComentarios: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,14 +27,10 @@ class VCRegistroPresion: UIViewController {
     @IBAction func cierraView(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func quitaTeclado(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
-    */
+    
 
 }
