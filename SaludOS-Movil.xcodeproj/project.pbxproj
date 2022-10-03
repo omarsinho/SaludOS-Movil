@@ -31,6 +31,7 @@
 		FBC837C028E63AC5006B6086 /* VCVistaMedicos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC837BF28E63AC5006B6086 /* VCVistaMedicos.swift */; };
 		FBC837C228E647FA006B6086 /* Medico.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC837C128E647F9006B6086 /* Medico.swift */; };
 		FBC837C428E64CB3006B6086 /* VCRegistroPresion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC837C328E64CB3006B6086 /* VCRegistroPresion.swift */; };
+		FBD2C8FF28EB927F006B575A /* PopUp_VCToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD2C8FE28EB927F006B575A /* PopUp_VCToken.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		FBC837BF28E63AC5006B6086 /* VCVistaMedicos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCVistaMedicos.swift; sourceTree = "<group>"; };
 		FBC837C128E647F9006B6086 /* Medico.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medico.swift; sourceTree = "<group>"; };
 		FBC837C328E64CB3006B6086 /* VCRegistroPresion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCRegistroPresion.swift; sourceTree = "<group>"; };
+		FBD2C8FE28EB927F006B575A /* PopUp_VCToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp_VCToken.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		30FF1E5228E01176009B595D /* Controladores */ = {
 			isa = PBXGroup;
 			children = (
+				FBD2C8FE28EB927F006B575A /* PopUp_VCToken.swift */,
 				FB82F31028DBD1C500C061F3 /* VCInicio.swift */,
 				FBC837BF28E63AC5006B6086 /* VCVistaMedicos.swift */,
 				FB82F31128DBD1C500C061F3 /* VCLogin.swift */,
@@ -226,6 +229,7 @@
 				FB82F31728DBD1C600C061F3 /* VCLogin.swift in Sources */,
 				7880CEC128D90277008C3D4B /* Paciente.swift in Sources */,
 				FB3828F728E8AEA200694EA5 /* PopUp_VCIndicaciones.swift in Sources */,
+				FBD2C8FF28EB927F006B575A /* PopUp_VCToken.swift in Sources */,
 				78860C3528D7DE85002F70DE /* SceneDelegate.swift in Sources */,
 				FB82F31928DBD1C600C061F3 /* VCSignUp_2.swift in Sources */,
 				FBC837C028E63AC5006B6086 /* VCVistaMedicos.swift in Sources */,
