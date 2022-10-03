@@ -10,17 +10,11 @@ import FirebaseAuth
 import Firebase
 
 class VCVistaMedicos: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    //var listaMedicos = ["Jose", "Pepe", "Juan"]
-    //var listaTitulos = ["Podologo", "Pediatra", "Cardiovasculeno"]
-    //var listaIdMedicos : Array<String> = []
+
     var listaNombresMedicos : Array<String> = []
     var listaTitulos : Array<String> = []
     
-    
     @IBOutlet weak var tableViewMedicos: UITableView!
-    
-    
     
     let db = Firestore.firestore()
     
@@ -41,10 +35,6 @@ class VCVistaMedicos: UIViewController, UITableViewDelegate, UITableViewDataSour
                 self.presentaAlerta(mensaje: error!.localizedDescription)
             }
         }
-
-        //print(listaIdMedicos)
-        //print(listaIdMedicos.count)
-        
     }
     
     func getMedicos(ids: Array<String>) {
