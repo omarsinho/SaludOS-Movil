@@ -10,6 +10,7 @@ import CoreLocation
 import FirebaseAuth
 import Firebase
 
+
 class VCSignUp_2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, CLLocationManagerDelegate {
     
     var nombreRecibido: String!
@@ -26,7 +27,7 @@ class VCSignUp_2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     var tipoSangrePicker = UIPickerView()
     let tipoSangreValues = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"]
     var tipoSangreName: String = "NA"
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -151,7 +152,7 @@ class VCSignUp_2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
                 print(peso)
                 print(tipoSangre)
                 
-                db.collection("Paciente").addDocument(data: ["altura": altura, "apellidoMaterno": self.apellidoMRecibido!, "apellidoPaterno": self.apellidoPRecibido!, "fechaNacimiento": self.fechaNacRecibida!, "nombrePila": self.nombreRecibido!, "peso": peso, "tipoSangre": tipoSangre, "uid": result!.user.uid]) {
+                db.collection("Paciente").document(result!.user.uid).setData(["altura": altura, "apellidoMaterno": self.apellidoMRecibido!, "apellidoPaterno": self.apellidoPRecibido!, "fechaNacimiento": self.fechaNacRecibida!, "nombrePila": self.nombreRecibido!, "peso": peso, "tipoSangre": tipoSangre, "uid": result!.user.uid, "uidMedicos": [""]]) {
                     (error) in
                     
                     if error != nil {
