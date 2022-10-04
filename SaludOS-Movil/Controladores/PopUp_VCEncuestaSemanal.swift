@@ -31,7 +31,7 @@ class PopUp_VCEncuestaSemanal: UIViewController {
         let emo = Double(Int(self.sldrEmocional.value * 1000)) / 100
         
         
-        db.collection("Paciente").document(Auth.auth().currentUser!.uid).collection("CuestionarioSemanal").document(formatter.string(from: Date())).setData(["fechaCuestionario": formatter.string(from: Date()), "medidorAlimentacion": ali, "medidorEjercicio": eje, "medidorEmocional": emo]) {
+        db.collection("CuestionarioSemanal").document().setData(["fechaCuestionario": formatter.string(from: Date()), "medidorAlimentacion": ali, "medidorEjercicio": eje, "medidorEmocional": emo, "uidPaciente": Auth.auth().currentUser!.uid]) {
             (error) in
             
             if error != nil {

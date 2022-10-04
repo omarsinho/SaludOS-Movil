@@ -53,7 +53,7 @@ class VCRegistroPresion: UIViewController {
             
             let emo = Double(Int(self.sldrEmocional.value * 1000)) / 100
 
-            db.collection("Paciente").document(Auth.auth().currentUser!.uid).collection("RegistroPresion").document(formatter.string(from: Date())).setData(["comentarios": tfComentarios.text!,"fechayHoraToma": formatter.string(from: Date()), "hicisteEjercicio": self.hicisteEjercicio(), "medidorEmocional": emo, "presionDiastolica": Int(self.tfPresionDIA.text!)!, "presionSistolica": Int(self.tfPresionSYS.text!)!, "pulso": Int(tfPulso.text!)!]) {
+            db.collection("RegistroPresion").document().setData(["comentarios": tfComentarios.text!,"fechayHoraToma": formatter.string(from: Date()), "hicisteEjercicio": self.hicisteEjercicio(), "medidorEmocional": emo, "presionDiastolica": Int(self.tfPresionDIA.text!)!, "presionSistolica": Int(self.tfPresionSYS.text!)!, "pulso": Int(tfPulso.text!)!, "uidPaciente": Auth.auth().currentUser!.uid]) {
                 (error) in
                 
                 if error != nil {
