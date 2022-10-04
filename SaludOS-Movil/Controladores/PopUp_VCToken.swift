@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class PopUp_VCToken: UIViewController {
 
@@ -13,16 +15,26 @@ class PopUp_VCToken: UIViewController {
     
     @IBOutlet weak var lbToken: UILabel!
     
+    let db = Firestore.firestore()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         token = makeDaToken()
-        if pushToBD(message: token) {
-            lbToken.text = token
-        } else {
-            lbToken.text = "Error, mala conexión"
-            let alert = UIAlertController(title: "Error de Conexión", message: "Porfavor checar tu internet y volver a intentar mas tarde", preferredStyle: .alert)
-             alert.addAction(UIAlertAction(title: "OK", style: .default))
-             self.present(alert, animated: true, completion: nil)
+        db.collection("Paciente").document(Auth.auth().currentUser!.uid).setData(["token": token!], merge: true) {
+            (error) in
+            
+            if error != nil {
+                self.lbToken.text = "Error, mala conexión"
+                let alerta = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: .alert)
+                let accion = UIAlertAction(title: "OK", style: .cancel)
+                alerta.addAction(accion)
+                self.present(alerta, animated: true)
+            }
+            // "Por favor checar tu internet y volver a intentar mas tarde"
+            else {
+                self.lbToken.text = self.token
+            }
         }
     }
     
@@ -39,27 +51,7 @@ class PopUp_VCToken: UIViewController {
         return "\(part_0[0])" + "\(part_1)" + "\(part_2)" + "\(part_3)" + "\(part_4[0])" + "\(part_4[4])" + "\(part_4[2])"
     }
     
-    func pushToBD(message: String) -> Bool{
-        if lbToken != nil {
-            // Push to BD?
-            print(message)
-            return true
-        }
-        return false
-    }
-    
     @IBAction func Regresar(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
