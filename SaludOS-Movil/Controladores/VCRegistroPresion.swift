@@ -9,7 +9,11 @@ import UIKit
 import FirebaseAuth
 import Firebase
 
-
+//extension Float {
+//    func truncate(places : Int) -> Float {
+//        return Float(floor(pow(10.0, Double(places)) * self)/pow(10.0, Float(places)))
+//    }
+//}
 
 class VCRegistroPresion: UIViewController {
     
@@ -20,12 +24,13 @@ class VCRegistroPresion: UIViewController {
     @IBOutlet weak var sldrEmocional: UISlider!
     @IBOutlet weak var tfComentarios: UITextField!
     
+    @IBOutlet weak var lbMedidor: UILabel!
+    
     let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        lbMedidor.text = "¿Como te sientes del 1 al 10? ###"
     }
     
     func hicisteEjercicio() -> Bool {
@@ -42,26 +47,27 @@ class VCRegistroPresion: UIViewController {
             let accion = UIAlertAction(title: "OK", style: .cancel)
             alerta.addAction(accion)
             present(alerta, animated: true)
-        }
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        
-        db.collection("Paciente").document(Auth.auth().currentUser!.uid).collection("RegistroPresion").document(formatter.string(from: Date())).setData(["comentarios": tfComentarios.text!,"fechayHoraToma": formatter.string(from: Date()), "hicisteEjercicio": self.hicisteEjercicio(), "medidorEmocional": self.sldrEmocional.value, "presionDiastolica": Int(self.tfPresionDIA.text!)!, "presionSistolica": Int(self.tfPresionSYS.text!)!, "pulso": Int(tfPulso.text!)!]) {
-            (error) in
+        } else {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             
-            if error != nil {
-                let alerta = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: .alert)
-                let accion = UIAlertAction(title: "OK", style: .cancel)
-                alerta.addAction(accion)
-                self.present(alerta, animated: true)
-            }
-            else {
-                self.dismiss(animated: true, completion: nil)
+            let emo = Double(Int(self.sldrEmocional.value * 1000)) / 100
+
+            db.collection("Paciente").document(Auth.auth().currentUser!.uid).collection("RegistroPresion").document(formatter.string(from: Date())).setData(["comentarios": tfComentarios.text!,"fechayHoraToma": formatter.string(from: Date()), "hicisteEjercicio": self.hicisteEjercicio(), "medidorEmocional": emo, "presionDiastolica": Int(self.tfPresionDIA.text!)!, "presionSistolica": Int(self.tfPresionSYS.text!)!, "pulso": Int(tfPulso.text!)!]) {
+                (error) in
+                
+                if error != nil {
+                    let alerta = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: .alert)
+                    let accion = UIAlertAction(title: "OK", style: .cancel)
+                    alerta.addAction(accion)
+                    self.present(alerta, animated: true)
+                }
+                else {
+                    self.dismiss(animated: true, completion: nil)
+                 }
             }
         }
     }
-    
     
     @IBAction func cierraView(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)

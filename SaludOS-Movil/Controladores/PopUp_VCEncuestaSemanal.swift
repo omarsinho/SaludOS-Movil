@@ -26,7 +26,12 @@ class PopUp_VCEncuestaSemanal: UIViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         
-        db.collection("Paciente").document(Auth.auth().currentUser!.uid).collection("CuestionarioSemanal").document(formatter.string(from: Date())).setData(["fechaCuestionario": formatter.string(from: Date()), "medidorAlimentacion": self.sldrAlimentacion.value, "medidorEjercicio": self.sldrEjercicio.value, "medidorEmocional": self.sldrEmocional.value]) {
+        let ali = Double(Int(self.sldrAlimentacion.value * 1000)) / 100
+        let eje = Double(Int(self.sldrEjercicio.value * 1000)) / 100
+        let emo = Double(Int(self.sldrEmocional.value * 1000)) / 100
+        
+        
+        db.collection("Paciente").document(Auth.auth().currentUser!.uid).collection("CuestionarioSemanal").document(formatter.string(from: Date())).setData(["fechaCuestionario": formatter.string(from: Date()), "medidorAlimentacion": ali, "medidorEjercicio": eje, "medidorEmocional": emo]) {
             (error) in
             
             if error != nil {
