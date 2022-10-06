@@ -41,6 +41,12 @@ class VCRegistroPresion: UIViewController {
     }
     
     
+    @IBAction func CambiaValor(_ sender: UISlider) {
+        let emo = Double(Int(self.sldrEmocional.value * 1000)) / 100
+        lbMedidor.text = "¿Como te sientes del 1 al 10? " + "\(emo)"
+    }
+    
+    
     @IBAction func SubmitPresion(_ sender: UIButton) {
         if tfPresionSYS.text?.isEmpty == true || tfPresionDIA.text?.isEmpty == true || tfPulso.text?.isEmpty == true {
             let alerta = UIAlertController(title: "Error", message: "Los campos de presión sistólica, presión diastólica, y pulso deben tener valores.", preferredStyle: .alert)
