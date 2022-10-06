@@ -21,14 +21,20 @@ class VCVistaMedicos: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // @escaping
         db.collection("Paciente").document(Auth.auth().currentUser!.uid).getDocument {
             (documentSnapshot, error) in
             if let document = documentSnapshot, error == nil {
                 if let idMedicos = document.get("uidMedicos") as? Array<String> {
                     //self.listaIdMedicos = idMedicos
                     //print("")
-                    self.getMedicos(ids: idMedicos)
+                    if idMedicos[0] == "" {
+                        self.listaNombresMedicos.append("NO tienes médicos vinculados.")
+                        self.listaTitulos.append("Primero el médico te tiene que agregar ingresando el token que se genera en la sección de perfil, en el ícono de la esquina superior izquierda.")
+                        self.tableViewMedicos.reloadData()
+                    }
+                    else {
+                        self.getMedicos(ids: idMedicos)
+                    }
                 }
             }
             else {
@@ -39,20 +45,17 @@ class VCVistaMedicos: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func getMedicos(ids: Array<String>) {
         for id in stride(from: 0, to: ids.count, by: 1) {
-            print("Hola")
             db.collection("Medico").document(ids[id]).getDocument {
                 (documentSnapshot, error) in
                 if let document = documentSnapshot, error == nil {
                     if let nombrePila = document.get("nombrePila") as? String, let apellidoP = document.get("apellidoPaterno") as? String, let apellidoM = document.get("apellidoMaterno") as? String {
                         self.listaNombresMedicos.append(nombrePila + " " + apellidoP + " " + apellidoM)
-                        print(self.listaNombresMedicos[id])
                     }
                     else {
                         self.presentaAlerta(mensaje: error!.localizedDescription)
                     }
                     if let titulo = document.get("titulo") as? String {
                         self.listaTitulos.append(titulo)
-                        print(self.listaTitulos[id])
                     }
                     else {
                         self.presentaAlerta(mensaje: error!.localizedDescription)
@@ -74,9 +77,6 @@ class VCVistaMedicos: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let celda = tableView.dequeueReusableCell(withIdentifier: "idCell")!
-        
-        
-        
         celda.textLabel?.text = listaNombresMedicos[indexPath.row]
         celda.detailTextLabel?.text = "\(listaTitulos[indexPath.row])"
         celda.imageView?.image = UIImage(named: "medic")
