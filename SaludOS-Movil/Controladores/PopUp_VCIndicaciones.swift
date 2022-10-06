@@ -7,12 +7,16 @@
 
 import UIKit
 
-class PopUp_VCIndicaciones: UIViewController {
-
+class PopUp_VCIndicaciones: UIViewController, UIScrollViewDelegate  {
+    
+    var cantPaginas = 6
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var pageControl: UIPageControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        pageControl.numberOfPages = cantPaginas
     }
     
 
@@ -20,6 +24,9 @@ class PopUp_VCIndicaciones: UIViewController {
     @IBAction func Regresar(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+
+    
     /*
     // MARK: - Navigation
 

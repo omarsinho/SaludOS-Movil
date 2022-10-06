@@ -239,21 +239,26 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." lineBreakMode="tailTruncation" numberOfLines="900" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnH-lc-dRb">
-                                        <rect key="frame" x="200.5" y="398" width="13.5" height="18"/>
-                                        <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="18"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="FLO-YL-AO9">
+                                        <rect key="frame" x="8" y="732" width="398" height="26"/>
+                                    </pageControl>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0NH-0U-dR2">
+                                        <rect key="frame" x="8" y="48" width="398" height="676"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="adL-dK-KUi"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="OfP-Al-f8w"/>
+                                    </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.83620601892471313" green="0.95486456155776978" blue="0.85850650072097778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
+                                    <constraint firstItem="FLO-YL-AO9" firstAttribute="leading" secondItem="IQs-xg-ycu" secondAttribute="leading" constant="8" id="1dT-IE-3L1"/>
                                     <constraint firstItem="Jhs-5f-Ahp" firstAttribute="leading" secondItem="IQs-xg-ycu" secondAttribute="leading" constant="8" id="5UE-MC-q6D"/>
                                     <constraint firstItem="0SU-wi-LmI" firstAttribute="top" secondItem="IQs-xg-ycu" secondAttribute="top" constant="20" id="RJn-0r-4Pf"/>
                                     <constraint firstItem="0SU-wi-LmI" firstAttribute="centerX" secondItem="IQs-xg-ycu" secondAttribute="centerX" id="Reb-Si-r5M"/>
                                     <constraint firstItem="Jhs-5f-Ahp" firstAttribute="top" secondItem="IQs-xg-ycu" secondAttribute="top" constant="8" id="SRU-Rd-mLM"/>
-                                    <constraint firstItem="dnH-lc-dRb" firstAttribute="centerY" secondItem="IQs-xg-ycu" secondAttribute="centerY" id="aRu-bV-ZDR"/>
-                                    <constraint firstItem="dnH-lc-dRb" firstAttribute="centerX" secondItem="IQs-xg-ycu" secondAttribute="centerX" id="ahK-N0-5mU"/>
+                                    <constraint firstAttribute="trailing" secondItem="FLO-YL-AO9" secondAttribute="trailing" constant="8" id="XNZ-ZI-JOB"/>
+                                    <constraint firstAttribute="bottom" secondItem="FLO-YL-AO9" secondAttribute="bottom" constant="56" id="Zh1-8A-nOP"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -271,10 +276,14 @@
                             <constraint firstItem="IQs-xg-ycu" firstAttribute="top" secondItem="i5t-nh-LIB" secondAttribute="top" id="zkX-Nw-0jm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pageControl" destination="FLO-YL-AO9" id="aaB-6b-aOz"/>
+                        <outlet property="scrollView" destination="0NH-0U-dR2" id="rsx-dB-g9z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9e-bp-WCi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="724.61538461538464" y="-611.37440758293837"/>
+            <point key="canvasLocation" x="723.1884057971015" y="-611.38392857142856"/>
         </scene>
         <!--Registro-->
         <scene sceneID="V49-da-coQ">
