@@ -21,6 +21,8 @@ class VCVistaMedicos: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        
         db.collection("Paciente").document(Auth.auth().currentUser!.uid).getDocument {
             (documentSnapshot, error) in
             if let document = documentSnapshot, error == nil {
@@ -83,11 +85,42 @@ class VCVistaMedicos: UIViewController, UITableViewDelegate, UITableViewDataSour
         return celda
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            listaNombresMedicos.remove(at: indexPath.row)
+            listaTitulos.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            // Quitar Medicos /BD
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let med = listaNombresMedicos[sourceIndexPath.row]
+        let titu = listaNombresMedicos[sourceIndexPath.row]
+
+        listaNombresMedicos.remove(at: sourceIndexPath.row)
+        listaTitulos.remove(at: sourceIndexPath.row)
+        
+        listaNombresMedicos.insert(med, at: destinationIndexPath.row)
+        listaTitulos.insert(titu, at: destinationIndexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
     func presentaAlerta(mensaje: String) {
         let alerta = UIAlertController(title: "Error", message: mensaje, preferredStyle: .alert)
         let accion = UIAlertAction(title: "OK", style: .cancel)
         alerta.addAction(accion)
         present(alerta, animated: true)
     }
+    
+    
 
 }

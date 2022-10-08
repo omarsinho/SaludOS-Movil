@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class PopUp_VCIndicaciones: UIViewController, UITableViewDelegate,UITableViewDataSource {
 
@@ -16,15 +18,73 @@ class PopUp_VCIndicaciones: UIViewController, UITableViewDelegate,UITableViewDat
     @IBOutlet weak var pageControlMedicos: UIPageControl!
     @IBOutlet weak var textViewIndicaciones: UITextView!
     
+    let db = Firestore.firestore()
     
-    var listaMedicos = ["Pancho", "Uvaldo","Ignacio", "Simi", "Catafixio", "Masiosare"]
-    var listaIndicaciones = ["Hola", "Quién soy", "No sé", "Se me olvidó" , "Yeh, yeh", "Bad Bunny beibe"]
+    var listaMedicos: Array<String> = []
+    var listaIndicaciones: Array<String> = []
     
     var listaMedicinas = [String]() //Idea: Crear clase Medicina para incluir en el table view
     override func viewDidLoad() {
         super.viewDidLoad()
-        pageControlMedicos.numberOfPages = listaMedicos.count
-        stpMedicos.maximumValue = Double(listaMedicos.count - 1)
+        
+        db.collection("Paciente").document(Auth.auth().currentUser!.uid).getDocument {
+            (documentSnapshot, error) in
+            if let document = documentSnapshot, error == nil {
+                if let idMedicos = document.get("uidMedicos") as? Array<String> {
+                    self.getMedicos(ids: idMedicos)
+                }
+            }
+            else {
+                self.presentaAlerta(mensaje: error!.localizedDescription)
+            }
+        }
+    }
+    
+    func getMedicos(ids: Array<String>) {
+        for id in stride(from: 0, to: ids.count, by: 1) {
+            db.collection("Medico").document(ids[id]).getDocument {
+                (documentSnapshot, error) in
+                if let document = documentSnapshot, error == nil {
+                    if let nombrePila = document.get("nombrePila") as? String, let apellidoP = document.get("apellidoPaterno") as? String, let apellidoM = document.get("apellidoMaterno") as? String {
+                        self.listaMedicos.append(nombrePila + " " + apellidoP + " " + apellidoM)
+                        self.getIndicaciones(medicos: ids)
+                    }
+                    else {
+                        self.presentaAlerta(mensaje: error!.localizedDescription)
+                    }
+                }
+            }
+        }
+    }
+    
+    func getIndicaciones(medicos: Array<String>) {
+        for medico in stride(from: 0, to: medicos.count, by: 1) {
+            db.collection("RegistroSalud").whereField("uidPaciente", isEqualTo: Auth.auth().currentUser!.uid).whereField("uidMedico", isEqualTo: medicos[medico]).getDocuments() {
+                (querySnapshot, err) in
+                if let err = err {
+                    self.presentaAlerta(mensaje: err.localizedDescription)
+                }
+                else {
+                    guard let querySnapshot = querySnapshot else {
+                        self.presentaAlerta(mensaje: "Error Desconocido")
+                        return
+                    }
+                    
+                    for document in querySnapshot.documents {
+                        if let indicaciones = document.get("indicaciones") as? String {
+                            self.listaIndicaciones.append(indicaciones)
+                        }
+                        else {
+                            self.presentaAlerta(mensaje: "Error desconocido")
+                        }
+                    }
+                    self.pageControlMedicos.numberOfPages = self.listaMedicos.count
+                    self.stpMedicos.maximumValue = Double(self.listaMedicos.count - 1)
+                    self.lbMedico.text = self.listaMedicos[0]
+                    self.textViewIndicaciones.text = self.listaIndicaciones[0]
+                }
+            }
+        }
     }
     
     func cambiaDatos(pos:Int){
@@ -56,14 +116,11 @@ class PopUp_VCIndicaciones: UIViewController, UITableViewDelegate,UITableViewDat
         return celda
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func presentaAlerta(mensaje: String) {
+        let alerta = UIAlertController(title: "Error", message: mensaje, preferredStyle: .alert)
+        let accion = UIAlertAction(title: "OK", style: .cancel)
+        alerta.addAction(accion)
+        present(alerta, animated: true)
     }
-    */
 
 }
