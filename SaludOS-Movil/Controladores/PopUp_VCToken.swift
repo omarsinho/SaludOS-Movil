@@ -8,6 +8,8 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import Foundation
+import CryptoKit
 
 class PopUp_VCToken: UIViewController {
 
@@ -21,7 +23,7 @@ class PopUp_VCToken: UIViewController {
         super.viewDidLoad()
         
         token = makeDaToken()
-        db.collection("Paciente").document(Auth.auth().currentUser!.uid).setData(["token": token!], merge: true) {
+        db.collection("Paciente").document(Auth.auth().currentUser!.uid).setData(["token": MD5(string: token!)], merge: true) {
             (error) in
             
             if error != nil {
@@ -51,7 +53,16 @@ class PopUp_VCToken: UIViewController {
         return "\(part_0[0])" + "\(part_1)" + "\(part_2)" + "\(part_3)" + "\(part_4[0])" + "\(part_4[4])" + "\(part_4[2])"
     }
     
+    func MD5(string: String) -> String {
+        let digest = Insecure.MD5.hash(data: string.data(using: .utf8) ?? Data())
+
+        return digest.map {
+            String(format: "%02hhx", $0)
+        }.joined()
+    }
+    
     @IBAction func Regresar(_ sender: UIButton) {
+        db.collection("Paciente").document(Auth.auth().currentUser!.uid).updateData(["token": FieldValue.delete()])
         self.dismiss(animated: true, completion: nil)
     }
 }
