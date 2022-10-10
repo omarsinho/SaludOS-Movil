@@ -12,12 +12,16 @@ class PopUp_Notificaciones: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        preferredContentSize = CGSize(width: 250, height: 120)
+        
     }
     
     @IBAction func Regresar(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
+    
     
     /*
     // MARK: - Navigation

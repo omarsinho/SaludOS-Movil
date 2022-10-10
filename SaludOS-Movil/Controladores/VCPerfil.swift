@@ -14,11 +14,16 @@ class VCPerfil: UIViewController {
     @IBOutlet weak var lbNombre: UILabel!
     @IBOutlet weak var lbStatus: UILabel!
     
+    @IBOutlet weak var imgPerfil: UIImageView!
+    
+    var foto = UIImage()
     let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        imgPerfil.image = foto
+        
         db.collection("Paciente").document(Auth.auth().currentUser!.uid).getDocument {
             (documentSnapshot, error) in
             if let document = documentSnapshot, error == nil {

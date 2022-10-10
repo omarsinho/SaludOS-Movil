@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,7 +24,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medSymbol" translatesAutoresizingMaskIntoConstraints="NO" id="uyH-G8-z13">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="simp" translatesAutoresizingMaskIntoConstraints="NO" id="uyH-G8-z13">
                                 <rect key="frame" x="100" y="68" width="214" height="214"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="uyH-G8-z13" secondAttribute="height" multiplier="1:1" id="8no-m6-Tnr"/>
@@ -75,7 +74,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zq4-dc-Wic"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.86947047710418701" green="0.96222752332687378" blue="0.89275646209716797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="x7J-Yp-mOA" firstAttribute="leading" secondItem="zq4-dc-Wic" secondAttribute="leading" constant="270" id="00o-XV-jqb"/>
@@ -119,7 +118,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="questionare" translatesAutoresizingMaskIntoConstraints="NO" id="L5h-Mb-hOH">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="L5h-Mb-hOH">
                                 <rect key="frame" x="140" y="68" width="134" height="134"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="L5h-Mb-hOH" secondAttribute="height" multiplier="1:1" id="vrh-EG-2sO"/>
@@ -188,7 +187,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jiX-QV-RIi"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.95702582597732544" green="0.95422822237014771" blue="0.83789926767349243" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Uzh-5o-Qxd" firstAttribute="centerY" secondItem="ZFZ-yY-QJh" secondAttribute="centerY" id="0PL-OU-KTV"/>
@@ -236,7 +235,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blood" translatesAutoresizingMaskIntoConstraints="NO" id="Bq5-Gc-UAx">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="simblood" translatesAutoresizingMaskIntoConstraints="NO" id="Bq5-Gc-UAx">
                                 <rect key="frame" x="100" y="68" width="214" height="214"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Bq5-Gc-UAx" secondAttribute="height" multiplier="1:1" id="lA2-2i-ok0"/>
@@ -286,7 +285,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zAD-JR-o4g"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.95857125520706177" green="0.89252215623855591" blue="0.83611452579498291" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="HqJ-qJ-9RZ" firstAttribute="centerY" secondItem="LrB-Wz-Aiv" secondAttribute="centerY" id="45q-FT-Rwa"/>
@@ -326,15 +325,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IhM-YL-EY1"/>
+        <segue reference="VA6-fv-x40"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SSA" width="1029" height="276"/>
-        <image name="blood" width="55" height="78"/>
-        <image name="medSymbol" width="79" height="83"/>
-        <image name="questionare" width="66" height="68"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="calendar" width="512" height="512"/>
+        <image name="simblood" width="512" height="512"/>
+        <image name="simp" width="512" height="512"/>
     </resources>
 </document>
