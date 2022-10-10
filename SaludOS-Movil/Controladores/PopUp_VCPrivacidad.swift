@@ -1,28 +1,31 @@
 //
-//  PopUp_Notificaciones.swift
+//  PopUp_VCPrivacidad.swift
 //  SaludOS-Movil
 //
-//  Created by Alumno on 01/10/22.
+//  Created by Alumno on 10/10/22.
 //
 
 import UIKit
+import WebKit
 
-class PopUp_Notificaciones: UIViewController {
+class PopUp_VCPrivacidad: UIViewController {
 
+    @IBOutlet weak var webView: WKWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        preferredContentSize = CGSize(width: 250, height: 120)
+        let path = Bundle.main.path(forResource: "privacidad", ofType: "pdf")
+        let urL = URL(fileURLWithPath: path!)
+        let request = URLRequest(url: urL)
         
+        webView.load(request)
     }
     
     @IBAction func Regresar(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
-    
-    
+
     /*
     // MARK: - Navigation
 

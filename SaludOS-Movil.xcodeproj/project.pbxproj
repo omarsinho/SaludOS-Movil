@@ -28,6 +28,8 @@
 		FB82F31B28DBD1C600C061F3 /* VCPerfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82F31528DBD1C600C061F3 /* VCPerfil.swift */; };
 		FBBB9B5528E8C87C001396E3 /* PopUp_VCEncuestaSemanal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB9B5428E8C87C001396E3 /* PopUp_VCEncuestaSemanal.swift */; };
 		FBBB9B5728E8CDBC001396E3 /* PopUp_Notificaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB9B5628E8CDBC001396E3 /* PopUp_Notificaciones.swift */; };
+		FBBCAD7828F4A20C00792BAD /* PopUp_VCPrivacidad.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBCAD7728F4A20C00792BAD /* PopUp_VCPrivacidad.swift */; };
+		FBBCAD7A28F4A2DB00792BAD /* privacidad.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FBBCAD7928F4A2DA00792BAD /* privacidad.pdf */; };
 		FBC837C028E63AC5006B6086 /* VCVistaMedicos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC837BF28E63AC5006B6086 /* VCVistaMedicos.swift */; };
 		FBC837C228E647FA006B6086 /* Medico.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC837C128E647F9006B6086 /* Medico.swift */; };
 		FBC837C428E64CB3006B6086 /* VCRegistroPresion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC837C328E64CB3006B6086 /* VCRegistroPresion.swift */; };
@@ -55,6 +57,8 @@
 		FB82F31528DBD1C600C061F3 /* VCPerfil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCPerfil.swift; sourceTree = "<group>"; };
 		FBBB9B5428E8C87C001396E3 /* PopUp_VCEncuestaSemanal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp_VCEncuestaSemanal.swift; sourceTree = "<group>"; };
 		FBBB9B5628E8CDBC001396E3 /* PopUp_Notificaciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp_Notificaciones.swift; sourceTree = "<group>"; };
+		FBBCAD7728F4A20C00792BAD /* PopUp_VCPrivacidad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp_VCPrivacidad.swift; sourceTree = "<group>"; };
+		FBBCAD7928F4A2DA00792BAD /* privacidad.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = privacidad.pdf; sourceTree = "<group>"; };
 		FBC837BF28E63AC5006B6086 /* VCVistaMedicos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCVistaMedicos.swift; sourceTree = "<group>"; };
 		FBC837C128E647F9006B6086 /* Medico.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medico.swift; sourceTree = "<group>"; };
 		FBC837C328E64CB3006B6086 /* VCRegistroPresion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCRegistroPresion.swift; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 		30FF1E5228E01176009B595D /* Controladores */ = {
 			isa = PBXGroup;
 			children = (
+				FBBCAD7928F4A2DA00792BAD /* privacidad.pdf */,
+				FBBCAD7728F4A20C00792BAD /* PopUp_VCPrivacidad.swift */,
 				FBD2C8FE28EB927F006B575A /* PopUp_VCToken.swift */,
 				FB82F31028DBD1C500C061F3 /* VCInicio.swift */,
 				FBC837BF28E63AC5006B6086 /* VCVistaMedicos.swift */,
@@ -206,6 +212,7 @@
 				3083A26528D8FDF600941527 /* GoogleService-Info.plist in Resources */,
 				30FF1E5128E00E5A009B595D /* AppGeneral.storyboard in Resources */,
 				78860C3C28D7DE8D002F70DE /* Assets.xcassets in Resources */,
+				FBBCAD7A28F4A2DB00792BAD /* privacidad.pdf in Resources */,
 				78860C3A28D7DE85002F70DE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +232,7 @@
 				FB82F31B28DBD1C600C061F3 /* VCPerfil.swift in Sources */,
 				FBBB9B5728E8CDBC001396E3 /* PopUp_Notificaciones.swift in Sources */,
 				FB82F31628DBD1C600C061F3 /* VCInicio.swift in Sources */,
+				FBBCAD7828F4A20C00792BAD /* PopUp_VCPrivacidad.swift in Sources */,
 				FBC837C428E64CB3006B6086 /* VCRegistroPresion.swift in Sources */,
 				FB82F31728DBD1C600C061F3 /* VCLogin.swift in Sources */,
 				7880CEC128D90277008C3D4B /* Paciente.swift in Sources */,
