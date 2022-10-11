@@ -234,10 +234,10 @@
                                         <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="celda" id="IJg-J1-xks">
-                                                <rect key="frame" x="0.0" y="50" width="308" height="44"/>
+                                                <rect key="frame" x="0.0" y="50" width="308" height="43.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IJg-J1-xks" id="A4l-lX-03H">
-                                                    <rect key="frame" x="0.0" y="0.0" width="308" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="308" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" systemColor="systemFillColor"/>
@@ -355,6 +355,7 @@
                                     <fontDescription key="titleFontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="AbrirEncuestaSemanal:" destination="uSD-25-GSM" eventType="touchUpInside" id="766-J3-F7o"/>
                                     <segue destination="Ndp-6L-2YI" kind="presentation" modalPresentationStyle="overCurrentContext" id="TfA-Nu-wt2"/>
                                 </connections>
                             </button>
@@ -1212,48 +1213,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xDT-DI-X6b">
-                                <rect key="frame" x="10" y="48" width="394" height="801"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDT-DI-X6b">
+                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9c-QN-GtX">
-                                        <rect key="frame" x="8" y="8" width="40" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9c-QN-GtX">
+                                        <rect key="frame" x="8" y="8" width="40.5" height="32.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="r9c-QN-GtX" secondAttribute="height" multiplier="5:4" id="mGQ-4O-EJF"/>
+                                        </constraints>
                                         <buttonConfiguration key="configuration" style="plain"/>
                                         <connections>
                                             <action selector="Regresar:" destination="tPP-aZ-6el" eventType="touchUpInside" id="qye-yT-Jca"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Token:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3Y-lt-gH8">
-                                        <rect key="frame" x="126" y="298" width="142" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="35"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cargando. . . " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6do-m9-guH">
-                                        <rect key="frame" x="103" y="398" width="188" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Este token sirve para vincularlo con su médico." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67M-Ul-naZ">
-                                        <rect key="frame" x="40" y="638" width="314" height="70"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HoeflerText-Italic" family="Hoefler Text" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NO cierre esta vista hasta que su médico lo haya agregado." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dn2-km-h2t">
-                                        <rect key="frame" x="30" y="701" width="335" height="70"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="22"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="oDd-RD-Uke">
+                                        <rect key="frame" x="123.5" y="359.5" width="167.5" height="95"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Token:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3Y-lt-gH8">
+                                                <rect key="frame" x="0.0" y="0.0" width="167.5" height="35"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="35"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cargando. . . " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6do-m9-guH">
+                                                <rect key="frame" x="0.0" y="65" width="167.5" height="30"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Cya-4d-hLD">
+                                        <rect key="frame" x="20" y="680" width="374" height="94"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Este token sirve para vincularlo con su médico." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67M-Ul-naZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Italic" family="Hoefler Text" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO cierre esta vista hasta que su médico lo haya agregado." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dn2-km-h2t">
+                                                <rect key="frame" x="0.0" y="50" width="374" height="44"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96470012696704321" green="0.94761690000624621" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Cya-4d-hLD" secondAttribute="trailing" constant="20" id="2WW-Tk-I6D"/>
+                                    <constraint firstItem="r9c-QN-GtX" firstAttribute="top" secondItem="xDT-DI-X6b" secondAttribute="top" constant="8" id="4gt-9g-mCl"/>
+                                    <constraint firstItem="oDd-RD-Uke" firstAttribute="centerY" secondItem="xDT-DI-X6b" secondAttribute="centerY" id="Dkt-9T-KIe"/>
+                                    <constraint firstItem="oDd-RD-Uke" firstAttribute="centerX" secondItem="xDT-DI-X6b" secondAttribute="centerX" id="HtW-rc-Fa1"/>
+                                    <constraint firstItem="r9c-QN-GtX" firstAttribute="leading" secondItem="xDT-DI-X6b" secondAttribute="leading" constant="8" id="L2i-cM-1qU"/>
+                                    <constraint firstItem="Cya-4d-hLD" firstAttribute="centerX" secondItem="xDT-DI-X6b" secondAttribute="centerX" id="ken-ed-2yE"/>
+                                    <constraint firstAttribute="bottom" secondItem="Cya-4d-hLD" secondAttribute="bottom" constant="40" id="pol-Cm-b3w"/>
+                                    <constraint firstItem="Cya-4d-hLD" firstAttribute="leading" secondItem="xDT-DI-X6b" secondAttribute="leading" constant="20" id="xTd-0B-UnB"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
@@ -1263,6 +1281,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lbJ-c1-RPF"/>
                         <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
+                        <constraints>
+                            <constraint firstItem="xDT-DI-X6b" firstAttribute="leading" secondItem="lbJ-c1-RPF" secondAttribute="leading" id="Dan-P1-IUi"/>
+                            <constraint firstItem="xDT-DI-X6b" firstAttribute="top" secondItem="lbJ-c1-RPF" secondAttribute="top" id="EO8-BA-zBR"/>
+                            <constraint firstItem="lbJ-c1-RPF" firstAttribute="bottom" secondItem="xDT-DI-X6b" secondAttribute="bottom" id="WXr-B8-2Uo"/>
+                            <constraint firstItem="lbJ-c1-RPF" firstAttribute="trailing" secondItem="xDT-DI-X6b" secondAttribute="trailing" id="nYR-dp-C9K"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="lbToken" destination="6do-m9-guH" id="Hlg-eD-rVR"/>
