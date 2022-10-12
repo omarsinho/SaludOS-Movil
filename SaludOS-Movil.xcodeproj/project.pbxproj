@@ -18,6 +18,8 @@
 		78860C3A28D7DE85002F70DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78860C3828D7DE85002F70DE /* Main.storyboard */; };
 		78860C3C28D7DE8D002F70DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78860C3B28D7DE8D002F70DE /* Assets.xcassets */; };
 		78860C3F28D7DE8D002F70DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78860C3D28D7DE8D002F70DE /* LaunchScreen.storyboard */; };
+		E07D334528F61B93004E419B /* Secciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07D334428F61B93004E419B /* Secciones.swift */; };
+		E0E322CC28F740A300CF3CA4 /* Medicamento.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E322CB28F740A300CF3CA4 /* Medicamento.swift */; };
 		FB3828F728E8AEA200694EA5 /* PopUp_VCIndicaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3828F628E8AEA200694EA5 /* PopUp_VCIndicaciones.swift */; };
 		FB3828F928E8B4FF00694EA5 /* PopUp_VCInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3828F828E8B4FF00694EA5 /* PopUp_VCInfo.swift */; };
 		FB82F31628DBD1C600C061F3 /* VCInicio.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82F31028DBD1C500C061F3 /* VCInicio.swift */; };
@@ -48,6 +50,8 @@
 		78860C3B28D7DE8D002F70DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78860C3E28D7DE8D002F70DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78860C4028D7DE8D002F70DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E07D334428F61B93004E419B /* Secciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secciones.swift; sourceTree = "<group>"; };
+		E0E322CB28F740A300CF3CA4 /* Medicamento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Medicamento.swift; path = "SaludOS-Movil/Modelos/Medicamento.swift"; sourceTree = SOURCE_ROOT; };
 		FB3828F628E8AEA200694EA5 /* PopUp_VCIndicaciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp_VCIndicaciones.swift; sourceTree = "<group>"; };
 		FB3828F828E8B4FF00694EA5 /* PopUp_VCInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp_VCInfo.swift; sourceTree = "<group>"; };
 		FB82F31028DBD1C500C061F3 /* VCInicio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCInicio.swift; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 		30D5C56728E8F0FC00B87C6F /* Modelos */ = {
 			isa = PBXGroup;
 			children = (
+				E0E322CB28F740A300CF3CA4 /* Medicamento.swift */,
+				E07D334428F61B93004E419B /* Secciones.swift */,
 				7880CEC028D90277008C3D4B /* Paciente.swift */,
 				FBC837C128E647F9006B6086 /* Medico.swift */,
 			);
@@ -229,6 +235,7 @@
 			files = (
 				FB82F31828DBD1C600C061F3 /* VCSignUp_1.swift in Sources */,
 				FBBCAD7C28F4BE1500792BAD /* Camera_VC.swift in Sources */,
+				E07D334528F61B93004E419B /* Secciones.swift in Sources */,
 				FB3828F928E8B4FF00694EA5 /* PopUp_VCInfo.swift in Sources */,
 				FBC837C228E647FA006B6086 /* Medico.swift in Sources */,
 				FB82F31A28DBD1C600C061F3 /* VCRegistroSangre.swift in Sources */,
@@ -242,6 +249,7 @@
 				7880CEC128D90277008C3D4B /* Paciente.swift in Sources */,
 				FB3828F728E8AEA200694EA5 /* PopUp_VCIndicaciones.swift in Sources */,
 				FBD2C8FF28EB927F006B575A /* PopUp_VCToken.swift in Sources */,
+				E0E322CC28F740A300CF3CA4 /* Medicamento.swift in Sources */,
 				78860C3528D7DE85002F70DE /* SceneDelegate.swift in Sources */,
 				FB82F31928DBD1C600C061F3 /* VCSignUp_2.swift in Sources */,
 				FBC837C028E63AC5006B6086 /* VCVistaMedicos.swift in Sources */,
