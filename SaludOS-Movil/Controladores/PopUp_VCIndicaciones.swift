@@ -23,7 +23,7 @@ class PopUp_VCIndicaciones: UIViewController, UITableViewDelegate,UITableViewDat
     var listaMedicos: Array<String> = []
     var listaIndicaciones: Array<String> = []
     
-    var listaMedicinas = [String]() //Idea: Crear clase Medicina para incluir en el table view
+    var listaMedicamentos = [Medicamento]() //Idea: Crear clase Medicina para incluir en el table view
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -106,14 +106,44 @@ class PopUp_VCIndicaciones: UIViewController, UITableViewDelegate,UITableViewDat
         self.dismiss(animated: true, completion: nil)
     }
     
+    var secciones=[Secciones]()
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return listaMedicamentos.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listaMedicinas.count
+        let seccion = secciones[section]
+        if seccion.abierto{
+            return seccion.opciones.count+1
+        }
+        else{
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let celda = tableView.dequeueReusableCell(withIdentifier: "celda")!
-        celda.textLabel?.text = listaMedicos[indexPath.row]
+        let celda = tableView.dequeueReusableCell(withIdentifier: "celda",for:indexPath)
+        if indexPath.row == 0{
+            celda.textLabel?.text = secciones[indexPath.section].titulo
+            celda.backgroundColor = .secondarySystemFill
+            
+        }
+        else{
+            celda.textLabel?.text = secciones[indexPath.section].opciones[indexPath.row - 1]
+            celda.backgroundColor = .tertiarySystemFill
+        }
         return celda
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.row == 0{
+            secciones[indexPath.section].abierto = !secciones[indexPath.section].abierto
+            tableView.reloadSections([indexPath.section], with: .none)
+        }
+       
     }
     
     func presentaAlerta(mensaje: String) {
