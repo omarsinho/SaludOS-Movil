@@ -152,7 +152,7 @@ class VCSignUp_2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
                 print(peso)
                 print(tipoSangre)
                 
-                db.collection("Paciente").document(result!.user.uid).setData(["altura": altura, "apellidoMaterno": self.apellidoMRecibido!, "apellidoPaterno": self.apellidoPRecibido!, "fechaNacimiento": self.fechaNacRecibida!, "nombrePila": self.nombreRecibido!, "peso": peso, "tipoSangre": tipoSangre, "uid": result!.user.uid, "uidMedicos": [""]]) {
+                db.collection("Paciente").document(result!.user.uid).setData(["altura": altura, "apellidoMaterno": self.apellidoMRecibido!, "apellidoPaterno": self.apellidoPRecibido!, "fechaNacimiento": self.fechaNacRecibida!, "nombrePila": self.nombreRecibido!, "peso": peso, "tipoSangre": tipoSangre, "uid": result!.user.uid, "uidMedicos": []]) {
                     (error) in
                     
                     if error != nil {
