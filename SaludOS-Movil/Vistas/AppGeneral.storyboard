@@ -28,7 +28,7 @@
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="Kxp-JU-kYh" kind="presentation" identifier="pfp" modalPresentationStyle="overCurrentContext" id="4AK-wL-1Dt"/>
+                                    <segue destination="Kxp-JU-kYh" kind="presentation" identifier="pfp" modalPresentationStyle="fullScreen" id="4AK-wL-1Dt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzx-FG-pJ4">
@@ -701,6 +701,14 @@
             </objects>
             <point key="canvasLocation" x="1438" y="820"/>
         </scene>
+        <!--Hosting Controller-->
+        <scene sceneID="f3k-Ku-buI">
+            <objects>
+                <hostingController id="ul8-Er-Xq3" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qAo-4V-oqo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-846" y="94"/>
+        </scene>
         <!--Inicio-->
         <scene sceneID="OV5-1Y-CgZ">
             <objects>
@@ -738,6 +746,9 @@
                                                 <color key="strokeColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="ul8-Er-Xq3" kind="presentation" destinationCreationSelector="showGrafica:" id="WjM-Ce-S7y"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qdf-5h-9pi">
                                         <rect key="frame" x="0.0" y="64.5" width="330" height="192"/>
@@ -1304,44 +1315,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PdZ-eo-Mkc">
-                                <rect key="frame" x="20" y="767" width="374" height="129"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOS-RN-cdS">
+                                <rect key="frame" x="20" y="431" width="374" height="34"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Espera unos segundos a que los cambios se guarden...">
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="HoeflerText-BlackItalic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PdZ-eo-Mkc">
+                                <rect key="frame" x="0.0" y="718" width="414" height="144"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSJ-uj-CeW">
-                                        <rect key="frame" x="8" y="8" width="40" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSJ-uj-CeW">
+                                        <rect key="frame" x="8" y="8" width="40.5" height="32.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="oSJ-uj-CeW" secondAttribute="height" multiplier="5:4" id="SSO-eX-vJA"/>
+                                        </constraints>
                                         <buttonConfiguration key="configuration" style="plain"/>
                                         <connections>
                                             <action selector="Regresar:" destination="Kxp-JU-kYh" eventType="touchUpInside" id="U0R-8t-qrw"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cug-tX-IXO">
-                                        <rect key="frame" x="67" y="25" width="88" height="79"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title=" ">
-                                            <imageReference key="image" image="camera.circle" catalog="system" symbolScale="large"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="Camera:" destination="Kxp-JU-kYh" eventType="touchUpInside" id="Wva-En-6Qi"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5f-i8-HVR">
-                                        <rect key="frame" x="210" y="25" width="88" height="79"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title=" ">
-                                            <imageReference key="image" image="photo.artframe" catalog="system" symbolScale="large"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="Gallery:" destination="Kxp-JU-kYh" eventType="touchUpInside" id="P5K-vk-hSH"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="yBw-gG-WbU">
+                                        <rect key="frame" x="118" y="55" width="178" height="34.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cug-tX-IXO">
+                                                <rect key="frame" x="0.0" y="0.0" width="59" height="34.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title=" ">
+                                                    <imageReference key="image" image="camera.circle" catalog="system" symbolScale="large"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="Camera:" destination="Kxp-JU-kYh" eventType="touchUpInside" id="Wva-En-6Qi"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5f-i8-HVR">
+                                                <rect key="frame" x="119" y="0.0" width="59" height="34.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title=" ">
+                                                    <imageReference key="image" image="photo.artframe" catalog="system" symbolScale="large"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="Gallery:" destination="Kxp-JU-kYh" eventType="touchUpInside" id="P5K-vk-hSH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="oSJ-uj-CeW" firstAttribute="top" secondItem="PdZ-eo-Mkc" secondAttribute="top" constant="8" id="Daw-Uv-uCq"/>
+                                    <constraint firstItem="yBw-gG-WbU" firstAttribute="top" secondItem="PdZ-eo-Mkc" secondAttribute="top" constant="55" id="Y8H-ii-RA0"/>
+                                    <constraint firstItem="oSJ-uj-CeW" firstAttribute="leading" secondItem="PdZ-eo-Mkc" secondAttribute="leading" constant="8" id="agN-t1-KGu"/>
+                                    <constraint firstAttribute="bottom" secondItem="yBw-gG-WbU" secondAttribute="bottom" constant="54.5" id="dxH-x5-gvY"/>
+                                    <constraint firstItem="yBw-gG-WbU" firstAttribute="centerX" secondItem="PdZ-eo-Mkc" secondAttribute="centerX" id="vN6-mM-5S2"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
@@ -1350,9 +1384,27 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="E9E-vk-rk2"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.95316527061855671" green="0.95316527061855671" blue="0.95316527061855671" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="qOS-RN-cdS" firstAttribute="centerX" secondItem="6NV-As-fdz" secondAttribute="centerX" id="9sP-DF-Xh5"/>
+                            <constraint firstItem="PdZ-eo-Mkc" firstAttribute="leading" secondItem="E9E-vk-rk2" secondAttribute="leading" id="LF8-8c-Hf9"/>
+                            <constraint firstItem="PdZ-eo-Mkc" firstAttribute="top" secondItem="qOS-RN-cdS" secondAttribute="bottom" constant="253" id="Rwy-Zh-H1g"/>
+                            <constraint firstItem="qOS-RN-cdS" firstAttribute="leading" secondItem="E9E-vk-rk2" secondAttribute="leading" constant="20" id="UR7-rT-4Fg"/>
+                            <constraint firstItem="PdZ-eo-Mkc" firstAttribute="centerX" secondItem="6NV-As-fdz" secondAttribute="centerX" id="WyZ-oF-8Vl"/>
+                            <constraint firstItem="E9E-vk-rk2" firstAttribute="trailing" secondItem="qOS-RN-cdS" secondAttribute="trailing" constant="20" id="Y5W-PJ-Ifc"/>
+                            <constraint firstItem="qOS-RN-cdS" firstAttribute="centerY" secondItem="6NV-As-fdz" secondAttribute="centerY" id="dcV-6i-cme"/>
+                            <constraint firstItem="E9E-vk-rk2" firstAttribute="bottom" secondItem="PdZ-eo-Mkc" secondAttribute="bottom" id="lAU-XX-Xfg"/>
+                            <constraint firstItem="E9E-vk-rk2" firstAttribute="trailing" secondItem="PdZ-eo-Mkc" secondAttribute="trailing" id="oBl-wE-eSS"/>
+                        </constraints>
                     </view>
                     <size key="freeformSize" width="414" height="896"/>
+                    <connections>
+                        <outlet property="btnCamara" destination="cug-tX-IXO" id="LTt-Mm-gZ9"/>
+                        <outlet property="btnCerrar" destination="oSJ-uj-CeW" id="4de-1g-qzL"/>
+                        <outlet property="btnGaleria" destination="n5f-i8-HVR" id="iYO-0w-hN7"/>
+                        <outlet property="lbEsperar" destination="qOS-RN-cdS" id="aUo-ag-H6a"/>
+                        <outlet property="viewOpcionesFoto" destination="PdZ-eo-Mkc" id="GvB-gt-U0j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fs9-Sk-nze" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

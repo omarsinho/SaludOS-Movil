@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		306399CD28F780EF0091B85F /* VistaGrafica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306399CC28F780EF0091B85F /* VistaGrafica.swift */; };
+		306399D128F7880D0091B85F /* Grafica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306399D028F7880D0091B85F /* Grafica.swift */; };
+		306399D428F7B86A0091B85F /* VistaModelo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306399D328F7B86A0091B85F /* VistaModelo.swift */; };
 		3083A26528D8FDF600941527 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3083A26428D8FDF600941527 /* GoogleService-Info.plist */; };
 		3083A26828D8FE7D00941527 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3083A26728D8FE7D00941527 /* FirebaseAuth */; };
 		3083A26A28D8FE7D00941527 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3083A26928D8FE7D00941527 /* FirebaseFirestore */; };
@@ -40,6 +43,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		306399CC28F780EF0091B85F /* VistaGrafica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaGrafica.swift; sourceTree = "<group>"; };
+		306399D028F7880D0091B85F /* Grafica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grafica.swift; sourceTree = "<group>"; };
+		306399D328F7B86A0091B85F /* VistaModelo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaModelo.swift; sourceTree = "<group>"; };
 		3083A26428D8FDF600941527 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		30FF1E5028E00E5A009B595D /* AppGeneral.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AppGeneral.storyboard; sourceTree = "<group>"; };
 		7880CEC028D90277008C3D4B /* Paciente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paciente.swift; sourceTree = "<group>"; };
@@ -85,6 +91,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		306399CB28F77C270091B85F /* Vistas */ = {
+			isa = PBXGroup;
+			children = (
+				78860C3D28D7DE8D002F70DE /* LaunchScreen.storyboard */,
+				78860C3828D7DE85002F70DE /* Main.storyboard */,
+				30FF1E5028E00E5A009B595D /* AppGeneral.storyboard */,
+				306399CC28F780EF0091B85F /* VistaGrafica.swift */,
+			);
+			path = Vistas;
+			sourceTree = "<group>";
+		};
+		306399D228F7B8480091B85F /* VistaModelos */ = {
+			isa = PBXGroup;
+			children = (
+				306399D328F7B86A0091B85F /* VistaModelo.swift */,
+			);
+			path = VistaModelos;
+			sourceTree = "<group>";
+		};
 		30D5C56728E8F0FC00B87C6F /* Modelos */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +117,7 @@
 				E07D334428F61B93004E419B /* Secciones.swift */,
 				7880CEC028D90277008C3D4B /* Paciente.swift */,
 				FBC837C128E647F9006B6086 /* Medico.swift */,
+				306399D028F7880D0091B85F /* Grafica.swift */,
 			);
 			path = Modelos;
 			sourceTree = "<group>";
@@ -138,14 +164,13 @@
 		78860C3128D7DE85002F70DE /* SaludOS-Movil */ = {
 			isa = PBXGroup;
 			children = (
+				306399D228F7B8480091B85F /* VistaModelos */,
+				306399CB28F77C270091B85F /* Vistas */,
 				30D5C56728E8F0FC00B87C6F /* Modelos */,
 				30FF1E5228E01176009B595D /* Controladores */,
 				78860C3228D7DE85002F70DE /* AppDelegate.swift */,
 				78860C3428D7DE85002F70DE /* SceneDelegate.swift */,
-				78860C3828D7DE85002F70DE /* Main.storyboard */,
-				30FF1E5028E00E5A009B595D /* AppGeneral.storyboard */,
 				78860C3B28D7DE8D002F70DE /* Assets.xcassets */,
-				78860C3D28D7DE8D002F70DE /* LaunchScreen.storyboard */,
 				3083A26428D8FDF600941527 /* GoogleService-Info.plist */,
 				78860C4028D7DE8D002F70DE /* Info.plist */,
 			);
@@ -236,6 +261,7 @@
 				FB82F31828DBD1C600C061F3 /* VCSignUp_1.swift in Sources */,
 				FBBCAD7C28F4BE1500792BAD /* Camera_VC.swift in Sources */,
 				E07D334528F61B93004E419B /* Secciones.swift in Sources */,
+				306399D428F7B86A0091B85F /* VistaModelo.swift in Sources */,
 				FB3828F928E8B4FF00694EA5 /* PopUp_VCInfo.swift in Sources */,
 				FBC837C228E647FA006B6086 /* Medico.swift in Sources */,
 				FB82F31A28DBD1C600C061F3 /* VCRegistroSangre.swift in Sources */,
@@ -252,6 +278,8 @@
 				E0E322CC28F740A300CF3CA4 /* Medicamento.swift in Sources */,
 				78860C3528D7DE85002F70DE /* SceneDelegate.swift in Sources */,
 				FB82F31928DBD1C600C061F3 /* VCSignUp_2.swift in Sources */,
+				306399D128F7880D0091B85F /* Grafica.swift in Sources */,
+				306399CD28F780EF0091B85F /* VistaGrafica.swift in Sources */,
 				FBC837C028E63AC5006B6086 /* VCVistaMedicos.swift in Sources */,
 				FBBB9B5528E8C87C001396E3 /* PopUp_VCEncuestaSemanal.swift in Sources */,
 			);
@@ -402,6 +430,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "SaludOS-Movil/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -423,6 +452,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "SaludOS-Movil/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

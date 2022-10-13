@@ -63,8 +63,8 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>profilePicture photo use</string>
+	<string>Por favor otorgue el permiso para acceder al carrete de fotos.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>profilePicture camera use</string>
+	<string>Por favor otorgue el permiso para acceder a la cámara.</string>
 </dict>
 </plist>

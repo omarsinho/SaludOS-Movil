@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import SwiftUI
 
 class VCInicio: UIViewController {
     
@@ -31,4 +32,10 @@ class VCInicio: UIViewController {
             }
         }
     }
+    
+    
+    
+    @IBSegueAction func showGrafica(_ coder: NSCoder) -> UIViewController? {
+        return UIHostingController(coder: coder, rootView: VistaGrafica())    }
+    
 }
