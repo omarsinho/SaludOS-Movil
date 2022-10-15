@@ -57,9 +57,12 @@ class VCRegistroPresion: UIViewController {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             
+            let formatter2 = DateFormatter()
+            formatter2.dateFormat = "yyyy-MM-dd"
+            
             let emo = Double(Int(self.sldrEmocional.value * 1000)) / 100
 
-            db.collection("RegistroPresion").document().setData(["comentarios": tfComentarios.text!,"fechayHoraToma": formatter.string(from: Date()), "hicisteEjercicio": self.hicisteEjercicio(), "medidorEmocional": emo, "presionDiastolica": Int(self.tfPresionDIA.text!)!, "presionSistolica": Int(self.tfPresionSYS.text!)!, "pulso": Int(tfPulso.text!)!, "uidPaciente": Auth.auth().currentUser!.uid]) {
+            db.collection("RegistroPresion").document(formatter.string(from: Date()) + " - \(Auth.auth().currentUser!.uid)").setData(["comentarios": tfComentarios.text!,"fechayHoraToma": formatter.string(from: Date()), "hicisteEjercicio": self.hicisteEjercicio(), "medidorEmocional": emo, "presionDiastolica": Int(self.tfPresionDIA.text!)!, "presionSistolica": Int(self.tfPresionSYS.text!)!, "pulso": Int(tfPulso.text!)!, "uidPaciente": Auth.auth().currentUser!.uid]) {
                 (error) in
                 
                 if error != nil {
