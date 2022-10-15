@@ -29,10 +29,12 @@ class VCVistaMedicos: UIViewController, UITableViewDelegate, UITableViewDataSour
                 if let idMedicos = document.get("uidMedicos") as? Array<String> {
                     //self.listaIdMedicos = idMedicos
                     //print("")
-                    if idMedicos[0] == "" {
-                        self.listaNombresMedicos.append("NO tienes médicos vinculados.")
-                        self.listaTitulos.append("Primero el médico te tiene que agregar ingresando el token que se genera en la sección de perfil, en el ícono de la esquina superior izquierda.")
-                        self.tableViewMedicos.reloadData()
+                    print(idMedicos)
+                    if idMedicos == [] {
+                        let alerta = UIAlertController(title: "Error: NO tienes médicos vinculados.", message: "Primero el médico te tiene que agregar ingresando el token que se genera en la sección de perfil, en el ícono de la esquina superior izquierda.", preferredStyle: .alert)
+                        let accion = UIAlertAction(title: "OK", style: .cancel) { (accion) in self.dismiss(animated: true)}
+                        alerta.addAction(accion)
+                        self.present(alerta, animated: true)
                     }
                     else {
                         self.getMedicos(ids: idMedicos)

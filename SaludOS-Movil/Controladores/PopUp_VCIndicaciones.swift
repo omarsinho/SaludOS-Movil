@@ -20,34 +20,50 @@ class PopUp_VCIndicaciones: UIViewController, UITableViewDelegate,UITableViewDat
     
     let db = Firestore.firestore()
     
-    var listaMedicos: Array<String> = []
+    var listaIDMedicos: Array<String> = []
+    var listaNombresMedicos: Array<String> = []
     var listaIndicaciones: Array<String> = []
     
     var listaMedicamentos = [Medicamento]() //Idea: Crear clase Medicina para incluir en el table view
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        db.collection("Paciente").document(Auth.auth().currentUser!.uid).getDocument {
-            (documentSnapshot, error) in
-            if let document = documentSnapshot, error == nil {
-                if let idMedicos = document.get("uidMedicos") as? Array<String> {
-                    self.getMedicos(ids: idMedicos)
-                }
+        db.collection("RegistroSalud").whereField("uidPaciente", isEqualTo: Auth.auth().currentUser!.uid).getDocuments() {
+            (querySnapshot, err) in
+            if let err = err {
+                self.presentaAlerta(mensaje: err.localizedDescription)
             }
             else {
-                self.presentaAlerta(mensaje: error!.localizedDescription)
+                guard let querySnapshot = querySnapshot else {
+                    self.presentaAlerta(mensaje: "Error Desconocido")
+                    return
+                }
+                
+                for document in querySnapshot.documents {
+                    if let indicaciones = document.get("indicaciones") as? String, let idMedico = document.get("uidMedico") as? String {
+                        self.listaIndicaciones.append(indicaciones)
+                        self.listaIDMedicos.append(idMedico)
+                    }
+                    else {
+                        self.presentaAlerta(mensaje: "Error desconocido")
+                    }
+                }
+                self.getMedicos(ids: self.listaIDMedicos, indicaciones: self.listaIndicaciones)
             }
         }
     }
     
-    func getMedicos(ids: Array<String>) {
+    func getMedicos(ids: Array<String>, indicaciones: Array<String>) {
         for id in stride(from: 0, to: ids.count, by: 1) {
             db.collection("Medico").document(ids[id]).getDocument {
                 (documentSnapshot, error) in
                 if let document = documentSnapshot, error == nil {
                     if let nombrePila = document.get("nombrePila") as? String, let apellidoP = document.get("apellidoPaterno") as? String, let apellidoM = document.get("apellidoMaterno") as? String {
-                        self.listaMedicos.append(nombrePila + " " + apellidoP + " " + apellidoM)
-                        self.getIndicaciones(medicos: ids)
+                        self.listaNombresMedicos.append(nombrePila + " " + apellidoP + " " + apellidoM)
+                        
+                        if id == ids.count - 1 {
+                            self.preparaVista(medicos: self.listaNombresMedicos, indicaciones: indicaciones)
+                        }
                     }
                     else {
                         self.presentaAlerta(mensaje: error!.localizedDescription)
@@ -57,38 +73,15 @@ class PopUp_VCIndicaciones: UIViewController, UITableViewDelegate,UITableViewDat
         }
     }
     
-    func getIndicaciones(medicos: Array<String>) {
-        for medico in stride(from: 0, to: medicos.count, by: 1) {
-            db.collection("RegistroSalud").whereField("uidPaciente", isEqualTo: Auth.auth().currentUser!.uid).whereField("uidMedico", isEqualTo: medicos[medico]).getDocuments() {
-                (querySnapshot, err) in
-                if let err = err {
-                    self.presentaAlerta(mensaje: err.localizedDescription)
-                }
-                else {
-                    guard let querySnapshot = querySnapshot else {
-                        self.presentaAlerta(mensaje: "Error Desconocido")
-                        return
-                    }
-                    
-                    for document in querySnapshot.documents {
-                        if let indicaciones = document.get("indicaciones") as? String {
-                            self.listaIndicaciones.append(indicaciones)
-                        }
-                        else {
-                            self.presentaAlerta(mensaje: "Error desconocido")
-                        }
-                    }
-                    self.pageControlMedicos.numberOfPages = self.listaMedicos.count
-                    self.stpMedicos.maximumValue = Double(self.listaMedicos.count - 1)
-                    self.lbMedico.text = self.listaMedicos[0]
-                    self.textViewIndicaciones.text = self.listaIndicaciones[0]
-                }
-            }
-        }
+    func preparaVista(medicos: Array<String>, indicaciones: Array<String>) {
+        pageControlMedicos.numberOfPages = medicos.count
+        stpMedicos.maximumValue = Double(medicos.count - 1)
+        lbMedico.text = medicos[0]
+        textViewIndicaciones.text = indicaciones[0]
     }
     
     func cambiaDatos(pos:Int){
-        lbMedico.text = listaMedicos[pos]
+        lbMedico.text = listaNombresMedicos[pos]
         textViewIndicaciones.text = listaIndicaciones[pos]
         // listaMedicinas = se hace get de las medicinas que receta el Médico encargado
         tableView.reloadData()
