@@ -50,8 +50,7 @@ class PopUp_VCIndicaciones: UIViewController, UITableViewDelegate,UITableViewDat
                         self.getIndicaciones(medicos: ids)
                     }
                     else {
-                        self.presentaAlerta(mensaje: error!.localizedDescription)
-                    }
+                        self.presentaAlerta(mensaje: error!.localizedDescription)                    }
                 }
             }
         }
