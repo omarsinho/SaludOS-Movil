@@ -23,6 +23,7 @@ class PopUp_VCIndicaciones: UIViewController, UITableViewDelegate,UITableViewDat
     var listaIDMedicos: Array<String> = []
     var listaNombresMedicos: Array<String> = []
     var listaIndicaciones: Array<String> = []
+    var secciones=[Secciones]()
     
     var listaMedicamentos = [Medicamento]() //Idea: Crear clase Medicina para incluir en el table view
     override func viewDidLoad() {
@@ -50,6 +51,10 @@ class PopUp_VCIndicaciones: UIViewController, UITableViewDelegate,UITableViewDat
                 }
                 self.getMedicos(ids: self.listaIDMedicos, indicaciones: self.listaIndicaciones)
             }
+        }
+        listaMedicamentos.append(Medicamento(nombre: "a", fechaLimite: "a", frecuencia: "a", cantidad: "a"))
+        for medicamento in listaMedicamentos{
+            secciones.append(Secciones(titulo: medicamento.nombre, opciones: [medicamento.fechaLimite]))
         }
     }
     
@@ -99,7 +104,7 @@ class PopUp_VCIndicaciones: UIViewController, UITableViewDelegate,UITableViewDat
         self.dismiss(animated: true, completion: nil)
     }
     
-    var secciones=[Secciones]()
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return listaMedicamentos.count
