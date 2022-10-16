@@ -17,6 +17,9 @@ class TableVCHistorial: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        for registro in listaRegistros{
+            secciones.append(Secciones(titulo: registro.fechayHoraToma, opciones: [registro.comentarios,"Medidor emocional; \(registro.medidorEmocional)","Realicé ejercicio: \(registro.hicisteEjercicio)", "Presión sistólica: \(registro.presionSistolica)", "Presión diastólica: \(registro.presionDiastolica)", "Pulso: \(registro.pulso)"]))
+        }
     }
 
     // MARK: - Table view data source

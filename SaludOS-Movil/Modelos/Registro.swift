@@ -9,13 +9,13 @@ import UIKit
 
 class Registro {
     let comentarios : String
-    let fechayHoraToma:Date
+    let fechayHoraToma:String
     let hicisteEjercicio :Bool
     let medidorEmocional:Double
     let presionDiastolica:Double
     let presionSistolica:Double
     let pulso: Double
-    init(comentarios: String, fechayHoraToma: Date, hicisteEjercicio: Bool, medidorEmocional: Double, presionDiastolica: Double, presionSistolica: Double, pulso: Double) {
+    init(comentarios: String, fechayHoraToma: String, hicisteEjercicio: Bool, medidorEmocional: Double, presionDiastolica: Double, presionSistolica: Double, pulso: Double) {
         self.comentarios = comentarios
         self.fechayHoraToma = fechayHoraToma
         self.hicisteEjercicio = hicisteEjercicio
