@@ -52,9 +52,9 @@ class PopUp_VCIndicaciones: UIViewController, UITableViewDelegate,UITableViewDat
                 self.getMedicos(ids: self.listaIDMedicos, indicaciones: self.listaIndicaciones)
             }
         }
-        listaMedicamentos.append(Medicamento(nombre: "a", fechaLimite: "a", frecuencia: "a", cantidad: "a"))
+        listaMedicamentos.append(Medicamento(nombre: "Naproxeno", fechaLimite: "22/12/2024", frecuencia: "3 veces al día", cantidad: "200gr"))
         for medicamento in listaMedicamentos{
-            secciones.append(Secciones(titulo: medicamento.nombre, opciones: [medicamento.fechaLimite]))
+            secciones.append(Secciones(titulo: medicamento.nombre, opciones: ["Fecha límite: \(medicamento.fechaLimite)","Frecuencia: \(medicamento.frecuencia)", "Cantidad: \(medicamento.cantidad)"]))
         }
     }
     
