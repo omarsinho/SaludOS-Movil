@@ -20,7 +20,7 @@ class TableVCHistorial: UITableViewController {
         listaRegistros.append(Registro(comentarios: "xd", fechayHoraToma: "01/01/2002", hicisteEjercicio: true, medidorEmocional: 2.84, presionDiastolica: 3.85, presionSistolica: 2.22, pulso: 329))
         listaRegistros.append(Registro(comentarios: "omar", fechayHoraToma: "01/01/2017", hicisteEjercicio: false, medidorEmocional: 2.84, presionDiastolica: 3.85, presionSistolica: 2.22, pulso: 329))
         for registro in listaRegistros{
-            secciones.append(Secciones(titulo: registro.fechayHoraToma, opciones: [registro.comentarios,"Medidor emocional; \(registro.medidorEmocional)","Realicé ejercicio: \(registro.hicisteEjercicio ? "Sí" : "No")", "Presión sistólica: \(registro.presionSistolica)", "Presión diastólica: \(registro.presionDiastolica)", "Pulso: \(registro.pulso)"]))
+            secciones.append(Secciones(titulo: registro.fechayHoraToma, opciones: [registro.comentarios,"Medidor emocional: \(registro.medidorEmocional)","Realicé ejercicio: \(registro.hicisteEjercicio ? "Sí" : "No")", "Presión sistólica: \(registro.presionSistolica)", "Presión diastólica: \(registro.presionDiastolica)", "Pulso: \(registro.pulso)"]))
         }
     }
 
