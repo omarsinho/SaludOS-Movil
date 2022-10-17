@@ -31,8 +31,8 @@ class VCVistaMedicos: UIViewController, UITableViewDelegate, UITableViewDataSour
                     //print("")
                     print(idMedicos)
                     if idMedicos == [] {
-                        let alerta = UIAlertController(title: "Error: NO tienes médicos vinculados.", message: "Primero el médico te tiene que agregar ingresando el token que se genera en la sección de perfil, en el ícono de la esquina superior izquierda.", preferredStyle: .alert)
-                        let accion = UIAlertAction(title: "OK", style: .cancel) { (accion) in self.dismiss(animated: true)}
+                        let alerta = UIAlertController(title: "Aviso: NO tienes médicos vinculados.", message: "Primero el médico te tiene que agregar ingresando el token que se genera en la sección de perfil, en el ícono de la esquina superior izquierda.", preferredStyle: .alert)
+                        let accion = UIAlertAction(title: "OK", style: .cancel) { accion in self.dismiss(animated: true)}
                         alerta.addAction(accion)
                         self.present(alerta, animated: true)
                     }
@@ -118,7 +118,7 @@ class VCVistaMedicos: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func presentaAlerta(mensaje: String) {
         let alerta = UIAlertController(title: "Error", message: mensaje, preferredStyle: .alert)
-        let accion = UIAlertAction(title: "OK", style: .cancel)
+        let accion = UIAlertAction(title: "OK", style: .cancel) { (accion) in self.dismiss(animated: true)}
         alerta.addAction(accion)
         present(alerta, animated: true)
     }

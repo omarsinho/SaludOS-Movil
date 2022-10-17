@@ -13,6 +13,10 @@ import Firebase
 struct VistaGrafica: View {
     
     @ObservedObject var modelo = VistaModelo()
+    //@State var mostrarAlerta = false
+    
+    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
         ZStack {
@@ -43,6 +47,13 @@ struct VistaGrafica: View {
                     AxisMarks(values: .stride(by: 10))
                 }
             }
+        }
+        .alert("Error", isPresented: $modelo.NOSePuedeMostrar) {
+            Button("OK") {
+                presentationMode.wrappedValue.dismiss()
+            }
+        } message: {
+            Text("No tienes suficientes registros de presión arterial para poder graficar. Necesitas tener al menos dos.")
         }
         VStack {
             Text("Datos Estadísticos")

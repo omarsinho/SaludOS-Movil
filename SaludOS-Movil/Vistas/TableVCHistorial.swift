@@ -6,34 +6,61 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class TableVCHistorial: UITableViewController {
 
+    var secciones=[Secciones]()
+    var listaRegistros: Array<Registro> = []
+    //var listaRegistros = [Registro]()
+    
+    let db = Firestore.firestore()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        listaRegistros.append(Registro(comentarios: "xd", fechayHoraToma: "01/01/2002", hicisteEjercicio: true, medidorEmocional: 2.84, presionDiastolica: 3.85, presionSistolica: 2.22, pulso: 329))
-        listaRegistros.append(Registro(comentarios: "omar", fechayHoraToma: "01/01/2017", hicisteEjercicio: false, medidorEmocional: 2.84, presionDiastolica: 3.85, presionSistolica: 2.22, pulso: 329))
-        for registro in listaRegistros{
-            secciones.append(Secciones(titulo: registro.fechayHoraToma, opciones: [registro.comentarios,"Medidor emocional: \(registro.medidorEmocional)","Realicé ejercicio: \(registro.hicisteEjercicio ? "Sí" : "No")", "Presión sistólica: \(registro.presionSistolica)", "Presión diastólica: \(registro.presionDiastolica)", "Pulso: \(registro.pulso)"]))
+        db.collection("RegistroPresion").whereField("uidPaciente", isEqualTo: Auth.auth().currentUser!.uid).getDocuments() {
+            (querySnapshot, err) in
+            if let err = err {
+                self.presentaAlerta(mensaje: err.localizedDescription)
+            }
+            else {
+                guard let querySnapshot = querySnapshot else {
+                    print("Error 1")
+                    self.presentaAlerta(mensaje: "Error Desconocido")
+                    return
+                }
+                
+                if querySnapshot.documents.count == 0 {
+                    self.presentaAlerta(mensaje: "No puedes ver tu historial porque todavía no has hecho al menos un registro de presión arterial.")
+                }
+                
+                for document in querySnapshot.documents {
+                    if let comentarios = document.get("comentarios") as? String,
+                       let fechayHoraToma = document.get("fechayHoraToma") as? String,
+                       let hicisteEjercicio = document.get("hicisteEjercicio") as? Bool,
+                       let medidorEmocional = document.get("medidorEmocional") as? Double,
+                       let presionDiastolica = document.get("presionDiastolica") as? Double,
+                       let presionSistolica = document.get("presionSistolica") as? Double,
+                       let puslo = document.get("pulso") as? Double {
+                        self.listaRegistros.append(Registro(comentarios: comentarios, fechayHoraToma: fechayHoraToma, hicisteEjercicio: hicisteEjercicio, medidorEmocional: medidorEmocional, presionDiastolica: presionDiastolica, presionSistolica: presionSistolica, pulso: puslo))
+                    }
+                    else {
+                        print("Error 2")
+                        self.presentaAlerta(mensaje: "Error desconocido")
+                    }
+                }
+                for registro in self.listaRegistros{
+                    self.secciones.append(Secciones(titulo: registro.fechayHoraToma, opciones: ["Comentarios: \(registro.comentarios)","Medidor emocional:  \(registro.medidorEmocional)","¿Realicé ejercicio?:  \(registro.hicisteEjercicio ? "Sí" : "No")", "Presión sistólica:  \(registro.presionSistolica)", "Presión diastólica:  \(registro.presionDiastolica)", "Pulso: \(registro.pulso)"]))
+                }
+                self.tableView.reloadData()
+            }
         }
     }
 
     // MARK: - Table view data source
 
-    
-
-    var secciones=[Secciones]()
-    var listaRegistros = [Registro]()
-    
-    //let registro = Registro(comentarios: <#T##String#>, fechayHoraToma: <#T##Date#>, hicisteEjercicio: <#T##Bool#>, medidorEmocional: <#T##Double#>, presionDiastolica: <#T##Double#>, presionSistolica: <#T##Double#>, pulso: <#T##Double#>)
-    
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return listaRegistros.count
     }
@@ -70,6 +97,13 @@ class TableVCHistorial: UITableViewController {
             tableView.reloadSections([indexPath.section], with: .none)
         }
        
+    }
+    
+    func presentaAlerta(mensaje: String) {
+        let alerta = UIAlertController(title: "Aviso", message: mensaje, preferredStyle: .alert)
+        let accion = UIAlertAction(title: "OK", style: .cancel) { accion in self.dismiss(animated: true)}
+        alerta.addAction(accion)
+        present(alerta, animated: true)
     }
 
 }

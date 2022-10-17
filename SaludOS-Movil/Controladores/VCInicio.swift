@@ -38,6 +38,8 @@ class VCInicio: UIViewController {
                 self.lbNombre.text = error?.localizedDescription
             }
         }
+        
+        sugerenciaDiaria()
     }
     
     override func viewWillAppear(_: Bool) {
@@ -67,6 +69,7 @@ class VCInicio: UIViewController {
                 print(self.arregloFechayHoraToma.last ?? "Hola")
             }
         }
+        calculoToma()
     }
     
     func sugerenciaDiaria() {
@@ -76,44 +79,44 @@ class VCInicio: UIViewController {
             btnLblSugerenciaDiaria.imageView?.image =
             UIImage(named: listSugerenciaDiariaImages[rand])
             return
-        }
+    }
         
-        func calculoToma() {
-            // EJEMPLO STRING: 2022-10-15 13:04:59
-            var strDB : String!
-            
-            // Get String from DB and change current variable
-            strDB = "2022-10-15 18:04:59"
-            var auxTwo = strDB.components(separatedBy: " ")
-            let auxDateDB = auxTwo[0].components(separatedBy: "-")
-            let auxTimeDB = auxTwo[1].components(separatedBy: ":")
-            
-            let date = Date()
-            let calendar = Calendar.current
-            let year = calendar.component(.year, from: date)
-            let month = calendar.component(.month, from: date)
-            let day = calendar.component(.day, from: date)
-            let hour = calendar.component(.hour, from: date)
-            let minutes = calendar.component(.minute, from: date)
-            
-            if let yearComparison = Int(auxDateDB[0]),
-               let monthComparison = Int(auxDateDB[1]),
-               let dayComparison = Int(auxDateDB[2]) {
-                if (yearComparison > year) || (monthComparison > month) {
-                    lbToma.titleLabel?.text = "Toma Pendiente"
-                } else {
-                    var calculo : Int!
-                    var tiempo = 1
-                    if day > dayComparison {
-                        tiempo = day - dayComparison
-                    }
-                    calculo = ( 24 * tiempo ) - hour
-                    lbToma.titleLabel?.text = "Siguiente Toma: " + String(calculo) + " horas..."
+    func calculoToma() {
+        // EJEMPLO STRING: 2022-10-15 13:04:59
+        var strDB : String!
+        
+        // Get String from DB and change current variable
+        strDB = "2022-10-15 18:04:59"
+        var auxTwo = strDB.components(separatedBy: " ")
+        let auxDateDB = auxTwo[0].components(separatedBy: "-")
+        let auxTimeDB = auxTwo[1].components(separatedBy: ":")
+        
+        let date = Date()
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
+        let hour = calendar.component(.hour, from: date)
+        let minutes = calendar.component(.minute, from: date)
+        
+        if let yearComparison = Int(auxDateDB[0]),
+            let monthComparison = Int(auxDateDB[1]),
+            let dayComparison = Int(auxDateDB[2]) {
+            if (yearComparison > year) || (monthComparison > month) {
+                lbToma.titleLabel?.text = "Toma Pendiente"
+            } else {
+                var calculo : Int!
+                var tiempo = 1
+                if day > dayComparison {
+                    tiempo = day - dayComparison
                 }
+                calculo = ( 24 * tiempo ) - hour
+                lbToma.titleLabel?.text = "Siguiente Toma: " + String(calculo) + " horas..."
             }
-            return
         }
-    
+        return
+    }
+
     @IBSegueAction func showGrafica(_ coder: NSCoder) -> UIViewController? {
         return UIHostingController(coder: coder, rootView: VistaGrafica())    }
     

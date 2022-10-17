@@ -34,6 +34,7 @@ class VistaModelo: ObservableObject {
     var sumSYS = 1
     var sumPulso = 1
     var cantidadDatos = 1
+    @Published var NOSePuedeMostrar = false
     
     @Published var mediaDIA = 1.1
     @Published var mediaSYS = 1.1
@@ -74,6 +75,10 @@ class VistaModelo: ObservableObject {
                 // No hay errores
                 if let snapshot = snapshot {
                     // Actualiza la lista en el hilo principal
+                    if snapshot.documents.count < 2 {
+                        self.NOSePuedeMostrar = true
+                        return
+                    }
                     DispatchQueue.main.async {
                         // Se obtienen los documentos y crea "Grafica"
                         self.datosRegistroPresion = snapshot.documents.map { d in

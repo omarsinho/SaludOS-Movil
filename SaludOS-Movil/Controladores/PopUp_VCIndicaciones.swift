@@ -25,7 +25,8 @@ class PopUp_VCIndicaciones: UIViewController, UITableViewDelegate,UITableViewDat
     var listaIndicaciones: Array<String> = []
     var secciones=[Secciones]()
     
-    var listaMedicamentos = [Medicamento]() //Idea: Crear clase Medicina para incluir en el table view
+    var listaMedicamentos: Array<Medicamento> = []
+    //var listaMedicamentos = [Medicamento]() //Idea: Crear clase Medicina para incluir en el table view
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,49 +41,77 @@ class PopUp_VCIndicaciones: UIViewController, UITableViewDelegate,UITableViewDat
                     return
                 }
                 
+                if querySnapshot.documents.count == 0 {
+                    self.presentaAlerta(mensaje: "Todavía ningún médico te ha asignado indicaciones. También es posible que aún no tengas a ningún médico vinculado.")
+                }
+                
                 for document in querySnapshot.documents {
-                    if let indicaciones = document.get("indicaciones") as? String, let idMedico = document.get("uidMedico") as? String {
+                    if let indicaciones = document.get("indicaciones") as? String,
+                       let nombreMedicamentos = document.get("nombreMedicamentos") as? Array<String>,
+                       let cantidadMedicamentos = document.get("cantidadMedicamentos") as? Array<String>,
+                       let frecuenciaMedicamentos = document.get("frecuenciaMedicamentos") as? Array<String>,
+                       let fechaLimiteMedicamentos = document.get("fechaLimiteMedicamentos") as? Array<String>,
+                       let idMedico = document.get("uidMedico") as? String {
                         self.listaIndicaciones.append(indicaciones)
                         self.listaIDMedicos.append(idMedico)
+                        for valor in stride(from: 0, to: nombreMedicamentos.count, by: 1) {
+                            print("for append")
+                            self.listaMedicamentos.append(Medicamento(nombre: nombreMedicamentos[valor], fechaLimite: fechaLimiteMedicamentos[valor], frecuencia: frecuenciaMedicamentos[valor], cantidad: cantidadMedicamentos[valor]))
+                                                }
                     }
                     else {
                         self.presentaAlerta(mensaje: "Error desconocido")
                     }
                 }
-                self.getMedicos(ids: self.listaIDMedicos, indicaciones: self.listaIndicaciones)
+                self.getMedicos(ids: self.listaIDMedicos, indicaciones: self.listaIndicaciones, medicamentos: self.listaMedicamentos)
             }
-        }
-        listaMedicamentos.append(Medicamento(nombre: "Naproxeno", fechaLimite: "22/12/2024", frecuencia: "3 veces al día", cantidad: "200gr"))
-        for medicamento in listaMedicamentos{
-            secciones.append(Secciones(titulo: medicamento.nombre, opciones: ["Fecha límite: \(medicamento.fechaLimite)","Frecuencia: \(medicamento.frecuencia)", "Cantidad: \(medicamento.cantidad)"]))
         }
     }
     
-    func getMedicos(ids: Array<String>, indicaciones: Array<String>) {
+    func getMedicos(ids: Array<String>, indicaciones: Array<String>, medicamentos: Array<Medicamento>) {
         for id in stride(from: 0, to: ids.count, by: 1) {
+            print("turno for")
+            print(id)
             db.collection("Medico").document(ids[id]).getDocument {
                 (documentSnapshot, error) in
                 if let document = documentSnapshot, error == nil {
                     if let nombrePila = document.get("nombrePila") as? String, let apellidoP = document.get("apellidoPaterno") as? String, let apellidoM = document.get("apellidoMaterno") as? String {
                         self.listaNombresMedicos.append(nombrePila + " " + apellidoP + " " + apellidoM)
-                        
-                        if id == ids.count - 1 {
-                            self.preparaVista(medicos: self.listaNombresMedicos, indicaciones: indicaciones)
-                        }
+                        print("turno")
+                        print(id)
+                        print(nombrePila + " " + apellidoP + " " + apellidoM)
+                        print(self.listaNombresMedicos.count)
                     }
                     else {
                         self.presentaAlerta(mensaje: error!.localizedDescription)
+                    }
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    print("id: \(id)")
+                    print("ids count: \(ids.count)")
+                    if id == ids.count - 1 {
+                        self.preparaVista(medicos: self.listaNombresMedicos, indicaciones: indicaciones, medicamentos: medicamentos)
                     }
                 }
             }
         }
     }
     
-    func preparaVista(medicos: Array<String>, indicaciones: Array<String>) {
+    func preparaVista(medicos: Array<String>, indicaciones: Array<String>, medicamentos: Array<Medicamento>) {
+        for elemento in medicamentos {
+            print(elemento.nombre)
+        }
+
+        for medicamento in medicamentos{
+            secciones.append(Secciones(titulo: medicamento.nombre, opciones: ["Fecha límite: \(medicamento.fechaLimite)","Frecuencia: \(medicamento.frecuencia)", "Cantidad: \(medicamento.cantidad)"]))
+        }
+        print("Medicos count")
+        print(medicos.count)
         pageControlMedicos.numberOfPages = medicos.count
         stpMedicos.maximumValue = Double(medicos.count - 1)
         lbMedico.text = medicos[0]
         textViewIndicaciones.text = indicaciones[0]
+        tableView.reloadData()
     }
     
     func cambiaDatos(pos:Int){
@@ -103,8 +132,6 @@ class PopUp_VCIndicaciones: UIViewController, UITableViewDelegate,UITableViewDat
     @IBAction func Regresar(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return listaMedicamentos.count
@@ -145,8 +172,8 @@ class PopUp_VCIndicaciones: UIViewController, UITableViewDelegate,UITableViewDat
     }
     
     func presentaAlerta(mensaje: String) {
-        let alerta = UIAlertController(title: "Error", message: mensaje, preferredStyle: .alert)
-        let accion = UIAlertAction(title: "OK", style: .cancel)
+        let alerta = UIAlertController(title: "Aviso", message: mensaje, preferredStyle: .alert)
+        let accion = UIAlertAction(title: "OK", style: .cancel) { accion in self.dismiss(animated: true)}
         alerta.addAction(accion)
         present(alerta, animated: true)
     }
