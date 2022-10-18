@@ -22,36 +22,13 @@ class PopUp_VCInfo: UIViewController {
             let webPlayer = WKWebView(frame: self.ytview.bounds, configuration: webConf)
             self.ytview.addSubview(webPlayer)
                 
-            guard let videoURL = URL(string: "https://youtu.be/UnIhRpIT7nc")
+            guard let videoURL = URL(string: "https://youtu.be/8p0N5wN_FcY")
             else { return } //works with vimeo as well
             let request = URLRequest(url: videoURL)
                 webPlayer.load(request)
             }
         
         }
-        
-    
-    // NO JALA TT
-    @IBAction func btnContactanosWeb(_ sender: UIButton) {
-        if let url = URL(string: "www.google.com") {
-//            if #available(iOS 10, *) {
-//                UIApplication.shared.open(url, options: [:])
-//            } else {
-//                UIApplication.shared.openURL(url)
-//            }
-            UIApplication.shared.open(url, options: [:])
-        }
-    }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     
     @IBAction func Regresar(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)

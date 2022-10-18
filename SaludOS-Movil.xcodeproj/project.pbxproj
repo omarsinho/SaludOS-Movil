@@ -35,6 +35,7 @@
 		FB82F31B28DBD1C600C061F3 /* VCPerfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82F31528DBD1C600C061F3 /* VCPerfil.swift */; };
 		FBBB9B5528E8C87C001396E3 /* PopUp_VCEncuestaSemanal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB9B5428E8C87C001396E3 /* PopUp_VCEncuestaSemanal.swift */; };
 		FBBB9B5728E8CDBC001396E3 /* PopUp_Notificaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB9B5628E8CDBC001396E3 /* PopUp_Notificaciones.swift */; };
+		FBBCA67928FE0E250032A718 /* PU_VCCreditos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBCA67828FE0E250032A718 /* PU_VCCreditos.swift */; };
 		FBBCAD7828F4A20C00792BAD /* PopUp_VCPrivacidad.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBCAD7728F4A20C00792BAD /* PopUp_VCPrivacidad.swift */; };
 		FBBCAD7A28F4A2DB00792BAD /* privacidad.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FBBCAD7928F4A2DA00792BAD /* privacidad.pdf */; };
 		FBBCAD7C28F4BE1500792BAD /* Camera_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBCAD7B28F4BE1500792BAD /* Camera_VC.swift */; };
@@ -72,6 +73,7 @@
 		FB82F31528DBD1C600C061F3 /* VCPerfil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCPerfil.swift; sourceTree = "<group>"; };
 		FBBB9B5428E8C87C001396E3 /* PopUp_VCEncuestaSemanal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp_VCEncuestaSemanal.swift; sourceTree = "<group>"; };
 		FBBB9B5628E8CDBC001396E3 /* PopUp_Notificaciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp_Notificaciones.swift; sourceTree = "<group>"; };
+		FBBCA67828FE0E250032A718 /* PU_VCCreditos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PU_VCCreditos.swift; sourceTree = "<group>"; };
 		FBBCAD7728F4A20C00792BAD /* PopUp_VCPrivacidad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp_VCPrivacidad.swift; sourceTree = "<group>"; };
 		FBBCAD7928F4A2DA00792BAD /* privacidad.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = privacidad.pdf; sourceTree = "<group>"; };
 		FBBCAD7B28F4BE1500792BAD /* Camera_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera_VC.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				E05435EB28FB5A6700392E9F /* TableVCHistorial.swift */,
 				FBBCAD7928F4A2DA00792BAD /* privacidad.pdf */,
+				FBBCA67828FE0E250032A718 /* PU_VCCreditos.swift */,
 				FBBCAD7728F4A20C00792BAD /* PopUp_VCPrivacidad.swift */,
 				FBD2C8FE28EB927F006B575A /* PopUp_VCToken.swift */,
 				FB82F31028DBD1C500C061F3 /* VCInicio.swift */,
@@ -282,6 +285,7 @@
 				7880CEC128D90277008C3D4B /* Paciente.swift in Sources */,
 				FB3828F728E8AEA200694EA5 /* PopUp_VCIndicaciones.swift in Sources */,
 				FBD2C8FF28EB927F006B575A /* PopUp_VCToken.swift in Sources */,
+				FBBCA67928FE0E250032A718 /* PU_VCCreditos.swift in Sources */,
 				E0E322CC28F740A300CF3CA4 /* Medicamento.swift in Sources */,
 				78860C3528D7DE85002F70DE /* SceneDelegate.swift in Sources */,
 				FB82F31928DBD1C600C061F3 /* VCSignUp_2.swift in Sources */,
