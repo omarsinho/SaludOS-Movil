@@ -63,7 +63,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="f3X-RW-tps">
-                                <rect key="frame" x="106.5" y="458.5" width="201.5" height="179"/>
+                                <rect key="frame" x="106.5" y="434" width="201.5" height="228"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAU-4l-WA8">
                                         <rect key="frame" x="0.0" y="0.0" width="201.5" height="32"/>
@@ -79,8 +79,19 @@
                                             <segue destination="r5C-t8-Qac" kind="presentation" modalPresentationStyle="overCurrentContext" id="hQX-mk-V1H"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aE-QL-kix">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fto-ap-PoZ">
                                         <rect key="frame" x="0.0" y="49" width="201.5" height="32"/>
+                                        <color key="tintColor" red="0.39520236850000001" green="0.44014438989999999" blue="0.90799874069999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Privacidad">
+                                            <backgroundConfiguration key="background" cornerRadius="15" strokeWidth="1">
+                                                <color key="strokeColor" white="0.79827592729999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="18"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aE-QL-kix">
+                                        <rect key="frame" x="0.0" y="98" width="201.5" height="32"/>
                                         <color key="tintColor" red="0.39520236849784851" green="0.44014438986778259" blue="0.90799874067306519" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Privacidad">
@@ -94,7 +105,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3o-7I-9c1">
-                                        <rect key="frame" x="0.0" y="98" width="201.5" height="32"/>
+                                        <rect key="frame" x="0.0" y="147" width="201.5" height="32"/>
                                         <color key="tintColor" systemColor="systemCyanColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Creditos">
@@ -108,7 +119,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tf0-l2-DD2">
-                                        <rect key="frame" x="0.0" y="147" width="201.5" height="32"/>
+                                        <rect key="frame" x="0.0" y="196" width="201.5" height="32"/>
                                         <color key="tintColor" red="0.99631434679031372" green="0.0" blue="0.04790843278169632" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Cerrar Sesión">
@@ -130,7 +141,7 @@
                                     <constraint firstAttribute="width" secondItem="aNK-LN-Hm2" secondAttribute="height" multiplier="1:1" id="7dk-7u-Twi"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NBV-P2-bR0">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NBV-P2-bR0">
                                 <rect key="frame" x="176" y="768" width="62" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemGray3Color"/>
@@ -169,7 +180,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Perfil" image="person.circle" catalog="system" id="vTc-u1-Fo6">
-                        <imageReference key="selectedImage" image="person.circle" catalog="system" symbolScale="large"/>
+                        <imageReference key="selectedImage" image="person.circle.fill" catalog="system" symbolScale="large"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="imgPerfil" destination="aNK-LN-Hm2" id="MHe-4w-FmJ"/>
@@ -219,7 +230,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Ync-j4-aaN">
             <objects>
-                <tabBarController id="TfY-Im-2rQ" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBare" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TfY-Im-2rQ" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" itemWidth="105" id="PKb-t4-3vG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -230,8 +241,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="nE2-9t-Ftr" kind="relationship" relationship="viewControllers" id="Qb7-P8-PZY"/>
-                        <segue destination="nYF-kg-14I" kind="relationship" relationship="viewControllers" id="s49-Sf-YfM"/>
                         <segue destination="uSD-25-GSM" kind="relationship" relationship="viewControllers" id="xgm-AH-uGQ"/>
+                        <segue destination="nYF-kg-14I" kind="relationship" relationship="viewControllers" id="QBP-ei-vzs"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yvs-T8-PWw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -462,7 +473,7 @@
                                     <action selector="SubmitPresion:" destination="uSD-25-GSM" eventType="touchUpInside" id="Ra4-uL-e4t"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDY-QG-Z0t">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDY-QG-Z0t">
                                 <rect key="frame" x="23" y="24" width="40.5" height="32.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32.5" id="5M8-Ml-mtx"/>
@@ -494,9 +505,9 @@
                         </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Registro" id="N0S-Cv-duL">
-                        <imageReference key="image" image="plus.app.fill" catalog="system" symbolScale="large"/>
+                        <imageReference key="image" image="plus.app" catalog="system" symbolScale="large"/>
                         <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <imageReference key="selectedImage" image="plus.app" catalog="system" symbolScale="large"/>
+                        <imageReference key="selectedImage" image="plus.app.fill" catalog="system" symbolScale="large"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="imgHappy" destination="8wF-c2-TIV" id="NLR-za-ol2"/>
@@ -626,10 +637,10 @@
             </objects>
             <point key="canvasLocation" x="-846" y="94"/>
         </scene>
-        <!--Inicio-->
+        <!--VCInicio-->
         <scene sceneID="OV5-1Y-CgZ">
             <objects>
-                <viewController id="nE2-9t-Ftr" customClass="VCInicio" customModule="SaludOS_Movil" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VCInicio" title="VCInicio" id="nE2-9t-Ftr" customClass="VCInicio" customModule="SaludOS_Movil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cvd-2H-14k">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -666,7 +677,7 @@
                                     <segue destination="EYU-Ad-jxc" kind="presentation" modalPresentationStyle="overCurrentContext" id="wXi-F3-5Zb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFR-ab-NpV">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFR-ab-NpV">
                                 <rect key="frame" x="176.5" y="768" width="61.5" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="Pg0-Tp-D9N"/>
@@ -781,7 +792,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" tag="1" title="Inicio" image="house" catalog="system" id="Fa8-hr-oaw">
                         <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <imageReference key="selectedImage" image="house" catalog="system" symbolScale="default"/>
+                        <imageReference key="selectedImage" image="house.fill" catalog="system" symbolScale="default"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <connections>
@@ -1486,19 +1497,55 @@ Ing. Luis Enrique Cuevas Huesca</string>
             </objects>
             <point key="canvasLocation" x="2155" y="94"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="39m-7M-v6W">
+            <objects>
+                <viewController id="ed7-Qr-Pik" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S5O-2o-xvh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GSv-VP-dlR">
+                                <rect key="frame" x="75" y="143" width="240" height="539"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvb-HU-IXr">
+                                        <rect key="frame" x="8" y="8" width="40" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="S8T-pk-JUc"/>
+                        <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RIT-7N-N9d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1439" y="-2003"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xgm-AH-uGQ"/>
+        <segue reference="21p-BL-D5T"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera.circle" catalog="system" width="128" height="123"/>
         <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
         <image name="chart.line.uptrend.xyaxis" catalog="system" width="128" height="102"/>
         <image name="house" catalog="system" width="128" height="104"/>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="info.circle" catalog="system" width="128" height="123"/>
         <image name="list.bullet.rectangle.fill" catalog="system" width="128" height="93"/>
         <image name="medic" width="137" height="147"/>
         <image name="person.circle" catalog="system" width="128" height="123"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="person.crop.rectangle.badge.plus" catalog="system" width="128" height="96"/>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
         <image name="plus.app" catalog="system" width="128" height="114"/>
