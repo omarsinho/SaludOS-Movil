@@ -32,6 +32,7 @@
 		FB82F31828DBD1C600C061F3 /* VCSignUp_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82F31228DBD1C600C061F3 /* VCSignUp_1.swift */; };
 		FB82F31928DBD1C600C061F3 /* VCSignUp_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82F31328DBD1C600C061F3 /* VCSignUp_2.swift */; };
 		FB82F31B28DBD1C600C061F3 /* VCPerfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82F31528DBD1C600C061F3 /* VCPerfil.swift */; };
+		FBAF974C29009E110018EA11 /* PU_VCEditarPerfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAF974B29009E110018EA11 /* PU_VCEditarPerfil.swift */; };
 		FBBB9B5528E8C87C001396E3 /* PopUp_VCEncuestaSemanal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB9B5428E8C87C001396E3 /* PopUp_VCEncuestaSemanal.swift */; };
 		FBBB9B5728E8CDBC001396E3 /* PopUp_Notificaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB9B5628E8CDBC001396E3 /* PopUp_Notificaciones.swift */; };
 		FBBCA67928FE0E250032A718 /* PU_VCCreditos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBCA67828FE0E250032A718 /* PU_VCCreditos.swift */; };
@@ -69,6 +70,7 @@
 		FB82F31228DBD1C600C061F3 /* VCSignUp_1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCSignUp_1.swift; sourceTree = "<group>"; };
 		FB82F31328DBD1C600C061F3 /* VCSignUp_2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCSignUp_2.swift; sourceTree = "<group>"; };
 		FB82F31528DBD1C600C061F3 /* VCPerfil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCPerfil.swift; sourceTree = "<group>"; };
+		FBAF974B29009E110018EA11 /* PU_VCEditarPerfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PU_VCEditarPerfil.swift; sourceTree = "<group>"; };
 		FBBB9B5428E8C87C001396E3 /* PopUp_VCEncuestaSemanal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp_VCEncuestaSemanal.swift; sourceTree = "<group>"; };
 		FBBB9B5628E8CDBC001396E3 /* PopUp_Notificaciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp_Notificaciones.swift; sourceTree = "<group>"; };
 		FBBCA67828FE0E250032A718 /* PU_VCCreditos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PU_VCCreditos.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				E05435EB28FB5A6700392E9F /* TableVCHistorial.swift */,
 				FBBCAD7928F4A2DA00792BAD /* privacidad.pdf */,
+				FBAF974B29009E110018EA11 /* PU_VCEditarPerfil.swift */,
 				FBBCA67828FE0E250032A718 /* PU_VCCreditos.swift */,
 				FBBCAD7728F4A20C00792BAD /* PopUp_VCPrivacidad.swift */,
 				FBD2C8FE28EB927F006B575A /* PopUp_VCToken.swift */,
@@ -290,6 +293,7 @@
 				FBC837C028E63AC5006B6086 /* VCVistaMedicos.swift in Sources */,
 				E05435EC28FB5A6700392E9F /* TableVCHistorial.swift in Sources */,
 				FBBB9B5528E8C87C001396E3 /* PopUp_VCEncuestaSemanal.swift in Sources */,
+				FBAF974C29009E110018EA11 /* PU_VCEditarPerfil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

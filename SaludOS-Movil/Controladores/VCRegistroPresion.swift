@@ -119,11 +119,13 @@ class VCRegistroPresion: UIViewController /*UITabBarController*/ {
                             self.present(alerta, animated: true)
                         }
                         else {
-                            //                            self.dismiss(animated: true, completion: nil)
-                            //                            self.view.exchangeSubview(at: 2, withSubviewAt: 1)
-                            self.tabBarController?.view.removeFromSuperview()
-
-                            
+                            let alerta = UIAlertController(title: "Proceso Finalizado!", message: "Porfavor salir de esta pestaña" , preferredStyle: .alert)
+                            alerta.addAction(UIAlertAction(title: "OK", style: .cancel))
+                            self.present(alerta, animated: true)
+                            self.tfPresionSYS.text = ""
+                            self.tfPresionDIA.text = ""
+                            self.tfPulso.text = ""
+                            self.tfComentarios.text = ""
                          }
                     }
                 }
@@ -152,13 +154,13 @@ class VCRegistroPresion: UIViewController /*UITabBarController*/ {
                         alerta.addAction(accion)
                         self.present(alerta, animated: true)
                     } else {
-//                        self.dismiss(animated: true, completion: nil)
-//                        self.view.exchangeSubview(at: 2, withSubviewAt: 1)
-//                        let VC1 = self.storyboard!.instantiateViewController(withIdentifier: "VCInicio") as! VCInicio
-//                        VC1.tabBarController?.selectedIndex = 0
-//                        self.navigationController!.pushViewController(VC1, animated: true)
-//                        self.tabBarController?.view.willMove(toSuperview: <#T##UIView?#>)
-
+                        let alerta = UIAlertController(title: "Proceso Finalizado!", message: "Porfavor salir de esta pestaña" , preferredStyle: .alert)
+                        alerta.addAction(UIAlertAction(title: "OK", style: .cancel))
+                        self.present(alerta, animated: true)
+                        self.tfPresionSYS.text = ""
+                        self.tfPresionDIA.text = ""
+                        self.tfPulso.text = ""
+                        self.tfComentarios.text = ""
                      }
                 }
             }

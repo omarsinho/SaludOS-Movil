@@ -60,5 +60,5 @@ class VCLogin: UIViewController {
     
     @IBAction func quitaTeclado(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
-    }
+    } 
 }

@@ -89,6 +89,9 @@
                                             </backgroundConfiguration>
                                             <fontDescription key="titleFontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="18"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="hh6-II-uWV" kind="presentation" modalPresentationStyle="overCurrentContext" id="JJp-9w-g5u"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aE-QL-kix">
                                         <rect key="frame" x="0.0" y="98" width="201.5" height="32"/>
@@ -912,16 +915,16 @@
             </objects>
             <point key="canvasLocation" x="16.923076923076923" y="-611.37440758293837"/>
         </scene>
-        <!--View Controller-->
+        <!--Editar Perfil-->
         <scene sceneID="5GH-cB-avs">
             <objects>
-                <viewController id="hh6-II-uWV" sceneMemberID="viewController">
+                <viewController id="hh6-II-uWV" customClass="PU_VCEditarPerfil" customModule="SaludOS_Movil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fvq-0b-v5B">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1aY-fk-t92">
-                                <rect key="frame" x="75" y="143" width="240" height="539"/>
+                                <rect key="frame" x="20" y="48" width="374" height="814"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raG-ui-VbI">
@@ -929,6 +932,24 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
                                     </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Estatura:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LbF-a6-pva">
+                                        <rect key="frame" x="58" y="175" width="97" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Peso:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VFr-I8-36b">
+                                        <rect key="frame" x="56" y="337" width="97" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tipo de Sangre:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pxp-JA-336">
+                                        <rect key="frame" x="60" y="580" width="97" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -944,7 +965,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lSB-MI-QuI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1439" y="-1288"/>
+            <point key="canvasLocation" x="1437.68115942029" y="-1288.3928571428571"/>
         </scene>
         <!--Pop UpVC Encuesta Semanal-->
         <scene sceneID="HFU-W8-qLN">
@@ -1541,7 +1562,7 @@ Ing. Luis Enrique Cuevas Huesca</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ipa-Lq-Md4"/>
+        <segue reference="21p-BL-D5T"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera.circle" catalog="system" width="128" height="123"/>

@@ -122,8 +122,8 @@ class VCInicio: UIViewController {
             let accion = UIAlertAction(title: "OK", style: .cancel)
             alerta.addAction(accion)
             present(alerta, animated: true)
+        }
     }
-    
     
     
 }
