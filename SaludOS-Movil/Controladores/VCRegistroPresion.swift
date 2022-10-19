@@ -164,12 +164,7 @@ class VCRegistroPresion: UIViewController /*UITabBarController*/ {
             }
         }
     }
-    
-   
-//    @IBAction func Regresar(_ sender: UIButton) {
-//        self.dismiss(animated: true)
-//    }
-    
+
     @IBAction func quitaTeclado(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }

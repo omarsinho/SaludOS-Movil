@@ -67,7 +67,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAU-4l-WA8">
                                         <rect key="frame" x="0.0" y="0.0" width="201.5" height="32"/>
-                                        <color key="tintColor" systemColor="systemPurpleColor"/>
+                                        <color key="tintColor" red="0.85833978977333125" green="0.38596546406648596" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Checa tus Médico(s)">
                                             <backgroundConfiguration key="background" cornerRadius="15" strokeWidth="1">
@@ -81,9 +81,9 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fto-ap-PoZ">
                                         <rect key="frame" x="0.0" y="49" width="201.5" height="32"/>
-                                        <color key="tintColor" red="0.39520236850000001" green="0.44014438989999999" blue="0.90799874069999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.72360758878746811" green="0.26966899430670704" blue="0.90799874069999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Privacidad">
+                                        <buttonConfiguration key="configuration" style="plain" title="Editar Perfil">
                                             <backgroundConfiguration key="background" cornerRadius="15" strokeWidth="1">
                                                 <color key="strokeColor" white="0.79827592729999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </backgroundConfiguration>
@@ -179,7 +179,8 @@
                             <constraint firstItem="2QM-C3-vms" firstAttribute="top" secondItem="aNK-LN-Hm2" secondAttribute="bottom" id="wZg-zq-mxy"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Perfil" image="person.circle" catalog="system" id="vTc-u1-Fo6">
+                    <tabBarItem key="tabBarItem" title="Perfil" id="vTc-u1-Fo6">
+                        <imageReference key="image" image="person.circle" catalog="system" symbolScale="large" variableValue="5.5511151231257827e-17"/>
                         <imageReference key="selectedImage" image="person.circle.fill" catalog="system" symbolScale="large"/>
                     </tabBarItem>
                     <connections>
@@ -241,8 +242,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="nE2-9t-Ftr" kind="relationship" relationship="viewControllers" id="Qb7-P8-PZY"/>
-                        <segue destination="uSD-25-GSM" kind="relationship" relationship="viewControllers" id="xgm-AH-uGQ"/>
-                        <segue destination="nYF-kg-14I" kind="relationship" relationship="viewControllers" id="QBP-ei-vzs"/>
+                        <segue destination="uSD-25-GSM" kind="relationship" relationship="viewControllers" id="Cyy-kI-OXV"/>
+                        <segue destination="nYF-kg-14I" kind="relationship" relationship="viewControllers" id="KxD-9Q-0t2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yvs-T8-PWw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -459,7 +460,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRE-hL-bqt">
-                                <rect key="frame" x="151" y="696" width="106" height="44"/>
+                                <rect key="frame" x="151" y="745" width="106" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="0.65904951099999998" green="0.09080284089" blue="0.11860119550000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
@@ -480,7 +481,6 @@
                                 </constraints>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
-                                    <action selector="Regresar:" destination="uSD-25-GSM" eventType="touchUpInside" id="5I0-he-luw"/>
                                     <action selector="Regresar:" destination="Ndp-6L-2YI" eventType="touchUpInside" id="alt-U5-6ru"/>
                                 </connections>
                             </button>
@@ -663,14 +663,14 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCO-QC-Xe5">
-                                <rect key="frame" x="20" y="68" width="54.5" height="54.5"/>
+                                <rect key="frame" x="20" y="68" width="63" height="54.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54.5" id="4nZ-kp-gvK"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title=" ">
                                     <imageReference key="image" image="info.circle" catalog="system" symbolScale="large"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="23" scale="large"/>
                                     <color key="baseForegroundColor" systemColor="systemTealColor"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -696,15 +696,16 @@
                                 <rect key="frame" x="44" y="250" width="326" height="454"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNc-Aq-MqJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="326" height="70"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="326" height="50.5"/>
                                         <color key="tintColor" systemColor="systemPurpleColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Gráfica de Presión Arterial" cornerStyle="fixed" buttonSize="large">
+                                        <buttonConfiguration key="configuration" style="plain" imagePlacement="leading" title="Gráfica de Presión Arterial" cornerStyle="fixed" buttonSize="large">
                                             <imageReference key="image" image="chart.line.uptrend.xyaxis" catalog="system" symbolScale="large"/>
                                             <backgroundConfiguration key="background" cornerRadius="15" strokeWidth="1" strokeOutset="0.0">
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="strokeColor" white="0.79689430703922193" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </backgroundConfiguration>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="28" scale="large" weight="semibold"/>
                                             <fontDescription key="titleFontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="20"/>
                                             <color key="baseForegroundColor" systemColor="systemPinkColor"/>
                                         </buttonConfiguration>
@@ -713,16 +714,18 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zX8-Pm-FDk">
-                                        <rect key="frame" x="0.0" y="90" width="326" height="120"/>
+                                        <rect key="frame" x="0.0" y="70.5" width="326" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="axm-dZ-FZz"/>
                                         </constraints>
                                         <color key="tintColor" systemColor="systemPurpleColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="list.bullet.rectangle.fill" catalog="system" title="Indicaciones del Medico">
+                                        <buttonConfiguration key="configuration" style="plain" imagePlacement="leading" title="Indicaciones del Medico">
+                                            <imageReference key="image" image="list.bullet.rectangle.fill" catalog="system" symbolScale="large"/>
                                             <backgroundConfiguration key="background" cornerRadius="15" strokeWidth="1">
                                                 <color key="strokeColor" white="0.79689430703922193" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </backgroundConfiguration>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="28" scale="large" weight="semibold"/>
                                             <fontDescription key="titleFontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="22"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -730,16 +733,18 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3C5-bg-LEB">
-                                        <rect key="frame" x="0.0" y="230" width="326" height="120"/>
+                                        <rect key="frame" x="0.0" y="210.5" width="326" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="P0n-0d-rSK"/>
                                         </constraints>
                                         <color key="tintColor" systemColor="systemIndigoColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="rectangle.and.pencil.and.ellipsis" catalog="system" title="Historial de Registros">
+                                        <buttonConfiguration key="configuration" style="plain" imagePlacement="leading" title="Historial de Registros">
+                                            <imageReference key="image" image="rectangle.and.pencil.and.ellipsis" catalog="system" symbolScale="large"/>
                                             <backgroundConfiguration key="background" cornerRadius="15" strokeWidth="1">
                                                 <color key="strokeColor" white="0.79689430703922193" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </backgroundConfiguration>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="28" scale="large" weight="semibold"/>
                                             <fontDescription key="titleFontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="22"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -747,17 +752,19 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="euq-vW-4Lm">
-                                        <rect key="frame" x="0.0" y="370" width="326" height="44"/>
+                                        <rect key="frame" x="0.0" y="350.5" width="326" height="63.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="chart.bar.doc.horizontal" catalog="system" title="Encuesta Semanal" buttonSize="large">
+                                        <buttonConfiguration key="configuration" style="plain" imagePlacement="leading" title="Encuesta Semanal" buttonSize="large">
+                                            <imageReference key="image" image="chart.bar.doc.horizontal" catalog="system" symbolScale="large"/>
                                             <backgroundConfiguration key="background" cornerRadius="15" strokeWidth="1">
                                                 <color key="strokeColor" white="0.79689430703922193" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </backgroundConfiguration>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="28" scale="large" weight="semibold"/>
                                             <fontDescription key="titleFontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="20"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="AbrirEncuestaSemanal:" destination="uSD-25-GSM" eventType="touchUpInside" id="e4e-fc-veU"/>
+                                            <action selector="btnEncuestaSemanal:" destination="nE2-9t-Ftr" eventType="touchUpInside" id="fBM-VS-RAA"/>
                                             <segue destination="Ndp-6L-2YI" kind="presentation" modalPresentationStyle="overCurrentContext" id="Iez-UP-lzs"/>
                                         </connections>
                                     </button>
@@ -790,9 +797,10 @@
                             <constraint firstAttribute="bottomMargin" secondItem="RFR-ab-NpV" secondAttribute="bottom" constant="-1" id="l7Z-6p-ynA"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="Inicio" image="house" catalog="system" id="Fa8-hr-oaw">
+                    <tabBarItem key="tabBarItem" tag="1" title="Inicio" id="Fa8-hr-oaw">
+                        <imageReference key="image" image="house" catalog="system" symbolScale="large"/>
                         <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <imageReference key="selectedImage" image="house.fill" catalog="system" symbolScale="default"/>
+                        <imageReference key="selectedImage" image="house.fill" catalog="system" symbolScale="large"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <connections>
@@ -1533,7 +1541,7 @@ Ing. Luis Enrique Cuevas Huesca</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="21p-BL-D5T"/>
+        <segue reference="Ipa-Lq-Md4"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera.circle" catalog="system" width="128" height="123"/>
