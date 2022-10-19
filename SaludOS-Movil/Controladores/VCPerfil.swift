@@ -12,8 +12,6 @@ import Firebase
 class VCPerfil: UIViewController {
 
     @IBOutlet weak var lbNombre: UILabel!
-    @IBOutlet weak var lbStatus: UILabel!
-    
     @IBOutlet weak var imgPerfil: UIImageView!
     
     //var foto = UIImage()

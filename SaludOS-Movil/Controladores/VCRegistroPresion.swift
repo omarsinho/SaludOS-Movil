@@ -15,7 +15,7 @@ import Firebase
 //    }
 //}
 
-class VCRegistroPresion: UIViewController {
+class VCRegistroPresion: UIViewController /*UITabBarController*/ {
     
     @IBOutlet weak var switchEjercicio: UISwitch!
     @IBOutlet weak var tfPresionSYS: UITextField!
@@ -47,6 +47,8 @@ class VCRegistroPresion: UIViewController {
     
     override func viewWillAppear(_: Bool) {
         super.viewWillAppear(true)
+        
+//        self.view.exchangeSubview(at: 2, withSubviewAt: 0)
         
         veces = 0
         tfComentarios.isHidden = false
@@ -151,8 +153,9 @@ class VCRegistroPresion: UIViewController {
         }
     }
     
-    @IBAction func cierraView(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+   
+    @IBAction func Regresar(_ sender: UIButton) {
+        self.dismiss(animated: true)
     }
     
     @IBAction func quitaTeclado(_ sender: UITapGestureRecognizer) {
