@@ -12,21 +12,28 @@ import SwiftUI
 
 class VCInicio: UIViewController {
     
-    
+ 
+        
     @IBOutlet weak var lbNombre: UILabel!
-    @IBOutlet weak var lbToma: UIButton!
-    @IBOutlet weak var btnLblSugerenciaDiaria: UIButton!
-    
+    @IBOutlet weak var lbToma: UILabel!
+
     var arregloFechayHoraToma: Array<String> = []
     
-    var listSugerenciaDiariaText = ["Nueces", "Brócoli", "Chocolate Negro", "Fresas", "Curry", "Té Verde", "Aceite de Oliva", "Salmón", "Vino Tinto", "Legumbres"]
-    var listSugerenciaDiariaImages = ["nueces", "brocoli", "choco", "fresas", "curry", "te", "aceite", "salmon", "vino", "legu"]
-    
     let db = Firestore.firestore()
+    
+//    let button = UIButton.init(type: .custom)
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//        button.setTitle("Registro", for: .normal)
+//        button.setTitleColor(.lightGray, for: .normal)
+//        button.setTitleColor(.systemCyan, for: .highlighted)
+//        button.imageView?.image = UIImage(systemName: "plus.app")
+//        self.view.insertSubview(button, aboveSubview: self.tabBar)
+        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        
         db.collection("Paciente").document(Auth.auth().currentUser!.uid).getDocument {
             (documentSnapshot, error) in
             if let document = documentSnapshot, error == nil {
@@ -39,7 +46,7 @@ class VCInicio: UIViewController {
             }
         }
         
-        sugerenciaDiaria()
+//        sugerenciaDiaria()
     }
     
     override func viewWillAppear(_: Bool) {
@@ -72,14 +79,6 @@ class VCInicio: UIViewController {
         calculoToma()
     }
     
-    func sugerenciaDiaria() {
-            let rand = Int(arc4random_uniform(10))
-            let str = "Sugerencia Diaria: " + listSugerenciaDiariaText[rand]
-            btnLblSugerenciaDiaria.titleLabel?.text = str
-            btnLblSugerenciaDiaria.imageView?.image =
-            UIImage(named: listSugerenciaDiariaImages[rand])
-            return
-    }
         
     func calculoToma() {
         // EJEMPLO STRING: 2022-10-15 13:04:59
@@ -87,7 +86,7 @@ class VCInicio: UIViewController {
         
         // Get String from DB and change current variable
         strDB = "2022-10-15 18:04:59"
-        var auxTwo = strDB.components(separatedBy: " ")
+        let auxTwo = strDB.components(separatedBy: " ")
         let auxDateDB = auxTwo[0].components(separatedBy: "-")
         let auxTimeDB = auxTwo[1].components(separatedBy: ":")
         
@@ -97,25 +96,35 @@ class VCInicio: UIViewController {
         let month = calendar.component(.month, from: date)
         let day = calendar.component(.day, from: date)
         let hour = calendar.component(.hour, from: date)
-        let minutes = calendar.component(.minute, from: date)
+//        let minutes = calendar.component(.minute, from: date)
         
         if let yearComparison = Int(auxDateDB[0]),
             let monthComparison = Int(auxDateDB[1]),
-            let dayComparison = Int(auxDateDB[2]) {
-            if (yearComparison > year) || (monthComparison > month) {
-                lbToma.titleLabel?.text = "Toma Pendiente"
+            let dayComparison = Int(auxDateDB[2]),
+            let hourComparison = Int(auxTimeDB[0]) {
+            if (yearComparison > year) || (monthComparison > month) || ((dayComparison + 3) > day){
+                lbToma.text = "Toma Pendiente"
             } else {
                 var calculo : Int!
                 var tiempo = 1
                 if day > dayComparison {
                     tiempo = day - dayComparison
                 }
-                calculo = ( 24 * tiempo ) - hour
-                lbToma.titleLabel?.text = "Siguiente Toma: " + String(calculo) + " horas..."
+                calculo = ( 24 * tiempo + hourComparison) - hour
+                lbToma.text = "Siguiente Toma: " + String(calculo) + " horas..."
             }
         }
         return
     }
+    
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        button.frame = CGRect.init(x: self.tabBar.center.x - 32, y: self.view.bounds.height - 74, width: 64, height: 64)
+//        button.layer.cornerRadius = 32
+//    }
+//    override func didReceiveMemoryWarning() {
+//        super.didReceiveMemoryWarning()
+//    }
 
     @IBSegueAction func showGrafica(_ coder: NSCoder) -> UIViewController? {
         return UIHostingController(coder: coder, rootView: VistaGrafica())    }

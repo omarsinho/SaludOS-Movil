@@ -15,7 +15,7 @@ import Firebase
 //    }
 //}
 
-class VCRegistroPresion: UIViewController {
+class VCRegistroPresion: UIViewController /*UITabBarController*/ {
     
     @IBOutlet weak var switchEjercicio: UISwitch!
     @IBOutlet weak var tfPresionSYS: UITextField!
@@ -47,6 +47,8 @@ class VCRegistroPresion: UIViewController {
     
     override func viewWillAppear(_: Bool) {
         super.viewWillAppear(true)
+        
+//        self.view.exchangeSubview(at: 2, withSubviewAt: 0)
         
         veces = 0
         tfComentarios.isHidden = false
@@ -84,8 +86,12 @@ class VCRegistroPresion: UIViewController {
             
             let formatter2 = DateFormatter()
             formatter2.dateFormat = "yyyy-MM-dd"
-            
-            let emo = Double(Int(self.sldrEmocional.value * 1000)) / 100
+            var emo : Double
+            if self.sldrEmocional.value.isNormal {
+                emo = Double(Int(self.sldrEmocional.value * 1000)) / 100
+            } else {
+                emo = 0.0
+            }
             
             presionSistolica += Double(tfPresionSYS.text!)!
             presionDiastolica += Double(tfPresionDIA.text!)!
@@ -113,7 +119,11 @@ class VCRegistroPresion: UIViewController {
                             self.present(alerta, animated: true)
                         }
                         else {
-                            self.dismiss(animated: true, completion: nil)
+                            //                            self.dismiss(animated: true, completion: nil)
+                            //                            self.view.exchangeSubview(at: 2, withSubviewAt: 1)
+                            self.tabBarController?.view.removeFromSuperview()
+
+                            
                          }
                     }
                 }
@@ -132,8 +142,7 @@ class VCRegistroPresion: UIViewController {
                 alerta.addAction(accion1)
                 alerta.addAction(accion2)
                 present(alerta, animated: true)
-            }
-            else {
+            } else {
                 db.collection("RegistroPresion").document(formatter.string(from: Date()) + " - \(Auth.auth().currentUser!.uid)").setData(["comentarios": self.tfComentarios.text!,"fechayHoraToma": formatter.string(from: Date()), "hicisteEjercicio": self.hicisteEjercicio(), "medidorEmocional": emo, "presionDiastolica": self.presionDiastolica / self.veces, "presionSistolica": self.presionSistolica / self.veces, "pulso": self.pulso / self.veces, "uidPaciente": Auth.auth().currentUser!.uid]) {
                     (error) in
                     
@@ -142,18 +151,24 @@ class VCRegistroPresion: UIViewController {
                         let accion = UIAlertAction(title: "OK", style: .cancel)
                         alerta.addAction(accion)
                         self.present(alerta, animated: true)
-                    }
-                    else {
-                        self.dismiss(animated: true, completion: nil)
+                    } else {
+//                        self.dismiss(animated: true, completion: nil)
+//                        self.view.exchangeSubview(at: 2, withSubviewAt: 1)
+//                        let VC1 = self.storyboard!.instantiateViewController(withIdentifier: "VCInicio") as! VCInicio
+//                        VC1.tabBarController?.selectedIndex = 0
+//                        self.navigationController!.pushViewController(VC1, animated: true)
+//                        self.tabBarController?.view.willMove(toSuperview: <#T##UIView?#>)
+
                      }
                 }
             }
         }
     }
     
-    @IBAction func cierraView(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
-    }
+   
+//    @IBAction func Regresar(_ sender: UIButton) {
+//        self.dismiss(animated: true)
+//    }
     
     @IBAction func quitaTeclado(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
