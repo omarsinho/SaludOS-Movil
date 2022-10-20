@@ -42,14 +42,13 @@ class VCRegistroPresion: UIViewController /*UITabBarController*/ {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        lbMedidor.text = "¿Como te sientes del 1 al 10? ###"
     }
     
     override func viewWillAppear(_: Bool) {
         super.viewWillAppear(true)
         
-//        self.view.exchangeSubview(at: 2, withSubviewAt: 0)
-        
+        sldrEmocional.value = 0.5
+        lbMedidor.text = "¿Cómo te sientes del 1 al 10? 5.0"
         veces = 0
         tfComentarios.isHidden = false
         switchEjercicio.isHidden = false
