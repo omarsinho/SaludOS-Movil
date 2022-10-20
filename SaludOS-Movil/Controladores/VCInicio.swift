@@ -15,7 +15,7 @@ class VCInicio: UIViewController {
     @IBOutlet weak var lbNombre: UILabel!
     @IBOutlet weak var lbToma: UILabel!
 
-    var arregloFechayHoraToma: Array<String> = []
+    var arregloFechayHoraToma: Array<String> = ["Haz tu primer registro de presión arterial"]
     
     let db = Firestore.firestore()
         
@@ -59,16 +59,18 @@ class VCInicio: UIViewController {
                             print("Error desconocido")
                         }
                     }
-                    self.calculoToma(toma: self.arregloFechayHoraToma.last ?? "$")
+                    print(self.arregloFechayHoraToma.last!)
+                    self.calculoToma(toma: self.arregloFechayHoraToma.last!)
                 }
             }
         }
     
         
     func calculoToma(toma: String!) {
-        if toma == "$" {
-            lbToma.text = "Error en la Base de Datos"
-        } else {
+        if toma == "Haz tu primer registro de presión arterial" {
+            lbToma.text = "Haz tu primer registro de presión arterial"
+        }
+        else {
             // EJEMPLO STRING: 2022-10-15 13:04:59
             let auxTwo = toma.components(separatedBy: " ")
             let auxDateDB = auxTwo[0].components(separatedBy: "-")
@@ -86,16 +88,16 @@ class VCInicio: UIViewController {
                 let monthComparison = Int(auxDateDB[1]),
                 let dayComparison = Int(auxDateDB[2]),
                 let hourComparison = Int(auxTimeDB[0]) {
-                if (yearComparison > year) || (monthComparison > month) || ((dayComparison + 3) > day){
+                if (yearComparison < year) || (monthComparison < month) || ((dayComparison + 3) < day){
                     lbToma.text = "Toma Pendiente"
                 } else {
                     var calculo : Int!
                     var tiempo = 1
-                    if day > dayComparison {
+                    if dayComparison < day {
                         tiempo = day - dayComparison
                     }
                     calculo = ( 24 * tiempo + hourComparison) - hour
-                    lbToma.text = "Siguiente Toma: " + String(calculo) + " horas..."
+                    lbToma.text = "Siguiente Toma recomendada en:              " + String(calculo) + " hora(s)"
                 }
             }
         }

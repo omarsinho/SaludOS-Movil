@@ -21,7 +21,6 @@ class PopUp_VCEncuestaSemanal: UIViewController {
         super.viewDidLoad()
     }
     
-    
     @IBAction func SubmitCuestionario(_ sender: UIButton) {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
@@ -32,7 +31,7 @@ class PopUp_VCEncuestaSemanal: UIViewController {
         
         
         
-        db.collection("CuestionarioSemanal").document().setData(["fechaCuestionario": formatter.string(from: Date()), "medidorAlimentacion": ali, "medidorEjercicio": eje, "medidorEmocional": emo, "uidPaciente": Auth.auth().currentUser!.uid]) {
+        db.collection("CuestionarioSemanal").document(formatter.string(from: Date()) + " - \(Auth.auth().currentUser!.uid)").setData(["fechaCuestionario": formatter.string(from: Date()), "medidorAlimentacion": ali, "medidorEjercicio": eje, "medidorEmocional": emo, "uidPaciente": Auth.auth().currentUser!.uid]) {
             (error) in
             
             if error != nil {

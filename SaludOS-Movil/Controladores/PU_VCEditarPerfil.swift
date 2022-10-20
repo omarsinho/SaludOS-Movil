@@ -30,6 +30,8 @@ class PU_VCEditarPerfil : UIViewController, UIPickerViewDelegate, UIPickerViewDa
     var tipoSangrePicker = UIPickerView()
     let tipoSangreValues = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"]
     var tipoSangreName: String = "NA"
+    
+    let db = Firestore.firestore()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +42,26 @@ class PU_VCEditarPerfil : UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         setTipoSangrePicker()
     }
+    
+    override func viewWillAppear(_: Bool) {
+            super.viewWillAppear(true)
+            db.collection("Paciente").document(Auth.auth().currentUser!.uid).getDocument {
+                (documentSnapshot, error) in
+                if let document = documentSnapshot, error == nil {
+                    if let nombrePila = document.get("nombrePila") as? String, let apellidoP = document.get("apellidoPaterno") as? String, let apellidoM = document.get("apellidoMaterno") as? String, let altura = document.get("altura") as? String, let peso = document.get("peso") as? String, let tipoSangre = document.get("tipoSangre") as? String {
+                        self.tfNombre.text = nombrePila
+                        self.tfPaterno.text = apellidoP
+                        self.tfMaterno.text = apellidoM
+                        self.tfAltura.text = altura
+                        self.tfPeso.text = peso
+                        self.tfTipoSangre.text = tipoSangre
+                    }
+                }
+                else {
+                    self.presentaAlerta(mensaje: error!.localizedDescription)
+                }
+            }
+        }
     
     // MARK: - Funciones para el Dropdown
     
@@ -118,9 +140,36 @@ class PU_VCEditarPerfil : UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     @IBAction func btnGuardar(_ sender: UIButton) {
-        
+        if tfNombre.text?.isEmpty == true || tfPaterno.text?.isEmpty == true || tfMaterno.text?.isEmpty == true {
+            presentaAlerta(mensaje: "NO debe quedar ningún campo vacío.")
+        }
+        else {
+            db.collection("Paciente").document(Auth.auth().currentUser!.uid).setData(["altura": tfAltura.text!, "apellidoMaterno": tfMaterno.text!, "apellidoPaterno": tfPaterno.text!, "nombrePila": tfNombre.text!, "peso": tfPeso.text!, "tipoSangre": tfTipoSangre.text!], merge: true) {
+                (error) in
+                
+                if error != nil {
+                    self.presentaAlerta(mensaje: error!.localizedDescription)
+                }
+                else {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
     }
+    
+    @IBAction func Regresar(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func presentaAlerta(mensaje: String) {
+        let alerta = UIAlertController(title: "Error", message: mensaje, preferredStyle: .alert)
+        let accion = UIAlertAction(title: "OK", style: .cancel)
+        alerta.addAction(accion)
+        present(alerta, animated: true)
+    }
+
 }
+
 
 // MARK: - Clase auxiliar para el Dropdown
 //

@@ -122,30 +122,13 @@ class VCSignUp_2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
                 // El usuario fue creado exitosamente, ahora almacenar sus datos en la base de datos.
                 let db = Firestore.firestore()
                 
-                var altura: Float
-                var peso: Float
+                var altura: String
+                var peso: String
                 var tipoSangre: String
                 
-                if self.tfAltura.text?.isEmpty == true {
-                    altura = -1
-                }
-                else {
-                    altura = Float(self.tfAltura.text!)!
-                }
-                
-                if self.tfPeso.text?.isEmpty == true {
-                    peso = -1
-                }
-                else {
-                    peso = Float(self.tfPeso.text!)!
-                }
-                
-                if self.tfTipoSangre.text?.isEmpty == true {
-                    tipoSangre = ""
-                }
-                else {
-                    tipoSangre = self.tfTipoSangre.text!
-                }
+                altura = self.tfAltura.text!
+                peso = self.tfPeso.text!
+                tipoSangre = self.tfTipoSangre.text!
                 
                 print("Datos Sign Up 2: ")
                 print(altura)
