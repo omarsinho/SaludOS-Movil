@@ -45,20 +45,20 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="W4X-yf-aZj">
-                                <rect key="frame" x="83.5" y="683" width="247.5" height="99"/>
+                                <rect key="frame" x="76.5" y="683" width="261" height="99"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50V-i3-QN9">
-                                        <rect key="frame" x="0.0" y="0.0" width="247.5" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="261" height="34.5"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Inicia Sesion"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Iniciar Sesión"/>
                                         <connections>
                                             <action selector="IniciarSesion:" destination="LG7-Hi-gD1" eventType="touchUpInside" id="99O-R3-dgL"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4K1-fO-0Hi">
-                                        <rect key="frame" x="0.0" y="64.5" width="247.5" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="64.5" width="261" height="34.5"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="No tienes cuenta? Registrate!"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="¿No tienes cuenta? ¡Regístrate!"/>
                                         <connections>
                                             <segue destination="H70-if-cim" kind="presentation" modalPresentationStyle="fullScreen" id="91Y-MJ-JVq"/>
                                         </connections>
@@ -261,9 +261,9 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZe-hj-C1S">
-                                <rect key="frame" x="159" y="747.5" width="96" height="34.5"/>
+                                <rect key="frame" x="157.5" y="747.5" width="99.5" height="34.5"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Terminar!"/>
+                                <buttonConfiguration key="configuration" style="plain" title="¡Terminar!"/>
                                 <connections>
                                     <action selector="CrearCuenta:" destination="gee-U0-Ma4" eventType="touchUpInside" id="p5b-Cz-dpK"/>
                                 </connections>
@@ -324,7 +324,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VA6-fv-x40"/>
+        <segue reference="IhM-YL-EY1"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SSA" width="1029" height="276"/>

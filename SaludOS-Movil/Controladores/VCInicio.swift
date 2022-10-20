@@ -51,8 +51,6 @@ class VCInicio: UIViewController {
                     
                     for document in querySnapshot.documents {
                         if let fechayHoraToma = document.get("fechayHoraToma") as? String {
-                            print(fechayHoraToma)
-                            print("Hola Fecha")
                             self.arregloFechayHoraToma.append(fechayHoraToma)
                         }
                         else {
@@ -88,16 +86,16 @@ class VCInicio: UIViewController {
                 let monthComparison = Int(auxDateDB[1]),
                 let dayComparison = Int(auxDateDB[2]),
                 let hourComparison = Int(auxTimeDB[0]) {
-                if (yearComparison < year) || (monthComparison < month) || ((dayComparison + 3) < day){
-                    lbToma.text = "Toma Pendiente"
+                if (yearComparison < year) || (monthComparison < month) || ((dayComparison + 1) < day){
+                    lbToma.text = "Toma Pendiente. Por favor registre su presión arterial lo antes posible."
                 } else {
                     var calculo : Int!
                     var tiempo = 1
                     if dayComparison < day {
                         tiempo = day - dayComparison
                     }
-                    calculo = ( 24 * tiempo + hourComparison) - hour
-                    lbToma.text = "Siguiente Toma recomendada en:              " + String(calculo) + " hora(s)"
+                    calculo = ( 23 * tiempo + hourComparison) - hour
+                    lbToma.text = "Siguiente toma recomendada en: \n" + String(calculo) + " hora(s)"
                 }
             }
         }
@@ -116,7 +114,7 @@ class VCInicio: UIViewController {
     }
     
     @IBAction func btnEncuestaSemanal(_ sender: UIButton) {
-        let date = Date()
+        /*let date = Date()
         let calendar = Calendar.current
         var components = calendar.dateComponents([.day, .month, .year, .weekday], from: date as Date)
         if components.weekday != 1 { // Si no es domigno, marca error
@@ -124,7 +122,7 @@ class VCInicio: UIViewController {
             let accion = UIAlertAction(title: "OK", style: .cancel)
             alerta.addAction(accion)
             present(alerta, animated: true)
-        }
+        }*/
     }
     
     

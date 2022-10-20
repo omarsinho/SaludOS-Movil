@@ -15,10 +15,42 @@ class PopUp_VCEncuestaSemanal: UIViewController {
     @IBOutlet weak var sldrEjercicio: UISlider!
     @IBOutlet weak var sldrEmocional: UISlider!
     
+    @IBOutlet weak var lbAlimentacion: UILabel!
+    @IBOutlet weak var lbEjercicio: UILabel!
+    @IBOutlet weak var lbEmocional: UILabel!
+    
     let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_: Bool) {
+        super.viewWillAppear(true)
+        
+        lbAlimentacion.text = "¿Cómo te has alimentado esta semana? 5.0"
+        sldrAlimentacion.value = 0.5
+        lbEjercicio.text = "¿Haz hecho ejercicio esta semana? 5.0"
+        sldrEjercicio.value = 0.5
+        lbEmocional.text = "¿Como te has sentido esta semana? 5.0"
+        sldrEmocional.value = 0.5
+    }
+    
+    
+    @IBAction func CambiaValorAlim(_ sender: UISlider) {
+        let ali = Double(Int(self.sldrAlimentacion.value * 1000)) / 100
+        lbAlimentacion.text = "¿Cómo te has alimentado esta semana? " + "\(ali)"
+    }
+    
+    @IBAction func CambiaValorEjercicio(_ sender: UISlider) {
+        let eje = Double(Int(self.sldrEjercicio.value * 1000)) / 100
+        lbEjercicio.text = "¿Haz hecho ejercicio esta semana? " + "\(eje)"
+    }
+    
+    
+    @IBAction func CambiaValorEmocional(_ sender: UISlider) {
+        let emo = Double(Int(self.sldrEmocional.value * 1000)) / 100
+        lbEmocional.text = "¿Como te has sentido esta semana? " + "\(emo)"
     }
     
     @IBAction func SubmitCuestionario(_ sender: UIButton) {
