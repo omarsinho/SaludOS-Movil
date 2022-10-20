@@ -61,6 +61,15 @@ class PopUp_VCToken: UIViewController {
         }.joined()
     }
     
+    @IBAction func btnShare(_ sender: UIButton) {
+        
+        let mensaje = lbToken.text
+        let share = [mensaje!] as [Any]
+        let activityViewController = UIActivityViewController(activityItems: share, applicationActivities: nil)
+        self.present(activityViewController, animated: true)
+    }
+    
+    
     @IBAction func Regresar(_ sender: UIButton) {
         db.collection("Paciente").document(Auth.auth().currentUser!.uid).updateData(["token": FieldValue.delete()])
         self.dismiss(animated: true, completion: nil)
