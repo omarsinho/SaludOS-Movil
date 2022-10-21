@@ -11,6 +11,7 @@ import Firebase
 
 class VCVistaMedicos: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    var listaIDMedicos: Array<String> = []
     var listaNombresMedicos : Array<String> = []
     var listaTitulos : Array<String> = []
     
@@ -18,8 +19,8 @@ class VCVistaMedicos: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     let db = Firestore.firestore()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_: Bool) {
+        super.viewWillAppear(true)
         
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         
@@ -49,6 +50,7 @@ class VCVistaMedicos: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func getMedicos(ids: Array<String>) {
         for id in stride(from: 0, to: ids.count, by: 1) {
+            self.listaIDMedicos.append(ids[id])
             db.collection("Medico").document(ids[id]).getDocument {
                 (documentSnapshot, error) in
                 if let document = documentSnapshot, error == nil {
@@ -93,11 +95,35 @@ class VCVistaMedicos: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            let medicoAQuitar = indexPath.row
+            
             listaNombresMedicos.remove(at: indexPath.row)
             listaTitulos.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             
             // Quitar Medicos /BD
+            db.collection("Paciente").document(Auth.auth().currentUser!.uid).updateData(["uidMedicos": FieldValue.arrayRemove([listaIDMedicos[medicoAQuitar]])])
+            
+            db.collection("Medico").document(listaIDMedicos[medicoAQuitar]).updateData(["uidPacientes": FieldValue.arrayRemove([Auth.auth().currentUser!.uid])])
+            
+            /*db.collection("RegistroSalud").whereField("uidPaciente", isEqualTo: Auth.auth().currentUser!.uid).whereField("uidMedico", isEqualTo: listaIDMedicos[medicoAQuitar]).getDocuments() {
+                (querySnapshot, err) in
+                if let err = err {
+                    self.presentaAlerta(mensaje: err.localizedDescription)
+                }
+                else {
+                    guard let querySnapshot = querySnapshot else {
+                        self.presentaAlerta(mensaje: "Error Desconocido")
+                        return
+                    }
+                    querySnapshot.
+                    
+                    for document in querySnapshot.documents {
+                        document.
+                    
+                    }
+                }
+            }*/
         }
     }
     

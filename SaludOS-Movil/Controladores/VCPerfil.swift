@@ -71,18 +71,24 @@ class VCPerfil: UIViewController {
     @IBAction func CerrarSesion(_ sender: UIButton) {
         let auth = Auth.auth()
         
-        do {
-            try auth.signOut()
-            let defaults = UserDefaults.standard
-            defaults.set(false, forKey: "isUserSignedIn")
-            performSegue(withIdentifier: "PerfilALogin", sender: self)
+        let alerta = UIAlertController(title: "¿Estás seguro?", message: "Estás a punto de cerrar sesión.", preferredStyle: .alert)
+        let accion1 = UIAlertAction(title: "No", style: .cancel)
+        let accion2 = UIAlertAction(title: "Sí", style: .default) { accion2 in
+            do {
+                try auth.signOut()
+                let defaults = UserDefaults.standard
+                defaults.set(false, forKey: "isUserSignedIn")
+                self.performSegue(withIdentifier: "PerfilALogin", sender: self)
+            }
+            catch let signOutError {
+                let alerta = UIAlertController(title: "Error", message: signOutError.localizedDescription, preferredStyle: .alert)
+                let accion = UIAlertAction(title: "OK", style: .cancel)
+                    alerta.addAction(accion)
+            }
         }
-        catch let signOutError {
-            let alerta = UIAlertController(title: "Error", message: signOutError.localizedDescription, preferredStyle: .alert)
-            let accion = UIAlertAction(title: "OK", style: .cancel)
-                alerta.addAction(accion)
-            present(alerta, animated: true)
-        }
+        alerta.addAction(accion1)
+        alerta.addAction(accion2)
+        present(alerta, animated: true)
     }
     
 }

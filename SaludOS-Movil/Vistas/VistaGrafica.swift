@@ -28,7 +28,7 @@ struct VistaGrafica: View {
                         .font(.custom("Noteworthy", size: 22))
                         .multilineTextAlignment(.center)
                     Spacer()
-                    Chart(modelo.datosRegistroPresion, id: \.fechaYHoraToma) { dataPoint in
+                    Chart(modelo.datosRegistroPresion, id: \.id) { dataPoint in
                         LineMark(x: .value("Día", dataPoint.fechaYHoraToma), y: .value("Presión Diastólica", dataPoint.presionDiastolica))
                             .foregroundStyle(by: .value("Value", "Presión Diastólica"))
                         LineMark(x: .value("Día", dataPoint.fechaYHoraToma), y: .value("Presión Sistólica", dataPoint.presionSistolica))
@@ -76,11 +76,11 @@ struct VistaGrafica: View {
                         .font(.custom("PingFang TC", size: 16).italic())
                         .fontWeight(.bold)
                         .padding()
-                    Text("Presión Diastólica: \(modelo.modaDIA, specifier: "%.3f")mmHG aparece \(modelo.vecesDIA) veces")
+                    Text("Presión Diastólica: \(modelo.modaDIA, specifier: "%.0f")mmHG aparece \(modelo.vecesDIA) veces")
                         .font(.custom("PingFang TC", size: 14))
-                    Text("Presión Sistólica: \(modelo.modaSYS, specifier: "%.3f")mmHG aparece \(modelo.vecesSYS) veces")
+                    Text("Presión Sistólica: \(modelo.modaSYS, specifier: "%.0f")mmHG aparece \(modelo.vecesSYS) veces")
                         .font(.custom("PingFang TC", size: 14))
-                    Text("Pulso: \(modelo.modaPulso, specifier: "%.3f")mmHG aparece \(modelo.vecesPulso) veces")
+                    Text("Pulso: \(modelo.modaPulso, specifier: "%.0f")mmHG aparece \(modelo.vecesPulso) veces")
                         .font(.custom("PingFang TC", size: 14))
                 }
                 VStack {
@@ -88,11 +88,11 @@ struct VistaGrafica: View {
                         .font(.custom("PingFang TC", size: 16).italic())
                         .fontWeight(.bold)
                         .padding()
-                    Text("Presión Diastólica: \(modelo.medianaDIA, specifier: "%.3f")mmHG")
+                    Text("Presión Diastólica: \(modelo.medianaDIA, specifier: "%.0f")mmHG")
                         .font(.custom("PingFang TC", size: 14))
-                    Text("Presión Sistólica: \(modelo.medianaSYS, specifier: "%.3f")mmHG")
+                    Text("Presión Sistólica: \(modelo.medianaSYS, specifier: "%.0f")mmHG")
                         .font(.custom("PingFang TC", size: 14))
-                    Text("Pulso: \(modelo.medianaPulso, specifier: "%.3f")mmHG")
+                    Text("Pulso: \(modelo.medianaPulso, specifier: "%.0f")mmHG")
                         .font(.custom("PingFang TC", size: 14))
                     Text("Desviación Estándar")
                         .font(.custom("PingFang TC", size: 16).italic())

@@ -30,10 +30,10 @@ class VCRegistroPresion: UIViewController /*UITabBarController*/ {
     @IBOutlet weak var imgSad: UIImageView!
     @IBOutlet weak var imgHappy: UIImageView!
     
-    var veces: Double = 0
-    var presionSistolica: Double = 0
-    var presionDiastolica: Double = 0
-    var pulso: Double = 0
+    var veces: Int = 0
+    var presionSistolica: Int = 0
+    var presionDiastolica: Int = 0
+    var pulso: Int = 0
     
     var titulo = ""
     var mensaje = ""
@@ -92,9 +92,9 @@ class VCRegistroPresion: UIViewController /*UITabBarController*/ {
                 emo = 0.0
             }
             
-            presionSistolica += Double(tfPresionSYS.text!)!
-            presionDiastolica += Double(tfPresionDIA.text!)!
-            pulso += Double(tfPulso.text!)!
+            presionSistolica += Int(tfPresionSYS.text!)!
+            presionDiastolica += Int(tfPresionDIA.text!)!
+            pulso += Int(tfPulso.text!)!
             veces += 1
             
             if veces <= 2 {
