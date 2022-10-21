@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LG7-Hi-gD1">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--AppGeneral-->
+        <scene sceneID="4Ue-vU-Rgb">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="AppGeneral" storyboardName="AppGeneral" id="GYD-cE-4VM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2vx-jc-G5C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-772" y="190"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="tap-vW-zj1">
+            <objects>
+                <viewController id="LG7-Hi-gD1" customClass="VCLogin" customModule="SaludOS_Movil" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d2X-7w-eVs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="simp" translatesAutoresizingMaskIntoConstraints="NO" id="uyH-G8-z13">
+                                <rect key="frame" x="100" y="68" width="214" height="214"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uyH-G8-z13" secondAttribute="height" multiplier="1:1" id="8no-m6-Tnr"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="v6r-lG-d0W">
+                                <rect key="frame" x="50" y="394" width="314" height="108"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sdq-et-0zI">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9oj-st-QlZ">
+                                        <rect key="frame" x="0.0" y="74" width="314" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="alphabet" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="W4X-yf-aZj">
+                                <rect key="frame" x="76.5" y="683" width="261" height="99"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50V-i3-QN9">
+                                        <rect key="frame" x="0.0" y="0.0" width="261" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Iniciar Sesión"/>
+                                        <connections>
+                                            <action selector="IniciarSesion:" destination="LG7-Hi-gD1" eventType="touchUpInside" id="99O-R3-dgL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4K1-fO-0Hi">
+                                        <rect key="frame" x="0.0" y="64.5" width="261" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="¿No tienes cuenta? ¡Regístrate!"/>
+                                        <connections>
+                                            <segue destination="H70-if-cim" kind="presentation" modalPresentationStyle="fullScreen" id="91Y-MJ-JVq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SSA" translatesAutoresizingMaskIntoConstraints="NO" id="x7J-Yp-mOA">
+                                <rect key="frame" x="270" y="48" width="124" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="x7J-Yp-mOA" secondAttribute="height" multiplier="15:8" id="Twx-G4-OIu"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zq4-dc-Wic"/>
+                        <color key="backgroundColor" red="0.86947047710418701" green="0.96222752332687378" blue="0.89275646209716797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="x7J-Yp-mOA" firstAttribute="leading" secondItem="zq4-dc-Wic" secondAttribute="leading" constant="270" id="00o-XV-jqb"/>
+                            <constraint firstItem="W4X-yf-aZj" firstAttribute="centerX" secondItem="d2X-7w-eVs" secondAttribute="centerX" id="0ep-E3-fAo"/>
+                            <constraint firstItem="v6r-lG-d0W" firstAttribute="centerX" secondItem="d2X-7w-eVs" secondAttribute="centerX" id="7dx-nW-sEL"/>
+                            <constraint firstItem="uyH-G8-z13" firstAttribute="top" secondItem="zq4-dc-Wic" secondAttribute="top" constant="20" id="DPd-lT-Cap"/>
+                            <constraint firstItem="zq4-dc-Wic" firstAttribute="bottom" secondItem="W4X-yf-aZj" secondAttribute="bottom" constant="80" id="KP3-0I-Fdn"/>
+                            <constraint firstItem="zq4-dc-Wic" firstAttribute="trailing" secondItem="x7J-Yp-mOA" secondAttribute="trailing" constant="20" id="Pfj-3E-4er"/>
+                            <constraint firstItem="x7J-Yp-mOA" firstAttribute="top" secondItem="zq4-dc-Wic" secondAttribute="top" id="Tvm-bg-cgD"/>
+                            <constraint firstItem="zq4-dc-Wic" firstAttribute="trailing" secondItem="v6r-lG-d0W" secondAttribute="trailing" constant="50" id="Unc-iq-CHP"/>
+                            <constraint firstItem="v6r-lG-d0W" firstAttribute="centerY" secondItem="d2X-7w-eVs" secondAttribute="centerY" id="bEu-SH-G6F"/>
+                            <constraint firstItem="v6r-lG-d0W" firstAttribute="leading" secondItem="zq4-dc-Wic" secondAttribute="leading" constant="50" id="sfG-hs-C8d"/>
+                            <constraint firstItem="zq4-dc-Wic" firstAttribute="trailing" secondItem="uyH-G8-z13" secondAttribute="trailing" constant="100" id="vd1-H6-9vq"/>
+                            <constraint firstItem="uyH-G8-z13" firstAttribute="centerX" secondItem="d2X-7w-eVs" secondAttribute="centerX" id="xfj-cb-MIs"/>
+                            <constraint firstItem="uyH-G8-z13" firstAttribute="leading" secondItem="zq4-dc-Wic" secondAttribute="leading" constant="100" id="y3D-gQ-WX2"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="tDz-ES-5Jb" appends="YES" id="T3R-xI-UOU"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="tfEmail" destination="sdq-et-0zI" id="miA-uR-qXb"/>
+                        <outlet property="tfPassword" destination="9oj-st-QlZ" id="ahK-BT-q3w"/>
+                        <segue destination="GYD-cE-4VM" kind="presentation" identifier="LoginAInicio" modalPresentationStyle="fullScreen" id="IhM-YL-EY1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d7z-OG-cZQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="tDz-ES-5Jb">
+                    <connections>
+                        <action selector="quitaTeclado:" destination="LG7-Hi-gD1" id="d9d-A8-Q4v"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-1165.217391304348" y="798.88392857142856"/>
+        </scene>
+        <!--Sign Up1-->
+        <scene sceneID="AqE-aB-Qm4">
+            <objects>
+                <viewController id="H70-if-cim" customClass="VCSignUp_1" customModule="SaludOS_Movil" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZFZ-yY-QJh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="L5h-Mb-hOH">
+                                <rect key="frame" x="140" y="68" width="134" height="134"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="L5h-Mb-hOH" secondAttribute="height" multiplier="1:1" id="vrh-EG-2sO"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Uzh-5o-Qxd">
+                                <rect key="frame" x="31" y="283" width="352" height="330"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="XAP-WH-EQf">
+                                        <rect key="frame" x="0.0" y="0.0" width="352" height="34"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uKZ-MQ-uSG">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apellido Paterno" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eUz-UJ-h1F">
+                                                <rect key="frame" x="80" y="0.0" width="134" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apellido Materno" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ebj-zb-DsO">
+                                                <rect key="frame" x="214" y="0.0" width="138" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9fc-YR-o7c">
+                                        <rect key="frame" x="0.0" y="74" width="352" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v1f-WL-AG4">
+                                        <rect key="frame" x="0.0" y="148" width="352" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirma tu Contraseña:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Bd-Gb-Hf5">
+                                        <rect key="frame" x="0.0" y="222" width="352" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fecha de Nacimiento:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oqr-lB-Qgz">
+                                        <rect key="frame" x="0.0" y="296" width="352" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jN-SJ-u3a">
+                                <rect key="frame" x="151.5" y="747.5" width="111.5" height="34.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Continuar..."/>
+                                <connections>
+                                    <action selector="ContinuarASignUp2:" destination="H70-if-cim" eventType="touchUpInside" id="7NW-Av-2aL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIU-2Z-ALp">
+                                <rect key="frame" x="20" y="68" width="92.5" height="34.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Regresar"/>
+                                <connections>
+                                    <action selector="Regresar:" destination="H70-if-cim" eventType="touchUpInside" id="hFl-hq-4hd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jiX-QV-RIi"/>
+                        <color key="backgroundColor" red="0.95702582597732544" green="0.95422822237014771" blue="0.83789926767349243" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Uzh-5o-Qxd" firstAttribute="centerY" secondItem="ZFZ-yY-QJh" secondAttribute="centerY" id="0PL-OU-KTV"/>
+                            <constraint firstItem="9jN-SJ-u3a" firstAttribute="centerX" secondItem="ZFZ-yY-QJh" secondAttribute="centerX" id="3zu-OS-fLL"/>
+                            <constraint firstItem="L5h-Mb-hOH" firstAttribute="centerX" secondItem="ZFZ-yY-QJh" secondAttribute="centerX" id="FCT-wy-Ok0"/>
+                            <constraint firstItem="dIU-2Z-ALp" firstAttribute="leading" secondItem="jiX-QV-RIi" secondAttribute="leading" constant="20" id="Kad-1K-CHU"/>
+                            <constraint firstItem="Uzh-5o-Qxd" firstAttribute="leading" secondItem="jiX-QV-RIi" secondAttribute="leading" constant="31" id="Me9-yW-oMK"/>
+                            <constraint firstItem="jiX-QV-RIi" firstAttribute="trailing" secondItem="Uzh-5o-Qxd" secondAttribute="trailing" constant="31" id="QUA-2k-2v2"/>
+                            <constraint firstItem="jiX-QV-RIi" firstAttribute="trailing" secondItem="L5h-Mb-hOH" secondAttribute="trailing" constant="140" id="Shd-zT-Zjv"/>
+                            <constraint firstItem="L5h-Mb-hOH" firstAttribute="leading" secondItem="jiX-QV-RIi" secondAttribute="leading" constant="140" id="aPy-0Y-mR0"/>
+                            <constraint firstItem="dIU-2Z-ALp" firstAttribute="top" secondItem="jiX-QV-RIi" secondAttribute="top" constant="20" id="asQ-Mu-VNr"/>
+                            <constraint firstItem="Uzh-5o-Qxd" firstAttribute="centerX" secondItem="ZFZ-yY-QJh" secondAttribute="centerX" id="bZs-zf-i0v"/>
+                            <constraint firstItem="jiX-QV-RIi" firstAttribute="bottom" secondItem="9jN-SJ-u3a" secondAttribute="bottom" constant="80" id="okk-el-a2S"/>
+                            <constraint firstItem="L5h-Mb-hOH" firstAttribute="top" secondItem="jiX-QV-RIi" secondAttribute="top" constant="20" id="yg3-4A-Clv"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="RyR-sw-WsG" appends="YES" id="Fa4-Yx-YYz"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="tfApellidoM" destination="Ebj-zb-DsO" id="wWo-6w-8Q5"/>
+                        <outlet property="tfApellidoP" destination="eUz-UJ-h1F" id="D8Y-Vq-rAd"/>
+                        <outlet property="tfConfContrasena" destination="1Bd-Gb-Hf5" id="bSG-7w-nQJ"/>
+                        <outlet property="tfContrasena" destination="v1f-WL-AG4" id="ujB-vs-pcf"/>
+                        <outlet property="tfEmail" destination="9fc-YR-o7c" id="gON-BJ-yOz"/>
+                        <outlet property="tfFechaNac" destination="Oqr-lB-Qgz" id="qd7-PX-YCA"/>
+                        <outlet property="tfNombre" destination="uKZ-MQ-uSG" id="fKy-qr-pBo"/>
+                        <segue destination="gee-U0-Ma4" kind="presentation" identifier="SignUp1-a-2" modalPresentationStyle="fullScreen" id="kfj-S0-3tz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UfK-RP-q1y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="RyR-sw-WsG">
+                    <connections>
+                        <action selector="quitaTeclado:" destination="H70-if-cim" id="igV-lj-Fqx"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-349.27536231884062" y="798.88392857142856"/>
+        </scene>
+        <!--Sign Up2-->
+        <scene sceneID="gu5-eF-8hM">
+            <objects>
+                <viewController id="gee-U0-Ma4" customClass="VCSignUp_2" customModule="SaludOS_Movil" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LrB-Wz-Aiv" customClass="VCS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="simblood" translatesAutoresizingMaskIntoConstraints="NO" id="Bq5-Gc-UAx">
+                                <rect key="frame" x="100" y="68" width="214" height="214"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Bq5-Gc-UAx" secondAttribute="height" multiplier="1:1" id="lA2-2i-ok0"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="HqJ-qJ-9RZ">
+                                <rect key="frame" x="100" y="357" width="214" height="182"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Altura (m):" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V8T-Jv-rPp">
+                                        <rect key="frame" x="0.0" y="0.0" width="214" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Peso (kg):" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fWF-8p-71C">
+                                        <rect key="frame" x="0.0" y="74" width="214" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tipo de Sangre:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mVZ-oP-Y7t">
+                                        <rect key="frame" x="0.0" y="148" width="214" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZe-hj-C1S">
+                                <rect key="frame" x="157.5" y="747.5" width="99.5" height="34.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="¡Terminar!"/>
+                                <connections>
+                                    <action selector="CrearCuenta:" destination="gee-U0-Ma4" eventType="touchUpInside" id="p5b-Cz-dpK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Pg-Lk-FUc">
+                                <rect key="frame" x="20" y="68" width="92.5" height="34.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Regresar"/>
+                                <connections>
+                                    <action selector="Regresar:" destination="gee-U0-Ma4" eventType="touchUpInside" id="NVc-Xj-gr8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Los siguientes campos son opcionales" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u23-ua-wZt">
+                                <rect key="frame" x="61" y="316.5" width="292" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zAD-JR-o4g"/>
+                        <color key="backgroundColor" red="0.95857125520706177" green="0.89252215623855591" blue="0.83611452579498291" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="HqJ-qJ-9RZ" firstAttribute="centerY" secondItem="LrB-Wz-Aiv" secondAttribute="centerY" id="45q-FT-Rwa"/>
+                            <constraint firstItem="kZe-hj-C1S" firstAttribute="centerX" secondItem="LrB-Wz-Aiv" secondAttribute="centerX" id="7yq-MM-Qvq"/>
+                            <constraint firstItem="zAD-JR-o4g" firstAttribute="trailing" secondItem="HqJ-qJ-9RZ" secondAttribute="trailing" constant="100" id="C5c-qN-OTd"/>
+                            <constraint firstItem="0Pg-Lk-FUc" firstAttribute="top" secondItem="zAD-JR-o4g" secondAttribute="top" constant="20" id="HQO-6P-nlo"/>
+                            <constraint firstItem="zAD-JR-o4g" firstAttribute="trailing" secondItem="Bq5-Gc-UAx" secondAttribute="trailing" constant="100" id="QpO-GU-9j1"/>
+                            <constraint firstItem="zAD-JR-o4g" firstAttribute="bottom" secondItem="kZe-hj-C1S" secondAttribute="bottom" constant="80" id="S2X-hI-0tX"/>
+                            <constraint firstItem="HqJ-qJ-9RZ" firstAttribute="top" secondItem="u23-ua-wZt" secondAttribute="bottom" constant="20" id="WvP-sx-wZr"/>
+                            <constraint firstItem="HqJ-qJ-9RZ" firstAttribute="leading" secondItem="zAD-JR-o4g" secondAttribute="leading" constant="100" id="d57-sa-qTC"/>
+                            <constraint firstItem="Bq5-Gc-UAx" firstAttribute="centerX" secondItem="LrB-Wz-Aiv" secondAttribute="centerX" id="ejy-vl-PEK"/>
+                            <constraint firstItem="u23-ua-wZt" firstAttribute="centerX" secondItem="LrB-Wz-Aiv" secondAttribute="centerX" id="fj5-bH-Fzb"/>
+                            <constraint firstItem="Bq5-Gc-UAx" firstAttribute="leading" secondItem="zAD-JR-o4g" secondAttribute="leading" constant="100" id="hpK-58-bNS"/>
+                            <constraint firstItem="0Pg-Lk-FUc" firstAttribute="leading" secondItem="zAD-JR-o4g" secondAttribute="leading" constant="20" id="iWb-pB-aLK"/>
+                            <constraint firstItem="Bq5-Gc-UAx" firstAttribute="top" secondItem="zAD-JR-o4g" secondAttribute="top" constant="20" id="lUz-5U-vYV"/>
+                            <constraint firstItem="HqJ-qJ-9RZ" firstAttribute="centerX" secondItem="LrB-Wz-Aiv" secondAttribute="centerX" id="pfp-OQ-tsu"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="SXt-vl-8uh" appends="YES" id="PEr-nq-vAV"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="tfAltura" destination="V8T-Jv-rPp" id="BKx-jN-lhe"/>
+                        <outlet property="tfPeso" destination="fWF-8p-71C" id="QIZ-ZL-hNM"/>
+                        <outlet property="tfTipoSangre" destination="mVZ-oP-Y7t" id="eor-5I-ces"/>
+                        <segue destination="GYD-cE-4VM" kind="presentation" identifier="SignUp2AInicio" modalPresentationStyle="fullScreen" id="VA6-fv-x40"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1JK-Ic-7S5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="SXt-vl-8uh">
+                    <connections>
+                        <action selector="quitaTeclado:" destination="gee-U0-Ma4" id="XSm-Zx-QRX"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="457.97101449275368" y="798.88392857142856"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="IhM-YL-EY1"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="SSA" width="1029" height="276"/>
+        <image name="calendar" width="512" height="512"/>
+        <image name="simblood" width="512" height="512"/>
+        <image name="simp" width="512" height="512"/>
+    </resources>
+</document>
