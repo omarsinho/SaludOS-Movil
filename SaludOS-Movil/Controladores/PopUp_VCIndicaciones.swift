@@ -27,8 +27,8 @@ class PopUp_VCIndicaciones: UIViewController, UITableViewDelegate,UITableViewDat
     
     var listaMedicamentos: Array<Medicamento> = []
     //var listaMedicamentos = [Medicamento]() //Idea: Crear clase Medicina para incluir en el table view
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_: Bool) {
+        super.viewWillAppear(true)
         
         db.collection("RegistroSalud").whereField("uidPaciente", isEqualTo: Auth.auth().currentUser!.uid).getDocuments() {
             (querySnapshot, err) in

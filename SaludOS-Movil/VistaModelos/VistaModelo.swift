@@ -24,12 +24,6 @@ class VistaModelo: ObservableObject {
     var arregloSYS = [1.1]
     var arregloPulso = [1.1]
     
-    /*var arregloIDOrd = ["Hola"]
-    var arregloFechaOrd = [Date()]
-    var arregloDIAOrd = [1]
-    var arregloSYSOrd = [1]
-    var arregloPulsoOrd = [1]*/
-    
     var sumDIA = 1.1
     var sumSYS = 1.1
     var sumPulso = 1.1
@@ -83,7 +77,7 @@ class VistaModelo: ObservableObject {
                         // Se obtienen los documentos y crea "Grafica"
                         self.datosRegistroPresion = snapshot.documents.map { d in
                             // Crea un objeto "Grafica" por cada documento retornado
-                            return Grafica(id: d.documentID, fechaYHoraToma: d["fechaYHoraToma"] as? Date ?? Date(), presionDiastolica: d["presionDiastolica"] as? Double ?? 0, presionSistolica: d["presionSistolica"] as? Double ?? 0, pulso: d["pulso"] as? Double ?? 0)
+                            return Grafica(id: d.documentID, fechaYHoraToma: d["fechaYHoraToma"] as? Date ?? Date(), presionDiastolica: d["presionDiastolica"] as? Int ?? 0, presionSistolica: d["presionSistolica"] as? Int ?? 0, pulso: d["pulso"] as? Int ?? 0)
                         }
                         
                         //self.datosRegistroPresion.map { (id: $0.1, fechaYHoraToma: dateFormatter.date(from: $0.0)!, presionDiastolica: $0.1, presionSistolica: $0.1, pulso: $0.1)}
@@ -91,8 +85,6 @@ class VistaModelo: ObservableObject {
                         self.arregloDIA.remove(at: 0)
                         self.arregloSYS.remove(at: 0)
                         self.arregloPulso.remove(at: 0)
-                        
-
                         
                         for doc in snapshot.documents {
                             //self.arregloID.append(doc.documentID)
@@ -148,6 +140,10 @@ class VistaModelo: ObservableObject {
                         self.DEDIA = sqrt(self.varDIA)
                         self.DESYS = sqrt(self.varSYS)
                         self.DEPulso = sqrt(self.varPulso)
+                        
+                        for elemento in self.datosRegistroPresion {
+                            print(elemento.fechaYHoraToma)
+                        }
                     }
                 }
             }

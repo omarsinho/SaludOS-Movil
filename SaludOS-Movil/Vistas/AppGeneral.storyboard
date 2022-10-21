@@ -115,7 +115,7 @@
                                         <rect key="frame" x="0.0" y="147" width="201.5" height="32"/>
                                         <color key="tintColor" systemColor="systemCyanColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Creditos">
+                                        <buttonConfiguration key="configuration" style="plain" title="Créditos">
                                             <backgroundConfiguration key="background" cornerRadius="15" strokeWidth="1">
                                                 <color key="strokeColor" white="0.79827592729711205" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </backgroundConfiguration>
@@ -1553,7 +1553,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1P-1d-rmz">
-                                        <rect key="frame" x="8" y="8" width="40" height="32"/>
+                                        <rect key="frame" x="8" y="8" width="40.5" height="32.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="w1P-1d-rmz" secondAttribute="height" multiplier="5:4" id="ICb-gY-J9m"/>
                                         </constraints>
@@ -1562,60 +1562,92 @@
                                             <action selector="Regresar:" destination="HIm-cp-iXc" eventType="touchUpInside" id="YD1-NZ-xJe"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Equipo:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3a-k7-Hgo">
-                                        <rect key="frame" x="53" y="140" width="278" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="15"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Los Trabajos de Steve" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZu-JK-7Ct">
-                                        <rect key="frame" x="36" y="156" width="313" height="41"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="18"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Integrantes:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCa-jB-4Uf">
-                                        <rect key="frame" x="52" y="194" width="278" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="15"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0V-6d-St7">
-                                        <rect key="frame" x="35" y="223" width="313" height="61"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <string key="text">Juan Rodríguez A01411625,
-Ricardo Olmedo A00829748,
-Alberto Orozco A00831719,
-Omar Lopez A01284179,
-Sergio Carrera A01197964</string>
-                                        <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Referencias:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdZ-pn-RZq">
-                                        <rect key="frame" x="52" y="663" width="278" height="27"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="15"/>
-                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Samantha Miranda, [Armando Videos] (7 jul 2021). Como checar la presion arterial [Video]. Youtube. https://youtu.be/8p0N5wN_FcY" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTO-fO-Rgv">
-                                        <rect key="frame" x="22" y="688" width="341" height="42"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="24" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZd-Vr-t6p">
-                                        <rect key="frame" x="22" y="372" width="341" height="238"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <string key="text">Base de Datos:
-Firebase
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DLY-Su-vr1">
+                                        <rect key="frame" x="82.5" y="30" width="210" height="55"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maestros:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBk-8a-1na">
+                                                <rect key="frame" x="0.0" y="0.0" width="210" height="15"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="15"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeC-R3-MWj">
+                                                <rect key="frame" x="0.0" y="25" width="210" height="30"/>
+                                                <string key="text">Ing. Yolanda Martinez Treviño
+Ing. Luis Enrique Cuevas Huesca</string>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lDR-Q2-2aA">
+                                        <rect key="frame" x="106" y="115" width="163" height="43"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Equipo:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3a-k7-Hgo">
+                                                <rect key="frame" x="0.0" y="0.0" width="163" height="15"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="15"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Los Trabajos de Steve" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZu-JK-7Ct">
+                                                <rect key="frame" x="0.0" y="25" width="163" height="18"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="T6Y-aU-KaQ">
+                                        <rect key="frame" x="77.5" y="188" width="220.5" height="85"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Integrantes:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCa-jB-4Uf">
+                                                <rect key="frame" x="0.0" y="0.0" width="220.5" height="15"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="15"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0V-6d-St7">
+                                                <rect key="frame" x="0.0" y="25" width="220.5" height="60"/>
+                                                <string key="text">Juan Daniel Rodríguez Oropeza A01411625
+Ricardo José Olmedo Cañas A00829748
+Alberto Horacio Orozco Ramos A00831719
+Omar Alonso López Valenzuela A01284179
+Sergio Hirsohi Carrera Monnier A01197964</string>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Exz-WC-S3g">
+                                        <rect key="frame" x="0.0" y="293" width="375" height="5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="5" id="be3-xj-Ph3"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="strokeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VcM-qi-Y4L">
+                                        <rect key="frame" x="20" y="313" width="335" height="265"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Herramientas Utilizadas:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2h-Zn-byK">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="15"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="15"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="26" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZd-Vr-t6p">
+                                                <rect key="frame" x="0.0" y="25" width="335" height="240"/>
+                                                <string key="text">Backend:
+Firebase Firestore, Authentication, Storage
 
-Web:
-React-Bootstrap
+Front End Web:
+React JS
+Bootstrap
 Charts JS
 React
 Virgil Security
@@ -1623,40 +1655,55 @@ Ethree
 Firebase Tools
 Font Awesome
 
-Móvil:
-Swift Storyboard
+Front End Móvil:
+Swift Storyboard UIKit
 SwiftUI</string>
-                                        <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="15"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Herramientas Utilizadas:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2h-Zn-byK">
-                                        <rect key="frame" x="37" y="331" width="312" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="15"/>
-                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maestros:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBk-8a-1na">
-                                        <rect key="frame" x="52" y="48" width="278" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="15"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeC-R3-MWj">
-                                        <rect key="frame" x="87" y="74" width="210" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <string key="text">Ing. Yolanda Martinez Treviño
-Ing. Luis Enrique Cuevas Huesca</string>
-                                        <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="15"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9lV-lL-fzn">
+                                        <rect key="frame" x="20" y="601" width="335" height="51"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Referencias:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdZ-pn-RZq">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="15"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="15"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Samantha Miranda, [Armando Videos] (7 jul 2021). Como checar la presion arterial [Video]. Youtube. https://youtu.be/8p0N5wN_FcY" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTO-fO-Rgv">
+                                                <rect key="frame" x="0.0" y="15" width="335" height="36"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="Exz-WC-S3g" firstAttribute="top" secondItem="T6Y-aU-KaQ" secondAttribute="bottom" constant="20" id="38F-uQ-oYI"/>
                                     <constraint firstItem="w1P-1d-rmz" firstAttribute="leading" secondItem="mhP-zx-K9C" secondAttribute="leading" constant="8" id="5Jn-ef-a2O"/>
+                                    <constraint firstItem="DLY-Su-vr1" firstAttribute="centerX" secondItem="mhP-zx-K9C" secondAttribute="centerX" id="Cmm-fP-ied"/>
+                                    <constraint firstItem="9lV-lL-fzn" firstAttribute="centerX" secondItem="mhP-zx-K9C" secondAttribute="centerX" id="H8r-dE-dqw"/>
+                                    <constraint firstItem="VcM-qi-Y4L" firstAttribute="centerX" secondItem="mhP-zx-K9C" secondAttribute="centerX" id="JCB-9q-Jak"/>
+                                    <constraint firstItem="Exz-WC-S3g" firstAttribute="centerX" secondItem="mhP-zx-K9C" secondAttribute="centerX" id="PP1-e4-zNw"/>
+                                    <constraint firstAttribute="bottom" secondItem="9lV-lL-fzn" secondAttribute="bottom" constant="15" id="T0P-5C-9ox"/>
+                                    <constraint firstItem="DLY-Su-vr1" firstAttribute="top" secondItem="mhP-zx-K9C" secondAttribute="top" constant="30" id="TGr-Qf-PYM"/>
+                                    <constraint firstAttribute="trailing" secondItem="9lV-lL-fzn" secondAttribute="trailing" constant="20" id="XOT-7p-2iW"/>
+                                    <constraint firstItem="lDR-Q2-2aA" firstAttribute="top" secondItem="DLY-Su-vr1" secondAttribute="bottom" constant="30" id="bvq-N5-zDD"/>
+                                    <constraint firstItem="VcM-qi-Y4L" firstAttribute="top" secondItem="Exz-WC-S3g" secondAttribute="bottom" constant="15" id="d5J-DG-Xw8"/>
+                                    <constraint firstAttribute="trailing" secondItem="VcM-qi-Y4L" secondAttribute="trailing" constant="20" id="d9f-Dn-Cds"/>
                                     <constraint firstItem="w1P-1d-rmz" firstAttribute="top" secondItem="mhP-zx-K9C" secondAttribute="top" constant="8" id="edl-o1-UFU"/>
+                                    <constraint firstItem="T6Y-aU-KaQ" firstAttribute="centerX" secondItem="mhP-zx-K9C" secondAttribute="centerX" id="g1c-P5-taS"/>
+                                    <constraint firstItem="T6Y-aU-KaQ" firstAttribute="top" secondItem="lDR-Q2-2aA" secondAttribute="bottom" constant="30" id="g4z-Yx-2d9"/>
+                                    <constraint firstAttribute="trailing" secondItem="Exz-WC-S3g" secondAttribute="trailing" id="grx-ia-1oI"/>
+                                    <constraint firstItem="VcM-qi-Y4L" firstAttribute="leading" secondItem="mhP-zx-K9C" secondAttribute="leading" constant="20" id="hNt-7x-RJz"/>
+                                    <constraint firstItem="Exz-WC-S3g" firstAttribute="leading" secondItem="mhP-zx-K9C" secondAttribute="leading" id="hiu-CH-GkE"/>
+                                    <constraint firstItem="lDR-Q2-2aA" firstAttribute="centerX" secondItem="mhP-zx-K9C" secondAttribute="centerX" id="l9q-JR-9JN"/>
+                                    <constraint firstItem="9lV-lL-fzn" firstAttribute="leading" secondItem="mhP-zx-K9C" secondAttribute="leading" constant="20" id="swG-lR-naL"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1664,17 +1711,6 @@ Ing. Luis Enrique Cuevas Huesca</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Exz-WC-S3g">
-                                <rect key="frame" x="20" y="379" width="374" height="4"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="strokeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </backgroundConfiguration>
-                                </buttonConfiguration>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cSH-dU-nlg"/>
                         <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
@@ -1688,7 +1724,7 @@ Ing. Luis Enrique Cuevas Huesca</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ei7-r9-JUP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2155" y="94"/>
+            <point key="canvasLocation" x="2153.6231884057975" y="93.75"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="39m-7M-v6W">

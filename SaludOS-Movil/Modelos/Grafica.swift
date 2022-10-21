@@ -10,7 +10,7 @@ import Foundation
 struct Grafica: Identifiable {
     var id: String
     var fechaYHoraToma: Date
-    var presionDiastolica: Double
-    var presionSistolica: Double
-    var pulso: Double
+    var presionDiastolica: Int
+    var presionSistolica: Int
+    var pulso: Int
 }
